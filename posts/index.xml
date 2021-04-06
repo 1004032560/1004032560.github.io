@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Posts on looper梦呓</title>
+    <link>http://example.org/posts/</link>
+    <description>Recent content in Posts on looper梦呓</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Fri, 16 Oct 2020 17:38:23 +0800</lastBuildDate><atom:link href="http://example.org/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>订单中心数据表</title>
+      <link>http://example.org/posts/%E8%AE%A2%E5%8D%95%E4%B8%AD%E5%BF%83%E6%95%B0%E6%8D%AE%E8%A1%A8/</link>
+      <pubDate>Fri, 16 Oct 2020 17:38:23 +0800</pubDate>
+      
+      <guid>http://example.org/posts/%E8%AE%A2%E5%8D%95%E4%B8%AD%E5%BF%83%E6%95%B0%E6%8D%AE%E8%A1%A8/</guid>
+      <description>订单中心数据表 uoc_special_apply_order：特价支付表单
+uoc_special_apply_ord_item：特价支付明细表单
+uoc_special_apply_approval：特价支付审批表单</description>
+    </item>
+    
+    <item>
+      <title>学习路线</title>
+      <link>http://example.org/posts/%E5%AD%A6%E4%B9%A0%E8%B7%AF%E7%BA%BF/</link>
+      <pubDate>Fri, 16 Oct 2020 14:16:27 +0800</pubDate>
+      
+      <guid>http://example.org/posts/%E5%AD%A6%E4%B9%A0%E8%B7%AF%E7%BA%BF/</guid>
+      <description>Java后端开发路线规划 JavaSE
+JavaEE
+MySQL</description>
+    </item>
+    
+    <item>
+      <title>My First Post</title>
+      <link>http://example.org/posts/my-first-post/</link>
+      <pubDate>Thu, 15 Oct 2020 15:38:23 +0800</pubDate>
+      
+      <guid>http://example.org/posts/my-first-post/</guid>
+      <description>Hello World </description>
+    </item>
+    
+  </channel>
+</rss>
