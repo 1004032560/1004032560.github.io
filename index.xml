@@ -6,7 +6,21 @@
     <description>Recent content on looper梦呓</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 07 Apr 2021 09:29:46 +0800</lastBuildDate><atom:link href="https://1004032560.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <copyright>[Home](/) &amp;#183; Theme [Simpleness](https://github.com/RainerChiang/simpleness) Powered by [Hugo](https://gohugo.io/)</copyright>
+    <lastBuildDate>Fri, 09 Apr 2021 10:41:07 +0800</lastBuildDate><atom:link href="https://1004032560.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>About</title>
+      <link>https://1004032560.github.io/about/about/</link>
+      <pubDate>Fri, 09 Apr 2021 10:41:07 +0800</pubDate>
+      
+      <guid>https://1004032560.github.io/about/about/</guid>
+      <description>「互联网」码农
+微信公众号：looper梦呓
+哔哩哔哩：looper梦呓
+知乎：looper
+今日头条：looper</description>
+    </item>
+    
     <item>
       <title>HUGO</title>
       <link>https://1004032560.github.io/posts/hugo/</link>
@@ -42,9 +56,21 @@ uoc_special_apply_approval：特价支付审批表单</description>
       <pubDate>Fri, 16 Oct 2020 14:16:27 +0800</pubDate>
       
       <guid>https://1004032560.github.io/posts/%E5%AD%A6%E4%B9%A0%E8%B7%AF%E7%BA%BF/</guid>
-      <description>Java后端开发路线规划 JavaSE
-JavaEE
-MySQL</description>
+      <description>Java后端开发路线规划 Java基础
+集合
+线程
+IO
+MySql
+Spring
+MyBatis
+SpringMVC
+SpringBoot
+Redis
+Dubbo
+Zookeeper
+RabbitMQ
+Linux
+Docker</description>
     </item>
     
     <item>

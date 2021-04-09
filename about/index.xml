@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Abouts on looper梦呓</title>
+    <link>https://1004032560.github.io/about/</link>
+    <description>Recent content in Abouts on looper梦呓</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>[Home](/) &amp;#183; Theme [Simpleness](https://github.com/RainerChiang/simpleness) Powered by [Hugo](https://gohugo.io/)</copyright>
+    <lastBuildDate>Fri, 09 Apr 2021 10:41:07 +0800</lastBuildDate><atom:link href="https://1004032560.github.io/about/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>About</title>
+      <link>https://1004032560.github.io/about/about/</link>
+      <pubDate>Fri, 09 Apr 2021 10:41:07 +0800</pubDate>
+      
+      <guid>https://1004032560.github.io/about/about/</guid>
+      <description>「互联网」码农
+微信公众号：looper梦呓
+哔哩哔哩：looper梦呓
+知乎：looper
+今日头条：looper</description>
+    </item>
+    
+  </channel>
+</rss>
