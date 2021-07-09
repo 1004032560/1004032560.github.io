@@ -7,13 +7,32 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>[Home](/) &amp;#183; Theme [Simpleness](https://github.com/RainerChiang/simpleness) Powered by [Hugo](https://gohugo.io/)</copyright>
-    <lastBuildDate>Fri, 09 Jul 2021 15:18:11 +0800</lastBuildDate><atom:link href="https://1004032560.github.io/tags/redis/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 09 Jul 2021 15:28:57 +0800</lastBuildDate><atom:link href="https://1004032560.github.io/tags/redis/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>、Redis简介</title>
-      <link>https://1004032560.github.io/posts/01redis%E7%AE%80%E4%BB%8B/</link>
+      <title>Redis概述</title>
+      <link>https://1004032560.github.io/posts/redis%E6%A6%82%E8%BF%B0/</link>
+      <pubDate>Fri, 09 Jul 2021 15:28:57 +0800</pubDate>
+      
+      <guid>https://1004032560.github.io/posts/redis%E6%A6%82%E8%BF%B0/</guid>
+      <description>Redis概述 1、什么是Redis Redis（==Re==mote ==Di==ctionary ==S==erver）远程字典服务。
+Redis 是一个开源的使用 C 语言编写、支持网络、可基于内存，也可持久化的日志型、Key-Value数据库，并提供多种语言的API。 是当下最热门的 NoSQL 数据库之一。
+读的速度是 10 万次/s,写的速度是 8 万次/s 。
+2、Redis作用  内存存储（提高效率），持久化（内存中断电即失，需要rdb、aof） 效率高，可以用于高速缓存 发布订阅系统（简单的消息队列） 地图信息分析 计数器，计时器（文章视频浏览量） &amp;hellip;  3、Redis特性  多样的数据类型 持久化 集群 事务 &amp;hellip;  4、学习Redis刚需  Redis官网：https://redis.io/ Redis中文网：http://redis.cn/ 下载地址：通过官网下载即可 Window 系统在 GitHub 上下载  注意：GitHub 上的 Windows 的 Redis 版本已经很久没更新了，官方推荐在 Linux 上安装使用。
+5、Windows下安装Redis 官网：https://redis.io/download
+Windows 版下载地址：https://github.com/MicrosoftArchive/redis/releases
+下载 Redis For window X64.zip 解压到指定目录
+安装完成测试：
+6、Linux下安装Redis 暂待&amp;hellip;
+7、Redis性能测试 Redis 性能测试参数：
+   序号 选项 描述 默认值     1 -h 指定服务器主机名 127.</description>
+    </item>
+    
+    <item>
+      <title>NoSQL概述</title>
+      <link>https://1004032560.github.io/posts/nosql%E7%AE%80%E4%BB%8B/</link>
       <pubDate>Fri, 09 Jul 2021 15:18:11 +0800</pubDate>
       
-      <guid>https://1004032560.github.io/posts/01redis%E7%AE%80%E4%BB%8B/</guid>
+      <guid>https://1004032560.github.io/posts/nosql%E7%AE%80%E4%BB%8B/</guid>
       <description>学习是为了让自己过得更加体面
 NoSQL概述 1、为什么要使用NoSQL 到了二十世纪之前，网站访问量不是很大，大多数网站都是使用的单机。
 到了二十世纪之后，互联网用户数量增多，网站访问量增加，单机不能满足网站的需求，巨增的访问量导致服务器宕机，造成经济损失，主要为了解决：1、数据量太大；2、网站访问量太大；3、用户对数据的读写操作更加频繁等问题。
@@ -24,7 +43,8 @@ NoSQL概述 1、为什么要使用NoSQL 到了二十世纪之前，网站访问�
 使用 NoSQL 为了使得不同的数据类型找到相应的解决办法，减轻关系系型数据库的压力。
 2、什么是NoSQL NoSQL = Not Only SQL（不仅仅是 SQL）
 泛指非关系型数据库的，随着 web 2.0 互联网的诞生，传统的关系型数据库很难处理 web 2.0 的大数据，NoSQL 在当今的
-3、NoSQL优势  易扩展，NoSql 数据库种类繁多，数据之间无关系（这样就非常容易扩展）   大数据量高性能，有非常高的读写性能，益于它的无关系行（结构简单）， NoSQL 的缓存是记录级的，是一种细粒度级的缓存，性能高  MySQL 使用 Query Cache （查询缓存），每次表的更新 Cache 就失效，而 NoSQL 的 Cache 是记录级的，同时 Redis 官方说 Redis 每秒读取 11 万次，写 8 万次。  多样灵活的数据模型，无需事先为要存储的数据建立字段（随时可以存储自定义的数据格式），关系数据库中增、删字段是一件非常麻烦的事情   传统的 RDBMS（关系型数据库系统） 和 NoSQL  RDBMS - 结构化组织 - SQL语言 - 数据和关系都存在单独的表中 - 严格的一致性(每一步数据都必须要一致) - 基础的事务 - .</description>
+3、NoSQL优势  易扩展，NoSql 数据库种类繁多，数据之间无关系（这样就非常容易扩展）   大数据量高性能，有非常高的读写性能，益于它的无关系行（结构简单）， NoSQL 的缓存是记录级的，是一种细粒度级的缓存，性能高   MySQL 使用 Query Cache （查询缓存），每次表的更新 Cache 就失效，而 NoSQL 的 Cache 是记录级的，同时 Redis 官方说 Redis 每秒读取 11 万次，写 8 万次。
+  多样灵活的数据模型，无需事先为要存储的数据建立字段（随时可以存储自定义的数据格式），关系数据库中增、删字段是一件非常麻烦的事情   传统的 RDBMS（关系型数据库系统） 和 NoSQL  RDBMS - 结构化组织 - SQL语言 - 数据和关系都存在单独的表中 - 严格的一致性(每一步数据都必须要一致) - 基础的事务 - .</description>
     </item>
     
   </channel>

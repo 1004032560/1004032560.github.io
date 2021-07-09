@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="generator" content="Hugo 0.76.5" />
+
+  <title> NoSQL概述 |  looper梦呓</title>
+  <meta name="description" content="A simple and concise hugo theme.">
+  <link rel="stylesheet" href="https://1004032560.github.io/css/index.css">
+  <link rel="stylesheet" href="https://1004032560.github.io/css/classes.css">
+  <link rel="canonical" href="https://1004032560.github.io/posts/nosql%E7%AE%80%E4%BB%8B/">
+  <link rel="alternate" type="application/rss+xml" href="" title="looper梦呓">
+  
+  
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" rel="stylesheet">
+</head>
+
+<body>
+  <header class="menus">
+  
+
+  <nav >
+    
+    <a href="/"> looper梦呓</a>
+    
+    <a href="/tags"> Tags</a>
+    
+    <a href="/about/about"> About</a>
+    
+  </nav>
+
+  <nav class="fontawesome">
+    
+    <a href="https://github.com/1004032560" target="_blank">
+        <i title="GitHub" class="fab fa-github"></i>
+    </a>
+    
+    
+    <a href="https://1004032560.github.io/index.xml" target="_blank">
+        <i title="RSS" class="fas fa-rss"></i>
+    </a>
+    
+  </nav>
+  
+  
+  <div class="hidden description">A simple and concise hugo theme.</div>
+  
+</header>
+
+<article id="article">
+  <header>
+  
+
+    <h1 style="text-align: center;" >NoSQL概述</h1>
+    <div class="post-meta">
+    
+      <time datetime="2021-07-09T15:18:11&#43;08:00">July 09, 2021</time> &nbsp; 
+    
+
+    looper &nbsp;
+
+    
+    
+    
+
+    
+      <i class="far fa-clock"></i>
+      
+      
+      
+
+      
+        6 min
+      
+      37 s
+      &nbsp;
+    
+    </div>
+  </header>
+
+  <p>学习是为了让自己过得更加体面</p>
+<h2 id="nosql概述">NoSQL概述</h2>
+<h3 id="1为什么要使用nosql">1、为什么要使用NoSQL</h3>
+<p>到了二十世纪之前，网站访问量不是很大，大多数网站都是使用的单机。</p>
+<p>到了二十世纪之后，互联网用户数量增多，网站访问量增加，单机不能满足网站的需求，巨增的访问量导致服务器宕机，造成经济损失，主要为了解决：1、数据量太大；2、网站访问量太大；3、用户对数据的读写操作更加频繁等问题。</p>
+<p>解决方法：对数据库进行优化（垂直拆分，分库分表，读写分离），同时大部分网站用户 80% 的操作都是读取数据，为了减轻数据库的压力，所以增加缓存就成了刚需。</p>
+<p>解决方法的发展过程：1、优化数据结构与算法；2、文件缓存（IO）；3、缓存（Redis）。</p>
+<p>解决数据库的问题主要就是解决读、写操作速度问题</p>
+<p>2010年到2020年之间，世界发生了翻天覆地的变化，安卓的出现，地图，数据热榜，音乐，图片，文档，视频等数据的快速发展。导致 MySQL 等关系型数据库不够用了（IO压力），不能够很好很快的处理这些数据量大，变化快的数据。如果有一种数据库专门处理这种数据，MySQL 等关系型数据库的压力就会变得十分小，相应的就出现了非关系型数据库 NoSQL。</p>
+<p>使用 NoSQL 为了使得不同的数据类型找到相应的解决办法，减轻关系系型数据库的压力。</p>
+<!-- raw HTML omitted -->
+<h3 id="2什么是nosql">2、什么是NoSQL</h3>
+<p>NoSQL = Not Only SQL（不仅仅是 SQL）</p>
+<p>泛指非关系型数据库的，随着 web 2.0 互联网的诞生，传统的关系型数据库很难处理 web 2.0 的大数据，NoSQL 在当今的</p>
+<!-- raw HTML omitted -->
+<h3 id="3nosql优势">3、NoSQL优势</h3>
+<ul>
+<li><strong>易扩展</strong>，NoSql 数据库种类繁多，数据之间无关系（这样就非常容易扩展）</li>
+</ul>
+<!-- raw HTML omitted -->
+<ul>
+<li><strong>大数据量高性能</strong>，有非常高的读写性能，益于它的无关系行（结构简单）， NoSQL 的缓存是记录级的，是一种细粒度级的缓存，性能高</li>
+</ul>
+<blockquote>
+<p>MySQL 使用 Query Cache （查询缓存），每次表的更新 Cache 就失效，而 NoSQL 的 Cache 是记录级的，同时 Redis 官方说 Redis 每秒读取 11 万次，写 8 万次。</p>
+</blockquote>
+<!-- raw HTML omitted -->
+<ul>
+<li><strong>多样灵活的数据模型</strong>，无需事先为要存储的数据建立字段（随时可以存储自定义的数据格式），关系数据库中增、删字段是一件非常麻烦的事情</li>
+</ul>
+<!-- raw HTML omitted -->
+<ul>
+<li>传统的 RDBMS（关系型数据库系统） 和 NoSQL</li>
+</ul>
+<pre><code>RDBMS
+- 结构化组织
+- SQL语言
+- 数据和关系都存在单独的表中
+- 严格的一致性(每一步数据都必须要一致)
+- 基础的事务
+- ...
+
+NoSQL
+- 不仅仅是数据
+- 没有固定的查询语言
+- 键值对存储、列存储、文档存储、图形数据库
+- 最终一致性(最终的结果保持一致即可，不要求过程一致)
+- CPA定理和BASE (异地多活)
+- 高性能、高可用、高可扩展
+- ...
+</code></pre><!-- raw HTML omitted -->
+<h3 id="4分类">4、分类</h3>
+<h4 id="键值key-value存储数据库">键值（Key-Value）存储数据库</h4>
+<p>相关产品： <strong>Redis</strong>、MemcacheDB</p>
+<p>典型应用： 内容缓存，日志，主要用于处理大量数据的高访问负载。</p>
+<p>数据模型： Key 指向 Value 的键值对，通常用 Hash Table 实现</p>
+<p>优势： 快速查询</p>
+<p>劣势： 存储的数据缺少结构化，通常只能被当做字符串或者二进制数据</p>
+<!-- raw HTML omitted -->
+<h4 id="列存储数据库">列存储数据库</h4>
+<p>相关产品：Cassandra、<strong>HBase</strong>、Riak</p>
+<p>典型应用：分布式的文件系统</p>
+<p>数据模型：以列簇式存储，将同一列数据存在一起</p>
+<p>优势：查找速度快，可扩展性强，更容易进行分布式扩展</p>
+<p>劣势：功能相对局限</p>
+<!-- raw HTML omitted -->
+<h4 id="文档型数据库bson格式和json一样">文档型数据库（BSON格式和JSON一样）</h4>
+<p>相关产品：CouchDB、<strong>MongoDB</strong></p>
+<p>典型应用：Web应用（与Key-Value类似，Value是结构化的）</p>
+<p>数据模型： 一系列键值对</p>
+<p>优势：数据结构要求不严格</p>
+<p>劣势： 查询性能不高，而且缺乏统一的查询语法</p>
+<!-- raw HTML omitted -->
+<h4 id="图形graph数据库">图形(Graph)数据库</h4>
+<p>相关数据库：Neo4J、InfoGrid</p>
+<p>典型应用：社交网络，朋友圈，广告推荐，推荐系统</p>
+<p>数据模型：图结构</p>
+<p>优势：利用图结构相关算法（注意：图形数据库不是用来存储图片的）</p>
+<p>劣势：需要对整个图做计算才能得出结果，不容易做分布式的集群方案</p>
+
+
+  
+  <footer>
+    <hr>
+    
+    <div class="post-tags">
+    
+      <i class="fas fa-tags"></i>
+      
+        <a href="/tags/redis">Redis</a>
+        &nbsp;
+      
+    
+    </div>
+  </footer>
+  
+
+  
+
+
+  <div class="comments">
+
+
+
+</div>
+
+</article>
+
+
+
+  
+  
+  
+</body>
+<div class="foot">
+  
+  
+    &copy; 2019 - 2021 &#183; 
+    <a href="/">Home</a> · Theme <a href="https://github.com/RainerChiang/simpleness">Simpleness</a> Powered by <a href="https://gohugo.io/">Hugo</a> &#183;
+    <a href="#"><i class="fas fa-chevron-up"></i></a>
+  
+
+  
+  
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+	ga('create', 'looper', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+
+  
+</div>
+
+<script src="/js/lazyload.min.js"></script>
+<script>
+  var lazyImage = new LazyLoad({
+    container: document.getElementById('article')
+  });
+</script>
+
+
+</html>
