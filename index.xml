@@ -7,7 +7,35 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>[Home](/) &amp;#183; Theme [Simpleness](https://github.com/RainerChiang/simpleness) Powered by [Hugo](https://gohugo.io/)</copyright>
-    <lastBuildDate>Thu, 24 Jun 2021 18:58:47 +0800</lastBuildDate><atom:link href="https://1004032560.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 09 Jul 2021 14:54:40 +0800</lastBuildDate><atom:link href="https://1004032560.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Markdown语法&#43;Typora快捷键</title>
+      <link>https://1004032560.github.io/posts/markdown%E8%AF%AD%E6%B3%95&#43;typora%E5%BF%AB%E6%8D%B7%E9%94%AE/</link>
+      <pubDate>Fri, 09 Jul 2021 14:54:40 +0800</pubDate>
+      
+      <guid>https://1004032560.github.io/posts/markdown%E8%AF%AD%E6%B3%95&#43;typora%E5%BF%AB%E6%8D%B7%E9%94%AE/</guid>
+      <description>Markdown文档的快捷键使用  注意：有些快捷键需要在设置&amp;ndash;&amp;gt;偏好设置中，按照个人习惯，进行设置
+ [TOC]
+目录 使用 [toc] 这个就可以快速生成目录
+标题 Ctrl + 1 一级标题；
+Ctrl + 2 二级标题；
+Ctrl + 3三级标题；
+Ctrl + 4四级标题；
+Ctrl + 5五级标题
+Ctrl + 6六级标题
+Ctrl + B文本加粗； 我的markdown（普通文本加粗）
+ 注意：
+普通文本加粗和五级标大小一样；
+六级标题大小和五级标题一样，但是颜色为浅灰色；
+ Ctrl + shift + 5删除线； 不要998，不要996，只需98，轻松带回家
+Ctrl+ I文本下斜体；** 我的markdown
+Ctrl + U文本划线； 我的Markdown***加粗分割线  ---分割线  Ctrl + K超链接； 哔哩哔哩
+文章内的锚链接（#+想要到跳转到的标题）
+点击时按住Ctrl进行点击
+一级标题
+Ctrl + T表格    学号 姓名 班级     10001 阿大 三班   10002 阿二 二班   10003 阿三 一班    Ctrl + shift + Q引用 引用中可以再插入引用（使用‘ &amp;lt; ’）</description>
+    </item>
+    
     <item>
       <title>毕业季</title>
       <link>https://1004032560.github.io/posts/%E6%AF%95%E4%B8%9A%E5%AD%A3/</link>
