@@ -7,7 +7,28 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>[Home](/) &amp;#183; Theme [Simpleness](https://github.com/RainerChiang/simpleness) Powered by [Hugo](https://gohugo.io/)</copyright>
-    <lastBuildDate>Fri, 09 Jul 2021 15:28:57 +0800</lastBuildDate><atom:link href="https://1004032560.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 09 Jul 2021 16:11:57 +0800</lastBuildDate><atom:link href="https://1004032560.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>第1期looper周报</title>
+      <link>https://1004032560.github.io/posts/%E7%AC%AC1%E6%9C%9Flooper%E5%91%A8%E6%8A%A5/</link>
+      <pubDate>Fri, 09 Jul 2021 16:11:57 +0800</pubDate>
+      
+      <guid>https://1004032560.github.io/posts/%E7%AC%AC1%E6%9C%9Flooper%E5%91%A8%E6%8A%A5/</guid>
+      <description>1、学习 1.1 结对编程： 结对编程：敏捷开发的一种方式，两个程序员玩同一台电脑，一个负责编写代码，另一个负责观察。比如：狙击手，一般需要一名观察员进行辅助，观测风速、空气湿度、海拔高度等等，有时候也可以互换身份。
+那 BUG 出来了，是不是就找不到背锅的人了？
+1.2 阅读： 1、我曾不远千里奔赴威尼斯，只为追求我心人—-露丝，她用如水般清澈的目光，看着眼前高达三百二十五英尺的圣马可教堂，却不曾把眼神给予我哪怕一秒，我徒手攀登了那座高大教堂，以我的敏捷身手，很快就站在了教堂顶端，此前对我并不在意的露丝，却因目睹了我矫健伸手和果敢，在我被警察抓走的那一刻，为我倾心，我们因攀登结缘。 《攀登者》
+ 2、生活 毕业了告诫自己几点：
+1、政权出在枪杆子里，搞钱才是硬道理。
+2、凭本事，才能走的更远，不受限制，巩固技术，学习业务，提升个人能力。
+3、保持独立自主，积极主动询问，完成工作内容。
+4、做好信息记录，文档、博客、想法以及内容的产出。
+5、算法与数据结构、面试题概念型的东西，多刷题练习，并理解记忆。
+6、做一个产品，不断地优化重构，推动价值提升，实现复利。
+7、热爱生活，和爱的人好好生活，相互鼓励，共同成长。
+8、合理消费，做好资产管理。
+ 3、理财 暂无</description>
+    </item>
+    
     <item>
       <title>Redis概述</title>
       <link>https://1004032560.github.io/posts/redis%E6%A6%82%E8%BF%B0/</link>
