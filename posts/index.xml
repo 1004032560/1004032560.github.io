@@ -7,7 +7,26 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>[Home](/) &amp;#183; Theme [Simpleness](https://github.com/RainerChiang/simpleness) Powered by [Hugo](https://gohugo.io/)</copyright>
-    <lastBuildDate>Fri, 09 Jul 2021 14:54:40 +0800</lastBuildDate><atom:link href="https://1004032560.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 09 Jul 2021 15:18:11 +0800</lastBuildDate><atom:link href="https://1004032560.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>、Redis简介</title>
+      <link>https://1004032560.github.io/posts/01redis%E7%AE%80%E4%BB%8B/</link>
+      <pubDate>Fri, 09 Jul 2021 15:18:11 +0800</pubDate>
+      
+      <guid>https://1004032560.github.io/posts/01redis%E7%AE%80%E4%BB%8B/</guid>
+      <description>学习是为了让自己过得更加体面
+NoSQL概述 1、为什么要使用NoSQL 到了二十世纪之前，网站访问量不是很大，大多数网站都是使用的单机。
+到了二十世纪之后，互联网用户数量增多，网站访问量增加，单机不能满足网站的需求，巨增的访问量导致服务器宕机，造成经济损失，主要为了解决：1、数据量太大；2、网站访问量太大；3、用户对数据的读写操作更加频繁等问题。
+解决方法：对数据库进行优化（垂直拆分，分库分表，读写分离），同时大部分网站用户 80% 的操作都是读取数据，为了减轻数据库的压力，所以增加缓存就成了刚需。
+解决方法的发展过程：1、优化数据结构与算法；2、文件缓存（IO）；3、缓存（Redis）。
+解决数据库的问题主要就是解决读、写操作速度问题
+2010年到2020年之间，世界发生了翻天覆地的变化，安卓的出现，地图，数据热榜，音乐，图片，文档，视频等数据的快速发展。导致 MySQL 等关系型数据库不够用了（IO压力），不能够很好很快的处理这些数据量大，变化快的数据。如果有一种数据库专门处理这种数据，MySQL 等关系型数据库的压力就会变得十分小，相应的就出现了非关系型数据库 NoSQL。
+使用 NoSQL 为了使得不同的数据类型找到相应的解决办法，减轻关系系型数据库的压力。
+2、什么是NoSQL NoSQL = Not Only SQL（不仅仅是 SQL）
+泛指非关系型数据库的，随着 web 2.0 互联网的诞生，传统的关系型数据库很难处理 web 2.0 的大数据，NoSQL 在当今的
+3、NoSQL优势  易扩展，NoSql 数据库种类繁多，数据之间无关系（这样就非常容易扩展）   大数据量高性能，有非常高的读写性能，益于它的无关系行（结构简单）， NoSQL 的缓存是记录级的，是一种细粒度级的缓存，性能高  MySQL 使用 Query Cache （查询缓存），每次表的更新 Cache 就失效，而 NoSQL 的 Cache 是记录级的，同时 Redis 官方说 Redis 每秒读取 11 万次，写 8 万次。  多样灵活的数据模型，无需事先为要存储的数据建立字段（随时可以存储自定义的数据格式），关系数据库中增、删字段是一件非常麻烦的事情   传统的 RDBMS（关系型数据库系统） 和 NoSQL  RDBMS - 结构化组织 - SQL语言 - 数据和关系都存在单独的表中 - 严格的一致性(每一步数据都必须要一致) - 基础的事务 - .</description>
+    </item>
+    
     <item>
       <title>Markdown语法&#43;Typora快捷键</title>
       <link>https://1004032560.github.io/posts/markdown%E8%AF%AD%E6%B3%95&#43;typora%E5%BF%AB%E6%8D%B7%E9%94%AE/</link>

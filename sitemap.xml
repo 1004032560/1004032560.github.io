@@ -4,7 +4,27 @@
   
   <url>
     <loc>https://1004032560.github.io/</loc>
-    <lastmod>2021-07-09T14:54:40+08:00</lastmod>
+    <lastmod>2021-07-09T15:18:11+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://1004032560.github.io/posts/</loc>
+    <lastmod>2021-07-09T15:18:11+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://1004032560.github.io/tags/redis/</loc>
+    <lastmod>2021-07-09T15:18:11+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://1004032560.github.io/tags/</loc>
+    <lastmod>2021-07-09T15:18:11+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://1004032560.github.io/posts/01redis%E7%AE%80%E4%BB%8B/</loc>
+    <lastmod>2021-07-09T15:18:11+08:00</lastmod>
   </url>
   
   <url>
@@ -13,17 +33,7 @@
   </url>
   
   <url>
-    <loc>https://1004032560.github.io/posts/</loc>
-    <lastmod>2021-07-09T14:54:40+08:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://1004032560.github.io/tags/life/</loc>
-    <lastmod>2021-06-24T18:58:47+08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://1004032560.github.io/tags/</loc>
     <lastmod>2021-06-24T18:58:47+08:00</lastmod>
   </url>
   
@@ -35,6 +45,11 @@
   <url>
     <loc>https://1004032560.github.io/posts/mysql45%E8%AE%B2%E5%9F%BA%E7%A1%80%E6%9E%B6%E6%9E%84/</loc>
     <lastmod>2021-05-11T15:06:29+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://1004032560.github.io/tags/java/</loc>
+    <lastmod>2021-04-11T15:15:09+08:00</lastmod>
   </url>
   
   <url>
@@ -65,11 +80,6 @@
   <url>
     <loc>https://1004032560.github.io/posts/%E8%AE%A2%E5%8D%95%E4%B8%AD%E5%BF%83%E6%95%B0%E6%8D%AE%E8%A1%A8/</loc>
     <lastmod>2020-10-16T17:38:23+08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://1004032560.github.io/tags/java/</loc>
-    <lastmod>2020-10-16T14:16:27+08:00</lastmod>
   </url>
   
   <url>
