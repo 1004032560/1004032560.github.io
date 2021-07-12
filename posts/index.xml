@@ -7,7 +7,28 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>[Home](/) &amp;#183; Theme [Simpleness](https://github.com/RainerChiang/simpleness) Powered by [Hugo](https://gohugo.io/)</copyright>
-    <lastBuildDate>Fri, 09 Jul 2021 16:55:59 +0800</lastBuildDate><atom:link href="https://1004032560.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 12 Jul 2021 17:36:34 +0800</lastBuildDate><atom:link href="https://1004032560.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>【MySQL】数据定义语言DDL</title>
+      <link>https://1004032560.github.io/posts/mysql%E6%95%B0%E6%8D%AE%E5%AE%9A%E4%B9%89%E8%AF%AD%E8%A8%80ddl/</link>
+      <pubDate>Mon, 12 Jul 2021 17:36:34 +0800</pubDate>
+      
+      <guid>https://1004032560.github.io/posts/mysql%E6%95%B0%E6%8D%AE%E5%AE%9A%E4%B9%89%E8%AF%AD%E8%A8%80ddl/</guid>
+      <description>数据定义语言DDL(Data Definition Language) 对象： 数据库和表
+关键词： create、alter、drop、truncate(删除当前表再新建一个一模一样的表结构)
+创建数据库：
+create database school; 删除数据库：
+drop database school; 切换数据库：
+use school; 创建表：
+create table student( id int(4) primary key auto_increment, name varchar(20), score int(3) ); 查看数据库里存在的表：
+show tables; 注意：
+  varchar 类型的长度是可变的，创建表时指定了最大长度，定义时，其最大值可以取 0-65535 之间的任意值，但记录在这个范围内，使用多少分配多少，
+  varchar 类型实际占用空间为字符串的实际长度加 1。这样，可有效节约系统空间。varchar 是 mysql 的特有的数据类型。
+  char 类型的长度是固定的，在创建表时就指定了，其长度可以是 0-255 之间的任意值。虽然 char 占用的空间比较大，但它的处理速度快。
+  修改表：
+alter table student rename (to) teacher; alter table student add password varchar(20); alter table student change password pwd varchar(20); alter table student modify pwd int; alter table student drop pwd; 删除表：</description>
+    </item>
+    
     <item>
       <title>第1期looper周报</title>
       <link>https://1004032560.github.io/posts/%E7%AC%AC1%E6%9C%9Flooper%E5%91%A8%E6%8A%A5/</link>
