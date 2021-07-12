@@ -163,7 +163,7 @@ Ctrl + T表格    学号 姓名 班级     10001 阿大 三班   10002 阿二 �
     </item>
     
     <item>
-      <title>【MySQL讲】基础架构</title>
+      <title>【MySQL】基础架构</title>
       <link>https://1004032560.github.io/posts/mysql45%E8%AE%B2%E5%9F%BA%E7%A1%80%E6%9E%B6%E6%9E%84/</link>
       <pubDate>Tue, 11 May 2021 15:06:29 +0800</pubDate>
       
@@ -198,15 +198,6 @@ Object 类是所有类的父类（树结构中的根节点） 。当一个类没
 抽象是将一类对象的共同特征总结出来构造类的过程，包括数据抽象和行为抽象两方面。抽象只关注对象有哪些属性和行为，并不关注这些行为的细节是什么。
 接口属于特殊化的抽象，接口可以被其他类实现。
 一个类只能继承一个父类，但是可以实现多个接口。</description>
-    </item>
-    
-    <item>
-      <title>HUGO</title>
-      <link>https://1004032560.github.io/posts/hugo/</link>
-      <pubDate>Wed, 07 Apr 2021 09:29:46 +0800</pubDate>
-      
-      <guid>https://1004032560.github.io/posts/hugo/</guid>
-      <description># 创建一个名为「looper梦呓」的 HUGO 站点 hugo new site looper梦呓 # 在「looper梦呓」目录中新建一个 themes 的文件夹用于存储主题 # Hugo Themes : https://themes.gohugo.io # 创建一篇名为「HUGO基本命令」的文章 hugo new posts/HUGO基本命令.md # 启动 HUGO 站点 hugo server # 编译 HUGO 站点内容，生成 public 文件夹 hugo -D 人活着总是要做事情的，既然要做，就要去做有价值的事，既然要做，就要把它做好。</description>
     </item>
     
     <item>

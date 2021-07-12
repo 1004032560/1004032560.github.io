@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>HUGO on looper梦呓</title>
+    <link>https://1004032560.github.io/tags/hugo/</link>
+    <description>Recent content in HUGO on looper梦呓</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>[Home](/) &amp;#183; Theme [Simpleness](https://github.com/RainerChiang/simpleness) Powered by [Hugo](https://gohugo.io/)</copyright>
+    <lastBuildDate>Tue, 06 Apr 2021 16:14:57 +0800</lastBuildDate><atom:link href="https://1004032560.github.io/tags/hugo/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>HUGO基本命令</title>
+      <link>https://1004032560.github.io/posts/hugo%E5%9F%BA%E6%9C%AC%E5%91%BD%E4%BB%A4/</link>
+      <pubDate>Tue, 06 Apr 2021 16:14:57 +0800</pubDate>
+      
+      <guid>https://1004032560.github.io/posts/hugo%E5%9F%BA%E6%9C%AC%E5%91%BD%E4%BB%A4/</guid>
+      <description># 创建一个名为「looper梦呓」的 HUGO 站点 hugo new site looper梦呓 # 在「looper梦呓」目录中新建一个 themes 的文件夹用于存储主题 # Hugo Themes : https://themes.gohugo.io # 创建一篇名为「HUGO基本命令」的文章 hugo new posts/HUGO基本命令.md # 启动 HUGO 站点 hugo server # 编译 HUGO 站点内容，生成 public 文件夹 hugo -D 人活着总是要做事情的，既然要做，就要去做有价值的事，既然要做，就要把它做好。</description>
+    </item>
+    
+  </channel>
+</rss>
