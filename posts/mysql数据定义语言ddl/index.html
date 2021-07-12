@@ -83,19 +83,19 @@
 <p>对象： 数据库和表</p>
 <p>关键词： create、alter、drop、truncate(删除当前表再新建一个一模一样的表结构)</p>
 <p>创建数据库：</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="color:#ff79c6">create</span> <span style="color:#ff79c6">database</span> school;
+<div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="color:#007020;font-weight:bold">create</span> <span style="color:#007020;font-weight:bold">database</span> school;
 </code></pre></div><p>删除数据库：</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="color:#ff79c6">drop</span> <span style="color:#ff79c6">database</span> school;
+<div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="color:#007020;font-weight:bold">drop</span> <span style="color:#007020;font-weight:bold">database</span> school;
 </code></pre></div><p>切换数据库：</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql">use school;
+<div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql">use school;
 </code></pre></div><p>创建表：</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="color:#ff79c6">create</span> <span style="color:#ff79c6">table</span> student(
-    id <span style="color:#8be9fd;font-style:italic">int</span>(<span style="color:#bd93f9">4</span>) <span style="color:#ff79c6">primary</span> <span style="color:#ff79c6">key</span> auto_increment,
-    name <span style="color:#8be9fd;font-style:italic">varchar</span>(<span style="color:#bd93f9">20</span>),
-    score <span style="color:#8be9fd;font-style:italic">int</span>(<span style="color:#bd93f9">3</span>)
+<div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="color:#007020;font-weight:bold">create</span> <span style="color:#007020;font-weight:bold">table</span> student(
+    id <span style="color:#007020">int</span>(<span style="color:#40a070">4</span>) <span style="color:#007020;font-weight:bold">primary</span> <span style="color:#007020;font-weight:bold">key</span> auto_increment,
+    name <span style="color:#007020">varchar</span>(<span style="color:#40a070">20</span>),
+    score <span style="color:#007020">int</span>(<span style="color:#40a070">3</span>)
 );
 </code></pre></div><p>查看数据库里存在的表：</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="color:#ff79c6">show</span> tables;
+<div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="color:#007020;font-weight:bold">show</span> tables;
 </code></pre></div><p>注意：</p>
 <ul>
 <li>
@@ -109,17 +109,17 @@
 </li>
 </ul>
 <p>修改表：</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="color:#ff79c6">alter</span> <span style="color:#ff79c6">table</span> student <span style="color:#ff79c6">rename</span> (<span style="color:#ff79c6">to</span>) teacher;
-<span style="color:#ff79c6">alter</span> <span style="color:#ff79c6">table</span> student <span style="color:#ff79c6">add</span> password <span style="color:#8be9fd;font-style:italic">varchar</span>(<span style="color:#bd93f9">20</span>);
-<span style="color:#ff79c6">alter</span> <span style="color:#ff79c6">table</span> student change password pwd <span style="color:#8be9fd;font-style:italic">varchar</span>(<span style="color:#bd93f9">20</span>);
-<span style="color:#ff79c6">alter</span> <span style="color:#ff79c6">table</span> student <span style="color:#ff79c6">modify</span> pwd <span style="color:#8be9fd;font-style:italic">int</span>;
-<span style="color:#ff79c6">alter</span> <span style="color:#ff79c6">table</span> student <span style="color:#ff79c6">drop</span> pwd;
+<div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="color:#007020;font-weight:bold">alter</span> <span style="color:#007020;font-weight:bold">table</span> student <span style="color:#007020;font-weight:bold">rename</span> (<span style="color:#007020;font-weight:bold">to</span>) teacher;
+<span style="color:#007020;font-weight:bold">alter</span> <span style="color:#007020;font-weight:bold">table</span> student <span style="color:#007020;font-weight:bold">add</span> password <span style="color:#007020">varchar</span>(<span style="color:#40a070">20</span>);
+<span style="color:#007020;font-weight:bold">alter</span> <span style="color:#007020;font-weight:bold">table</span> student change password pwd <span style="color:#007020">varchar</span>(<span style="color:#40a070">20</span>);
+<span style="color:#007020;font-weight:bold">alter</span> <span style="color:#007020;font-weight:bold">table</span> student <span style="color:#007020;font-weight:bold">modify</span> pwd <span style="color:#007020">int</span>;
+<span style="color:#007020;font-weight:bold">alter</span> <span style="color:#007020;font-weight:bold">table</span> student <span style="color:#007020;font-weight:bold">drop</span> pwd;
 </code></pre></div><p>删除表：</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="color:#ff79c6">drop</span> <span style="color:#ff79c6">table</span> student;
+<div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="color:#007020;font-weight:bold">drop</span> <span style="color:#007020;font-weight:bold">table</span> student;
 </code></pre></div><p>查看生成表的sql语句：</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="color:#ff79c6">show</span> <span style="color:#ff79c6">create</span> <span style="color:#ff79c6">table</span> student;
+<div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="color:#007020;font-weight:bold">show</span> <span style="color:#007020;font-weight:bold">create</span> <span style="color:#007020;font-weight:bold">table</span> student;
 </code></pre></div><p>查看表结构：</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="color:#ff79c6">desc</span> student;
+<div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="color:#007020;font-weight:bold">desc</span> student;
 </code></pre></div>
 
   
