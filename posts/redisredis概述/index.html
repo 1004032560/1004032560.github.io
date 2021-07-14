@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="generator" content="Hugo 0.76.5" />
+
+  <title> 【Redis】Redis概述 |  looper梦呓</title>
+  <meta name="description" content="A simple and concise hugo theme.">
+  <link rel="stylesheet" href="https://1004032560.github.io/css/index.css">
+  <link rel="stylesheet" href="https://1004032560.github.io/css/classes.css">
+  <link rel="canonical" href="https://1004032560.github.io/posts/redisredis%E6%A6%82%E8%BF%B0/">
+  <link rel="alternate" type="application/rss+xml" href="" title="looper梦呓">
+  
+  
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" rel="stylesheet">
+</head>
+
+<body>
+  <header class="menus">
+  
+
+  <nav >
+    
+    <a href="/"> looper梦呓</a>
+    
+    <a href="/tags"> Tags</a>
+    
+    <a href="/about/about"> About</a>
+    
+  </nav>
+
+  <nav class="fontawesome">
+    
+    <a href="https://github.com/1004032560" target="_blank">
+        <i title="GitHub" class="fab fa-github"></i>
+    </a>
+    
+    
+    <a href="https://mp.weixin.qq.com/s/HpWP32efkOUumg7fUGZV1g" target="_blank">
+        <i title="微信公众号" class="fab fa-weixin"></i>
+    </a>
+    
+    
+    <a href="https://1004032560.github.io/index.xml" target="_blank">
+        <i title="RSS" class="fas fa-rss"></i>
+    </a>
+    
+  </nav>
+  
+  
+  <div class="hidden description">A simple and concise hugo theme.</div>
+  
+</header>
+
+<article id="article">
+  <header>
+  
+
+    <h1 style="text-align: center;" >【Redis】Redis概述</h1>
+    <div class="post-meta">
+    
+      <time datetime="2021-07-09T15:28:57&#43;08:00">July 09, 2021</time> &nbsp; 
+    
+
+    looper &nbsp;
+
+    
+    
+    
+
+    
+      <i class="far fa-clock"></i>
+      
+      
+      
+
+      
+        5 min
+      
+      37 s
+      &nbsp;
+    
+    </div>
+  </header>
+
+  <h2 id="redis概述">Redis概述</h2>
+<h3 id="1什么是redis">1、什么是Redis</h3>
+<p>Redis（Remote Dictionary Server）远程字典服务。</p>
+<p>Redis 是一个开源的使用 C 语言编写、支持网络、可基于内存，也可持久化的日志型、Key-Value数据库，并提供多种语言的API。 是当下最热门的 NoSQL 数据库之一。</p>
+<p>读的速度是 10 万次/s,写的速度是 8 万次/s 。</p>
+<!-- raw HTML omitted -->
+<h3 id="2redis作用">2、Redis作用</h3>
+<ol>
+<li>内存存储（提高效率），持久化（内存中断电即失，需要rdb、aof）</li>
+<li>效率高，可以用于高速缓存</li>
+<li>发布订阅系统（简单的消息队列）</li>
+<li>地图信息分析</li>
+<li>计数器，计时器（文章视频浏览量）</li>
+<li>&hellip;</li>
+</ol>
+<!-- raw HTML omitted -->
+<h3 id="3redis特性">3、Redis特性</h3>
+<ol>
+<li>多样的数据类型</li>
+<li>持久化</li>
+<li>集群</li>
+<li>事务</li>
+<li>&hellip;</li>
+</ol>
+<!-- raw HTML omitted -->
+<h3 id="4学习redis刚需">4、学习Redis刚需</h3>
+<ol>
+<li>Redis官网：<a href="https://redis.io/">https://redis.io/</a></li>
+<li>Redis中文网：<a href="http://redis.cn/">http://redis.cn/</a></li>
+<li>下载地址：通过官网下载即可</li>
+<li>Window 系统在 GitHub 上下载</li>
+</ol>
+<p>注意：GitHub 上的 Windows 的 Redis 版本已经很久没更新了，官方推荐在 Linux 上安装使用。</p>
+<!-- raw HTML omitted -->
+<h3 id="5windows下安装redis">5、Windows下安装Redis</h3>
+<p>官网：<a href="https://redis.io/download">https://redis.io/download</a></p>
+<p>Windows 版下载地址：<a href="https://github.com/MicrosoftArchive/redis/releases">https://github.com/MicrosoftArchive/redis/releases</a></p>
+<p>下载 Redis For window X64.zip 解压到指定目录</p>
+<p>安装完成测试：</p>
+<p><img src="https://raw.githubusercontent.com/1004032560/images/master/looper_2020-10-06_14-59-44-%E6%B5%8B%E8%AF%95.png" alt="looper_2020-10-06_14-59-44-测试.png"></p>
+<!-- raw HTML omitted -->
+<h3 id="6linux下安装redis">6、Linux下安装Redis</h3>
+<p>暂待&hellip;</p>
+<!-- raw HTML omitted -->
+<h3 id="7redis性能测试">7、Redis性能测试</h3>
+<p>Redis 性能测试参数：</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">序号</th>
+<th style="text-align:left">选项</th>
+<th style="text-align:left">描述</th>
+<th style="text-align:left">默认值</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">1</td>
+<td style="text-align:left"><strong>-h</strong></td>
+<td style="text-align:left">指定服务器主机名</td>
+<td style="text-align:left">127.0.0.1</td>
+</tr>
+<tr>
+<td style="text-align:left">2</td>
+<td style="text-align:left"><strong>-p</strong></td>
+<td style="text-align:left">指定服务器端口</td>
+<td style="text-align:left">6379</td>
+</tr>
+<tr>
+<td style="text-align:left">3</td>
+<td style="text-align:left"><strong>-s</strong></td>
+<td style="text-align:left">指定服务器 socket</td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:left">4</td>
+<td style="text-align:left"><strong>-c</strong></td>
+<td style="text-align:left">指定并发连接数</td>
+<td style="text-align:left">50</td>
+</tr>
+<tr>
+<td style="text-align:left">5</td>
+<td style="text-align:left"><strong>-n</strong></td>
+<td style="text-align:left">指定请求数</td>
+<td style="text-align:left">10000</td>
+</tr>
+<tr>
+<td style="text-align:left">6</td>
+<td style="text-align:left"><strong>-d</strong></td>
+<td style="text-align:left">以字节的形式指定 SET/GET 值的数据大小</td>
+<td style="text-align:left">2</td>
+</tr>
+<tr>
+<td style="text-align:left">7</td>
+<td style="text-align:left"><strong>-k</strong></td>
+<td style="text-align:left">1=keep alive 0=reconnect</td>
+<td style="text-align:left">1</td>
+</tr>
+<tr>
+<td style="text-align:left">8</td>
+<td style="text-align:left"><strong>-r</strong></td>
+<td style="text-align:left">SET/GET/INCR 使用随机 key, SADD 使用随机值</td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:left">9</td>
+<td style="text-align:left"><strong>-P</strong></td>
+<td style="text-align:left">通过管道传输 <code>&lt;numreq&gt;</code> 请求</td>
+<td style="text-align:left">1</td>
+</tr>
+<tr>
+<td style="text-align:left">10</td>
+<td style="text-align:left"><strong>-q</strong></td>
+<td style="text-align:left">强制退出 redis。仅显示 query/sec 值</td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:left">11</td>
+<td style="text-align:left"><strong>&ndash;csv</strong></td>
+<td style="text-align:left">以 CSV 格式输出</td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:left">12</td>
+<td style="text-align:left"><strong>-l</strong></td>
+<td style="text-align:left">生成循环，永久执行测试</td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:left">13</td>
+<td style="text-align:left"><strong>-t</strong></td>
+<td style="text-align:left">仅运行以逗号分隔的测试命令列表。</td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:left">14</td>
+<td style="text-align:left"><strong>-I</strong></td>
+<td style="text-align:left">Idle 模式。仅打开 N 个 idle 连接并等待。</td>
+<td style="text-align:left"></td>
+</tr>
+</tbody>
+</table>
+<p>测试 Redis 性能：</p>
+<div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#60a0b0;font-style:italic"># 测试 Redis 性能,本机localhost,端口6379,并发数100,请求数100000</span>
+redis-benchmark -h localhost -p <span style="color:#40a070">6379</span> -c <span style="color:#40a070">100</span> -n <span style="color:#40a070">100000</span>
+</code></pre></div><p>测试结果：</p>
+<p><img src="https://raw.githubusercontent.com/1004032560/images/master/looper_2020-10-06_15-31-19%E6%80%A7%E8%83%BD%E6%B5%8B%E8%AF%95.png" alt="looper_2020-10-06_15-31-19性能测试.png"></p>
+<p>【bilibili遇见狂神说】</p>
+<!-- raw HTML omitted -->
+<h3 id="8基本的redis命令">8、基本的Redis命令</h3>
+<p>切换数据库：<code>select 3</code>（切换到第四个数据库，默认从 0 开始）</p>
+<p>查看数据库大小：<code>dbsize</code></p>
+<p>清空当前数据库：<code>flushdb</code></p>
+<p>清空所有的数据库：<code>flushall</code></p>
+<p>查看所有的 key：<code>keys *</code></p>
+<!-- raw HTML omitted -->
+<h3 id="9redis是单线程的">9、Redis是单线程的</h3>
+<p>Redis是基于内存的，CPU不是Redis性能的瓶颈，<strong>Redis的瓶颈是根据机器的内存（内存大小）和网络的带宽（接受数据）</strong>，既然可以使用单线程来实现，所以就不需要使用多线程。</p>
+<p>Redis 是 C 语言写的，官方提供的数据为 10万+ 的 QPS，完全不必同样是使用 key-value 的 Memecache 差。</p>
+<!-- raw HTML omitted -->
+<h4 id="redis-为什么单线程还那么快">Redis 为什么单线程还那么快？</h4>
+<ol>
+<li>
+<p>误区1：高性能的服务器一定是多线程的？错，不一定</p>
+</li>
+<li>
+<p>误区2：多线程一定比单线程效率高？错，不一定，多线程中会产生上下文切换</p>
+<p>CPU &gt; 内存 &gt; 硬盘的速度</p>
+</li>
+</ol>
+<p>核心：Redis 是将所有的数据放到内存中的，所有使用单线程操作效率就是最高的。如果使用多线程，会产生 CPU 的上下文切换，对于内存系统来说，如果，没有上下文切换效率就是最高的，多次读写都在一个 CPU 上的，在内存情况下，这个就是最佳的方案。</p>
+
+
+  
+  <footer>
+    <hr>
+    
+    <div class="post-tags">
+    
+      <i class="fas fa-tags"></i>
+      
+        <a href="/tags/redis">Redis</a>
+        &nbsp;
+      
+    
+    </div>
+  </footer>
+  
+
+  
+
+<div class="releated-post">
+  <h3>Related Posts</h3>
+  
+  <i class="fas fa-paperclip"></i>
+  <a href="/posts/redisnosql%E7%AE%80%E4%BB%8B/">【Redis】NoSQL概述</a>
+  <br>
+  
+</div>
+
+
+  <div class="comments">
+
+
+
+</div>
+
+</article>
+
+
+
+  
+  
+  
+</body>
+<div class="foot">
+  
+  
+    &copy; 2019 - 2021 &#183; 
+    <a href="/">Home</a> · Theme <a href="https://github.com/RainerChiang/simpleness">Simpleness</a> Powered by <a href="https://gohugo.io/">Hugo</a> &#183;
+    <a href="#"><i class="fas fa-chevron-up"></i></a>
+  
+
+  
+  
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+	ga('create', 'looper', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+
+  
+</div>
+
+<script src="/js/lazyload.min.js"></script>
+<script>
+  var lazyImage = new LazyLoad({
+    container: document.getElementById('article')
+  });
+</script>
+
+
+</html>

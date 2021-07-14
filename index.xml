@@ -73,12 +73,12 @@ alter table student rename (to) teacher; alter table student add password varcha
     </item>
     
     <item>
-      <title>Redis概述</title>
-      <link>https://1004032560.github.io/posts/redis%E6%A6%82%E8%BF%B0/</link>
+      <title>【Redis】Redis概述</title>
+      <link>https://1004032560.github.io/posts/redisredis%E6%A6%82%E8%BF%B0/</link>
       <pubDate>Fri, 09 Jul 2021 15:28:57 +0800</pubDate>
       
-      <guid>https://1004032560.github.io/posts/redis%E6%A6%82%E8%BF%B0/</guid>
-      <description>Redis概述 1、什么是Redis Redis（==Re==mote ==Di==ctionary ==S==erver）远程字典服务。
+      <guid>https://1004032560.github.io/posts/redisredis%E6%A6%82%E8%BF%B0/</guid>
+      <description>Redis概述 1、什么是Redis Redis（Remote Dictionary Server）远程字典服务。
 Redis 是一个开源的使用 C 语言编写、支持网络、可基于内存，也可持久化的日志型、Key-Value数据库，并提供多种语言的API。 是当下最热门的 NoSQL 数据库之一。
 读的速度是 10 万次/s,写的速度是 8 万次/s 。
 2、Redis作用  内存存储（提高效率），持久化（内存中断电即失，需要rdb、aof） 效率高，可以用于高速缓存 发布订阅系统（简单的消息队列） 地图信息分析 计数器，计时器（文章视频浏览量） &amp;hellip;  3、Redis特性  多样的数据类型 持久化 集群 事务 &amp;hellip;  4、学习Redis刚需  Redis官网：https://redis.io/ Redis中文网：http://redis.cn/ 下载地址：通过官网下载即可 Window 系统在 GitHub 上下载  注意：GitHub 上的 Windows 的 Redis 版本已经很久没更新了，官方推荐在 Linux 上安装使用。
@@ -92,11 +92,11 @@ Windows 版下载地址：https://github.com/MicrosoftArchive/redis/releases
     </item>
     
     <item>
-      <title>NoSQL概述</title>
-      <link>https://1004032560.github.io/posts/nosql%E7%AE%80%E4%BB%8B/</link>
+      <title>【Redis】NoSQL概述</title>
+      <link>https://1004032560.github.io/posts/redisnosql%E7%AE%80%E4%BB%8B/</link>
       <pubDate>Fri, 09 Jul 2021 15:18:11 +0800</pubDate>
       
-      <guid>https://1004032560.github.io/posts/nosql%E7%AE%80%E4%BB%8B/</guid>
+      <guid>https://1004032560.github.io/posts/redisnosql%E7%AE%80%E4%BB%8B/</guid>
       <description>学习是为了让自己过得更加体面
 NoSQL概述 1、为什么要使用NoSQL 到了二十世纪之前，网站访问量不是很大，大多数网站都是使用的单机。
 到了二十世纪之后，互联网用户数量增多，网站访问量增加，单机不能满足网站的需求，巨增的访问量导致服务器宕机，造成经济损失，主要为了解决：1、数据量太大；2、网站访问量太大；3、用户对数据的读写操作更加频繁等问题。
@@ -181,11 +181,11 @@ Server 层包括连接器、查询缓存、分析器、优化器、执行器等�
     </item>
     
     <item>
-      <title>【Java基础】面向对象的三大特征</title>
-      <link>https://1004032560.github.io/posts/java%E5%9F%BA%E7%A1%80%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E7%9A%84%E4%B8%89%E5%A4%A7%E7%89%B9%E5%BE%81/</link>
+      <title>【Java】面向对象的三大特征</title>
+      <link>https://1004032560.github.io/posts/java%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E7%9A%84%E4%B8%89%E5%A4%A7%E7%89%B9%E5%BE%81/</link>
       <pubDate>Sun, 11 Apr 2021 15:15:09 +0800</pubDate>
       
-      <guid>https://1004032560.github.io/posts/java%E5%9F%BA%E7%A1%80%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E7%9A%84%E4%B8%89%E5%A4%A7%E7%89%B9%E5%BE%81/</guid>
+      <guid>https://1004032560.github.io/posts/java%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E7%9A%84%E4%B8%89%E5%A4%A7%E7%89%B9%E5%BE%81/</guid>
       <description>1、面向对象的特征 面向对象的最终目的是要构建强健、安全、高效的项目，也就是要实现项目的高内聚和低耦合：
  高内聚：把该模块的内部数据，功能细节隐藏在模块内部，不允许外界直接干预，只能通过公开的接口访问。 低耦合：该模块只需要给外界暴露少量功能方法，模块之间相互依赖的程度不高。  封装： 「封装」字面意思是把某个东西装起来，不让外界看到，也体现出了「简洁美」。
 例如：洗衣机只能看到外部操作按钮，洗衣服时无需关注洗衣机内部原理，也不会看到内部凌乱的走线，影响用户体验。

@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="generator" content="Hugo 0.76.5" />
+
+  <title> 【Java】面向对象的三大特征 |  looper梦呓</title>
+  <meta name="description" content="A simple and concise hugo theme.">
+  <link rel="stylesheet" href="https://1004032560.github.io/css/index.css">
+  <link rel="stylesheet" href="https://1004032560.github.io/css/classes.css">
+  <link rel="canonical" href="https://1004032560.github.io/posts/java%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E7%9A%84%E4%B8%89%E5%A4%A7%E7%89%B9%E5%BE%81/">
+  <link rel="alternate" type="application/rss+xml" href="" title="looper梦呓">
+  
+  
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" rel="stylesheet">
+</head>
+
+<body>
+  <header class="menus">
+  
+
+  <nav >
+    
+    <a href="/"> looper梦呓</a>
+    
+    <a href="/tags"> Tags</a>
+    
+    <a href="/about/about"> About</a>
+    
+  </nav>
+
+  <nav class="fontawesome">
+    
+    <a href="https://github.com/1004032560" target="_blank">
+        <i title="GitHub" class="fab fa-github"></i>
+    </a>
+    
+    
+    <a href="https://mp.weixin.qq.com/s/HpWP32efkOUumg7fUGZV1g" target="_blank">
+        <i title="微信公众号" class="fab fa-weixin"></i>
+    </a>
+    
+    
+    <a href="https://1004032560.github.io/index.xml" target="_blank">
+        <i title="RSS" class="fas fa-rss"></i>
+    </a>
+    
+  </nav>
+  
+  
+  <div class="hidden description">A simple and concise hugo theme.</div>
+  
+</header>
+
+<article id="article">
+  <header>
+  
+
+    <h1 style="text-align: center;" >【Java】面向对象的三大特征</h1>
+    <div class="post-meta">
+    
+      <time datetime="2021-04-11T15:15:09&#43;08:00">April 11, 2021</time> &nbsp; 
+    
+
+    looper &nbsp;
+
+    
+    
+    
+
+    
+      <i class="far fa-clock"></i>
+      
+      
+      
+
+      
+        4 min
+      
+      34 s
+      &nbsp;
+    
+    </div>
+  </header>
+
+  <h3 id="1面向对象的特征">1、面向对象的特征</h3>
+<p>面向对象的最终目的是要构建强健、安全、高效的项目，也就是要实现项目的高内聚和低耦合：</p>
+<ul>
+<li>高内聚：把该模块的内部数据，功能细节隐藏在模块内部，不允许外界直接干预，只能通过公开的接口访问。</li>
+<li>低耦合：该模块只需要给外界暴露少量功能方法，模块之间相互依赖的程度不高。</li>
+</ul>
+<h4 id="封装">封装：</h4>
+<p>「封装」字面意思是把某个东西装起来，不让外界看到，也体现出了「简洁美」。</p>
+<p>例如：洗衣机只能看到外部操作按钮，洗衣服时无需关注洗衣机内部原理，也不会看到内部凌乱的走线，影响用户体验。</p>
+<p>在面向对象的思想中「封装」则表示在一个实体类中将属性私有化，提供一些外部可以访问该属性的方法；</p>
+<p>或者对功能实现类进行抽象化，提炼出接口，只供外界调用，不对外暴露该方法的具体实现。</p>
+<h4 id="继承">继承：</h4>
+<p>「继承」字面意思是父与子之间发生的一种关系。</p>
+<p>在面向对象的思想中「继承」是指从已有类得到继承信息创建新类的过程。</p>
+<p>提供继承信息的类被称为父类（超类、基类）；得到继承信息的类被称为子类（派生类）。</p>
+<p>继承让变化中的软件系统有了一定的延续性。</p>
+<p>Object 类是所有类的父类（树结构中的根节点） 。当一个类没有显式声明父类，则该类会隐式继承 Object 类。</p>
+<h4 id="多态">多态：</h4>
+<p>多态性是指允许不同子类型的对象对同一消息作出不同的响应（动物需要吃东西，小猫吃猫粮，小狗吃狗粮）。</p>
+<p>简单的说就是用同样的「对象引用」调用同样的方法但是做了不同的事情（new 一个动物的「对象引用」调用 eat() 方法，但是小猫吃了猫粮，小狗吃了狗粮）。</p>
+<p>多态性分为编译时的多态性和运行时的多态性。</p>
+<p>方法重载（overload）实现的是编译时的多态性（也称为前绑定），而方法重写 （override）实现的是运行时的多态性（也称为后绑定）。</p>
+<p>运行时的多态是面向对象最精髓的东西，要实现多态需要做两件事：1. 方法重写（子类继承父类并重写父类中已有的或抽象的方法）；2. 对象造型（用父类型引用指向子类型对象，这样同样的引用调用同样的方法就会根据子类对象的不同而表现出不同的行为）。</p>
+<h4 id="抽象">抽象：</h4>
+<p>在面向对象的概念中，所有的对象都是通过类来描绘的，但是反过来，并不是所有的类都是用来描绘对象的，如果一个类中没有包含足够的信息来描绘一个具体的对象，这样的类就是抽象类。</p>
+<p>抽象是将一类对象的共同特征总结出来构造类的过程，包括数据抽象和行为抽象两方面。抽象只关注对象有哪些属性和行为，并不关注这些行为的细节是什么。</p>
+<p>接口属于特殊化的抽象，接口可以被其他类实现。</p>
+<p>一个类只能继承一个父类，但是可以实现多个接口。</p>
+
+
+  
+  <footer>
+    <hr>
+    
+    <div class="post-tags">
+    
+      <i class="fas fa-tags"></i>
+      
+        <a href="/tags/java">Java</a>
+        &nbsp;
+      
+    
+    </div>
+  </footer>
+  
+
+  
+
+<div class="releated-post">
+  <h3>Related Posts</h3>
+  
+  <i class="fas fa-paperclip"></i>
+  <a href="/posts/%E5%AD%A6%E4%B9%A0%E8%B7%AF%E7%BA%BF/">学习路线</a>
+  <br>
+  
+</div>
+
+
+  <div class="comments">
+
+
+
+</div>
+
+</article>
+
+
+
+  
+  
+  
+</body>
+<div class="foot">
+  
+  
+    &copy; 2019 - 2021 &#183; 
+    <a href="/">Home</a> · Theme <a href="https://github.com/RainerChiang/simpleness">Simpleness</a> Powered by <a href="https://gohugo.io/">Hugo</a> &#183;
+    <a href="#"><i class="fas fa-chevron-up"></i></a>
+  
+
+  
+  
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+	ga('create', 'looper', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+
+  
+</div>
+
+<script src="/js/lazyload.min.js"></script>
+<script>
+  var lazyImage = new LazyLoad({
+    container: document.getElementById('article')
+  });
+</script>
+
+
+</html>
