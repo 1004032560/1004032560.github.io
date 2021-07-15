@@ -31,26 +31,6 @@ ALTER TABLE uoc_ord_sale_insure MODIFY COLUMN org_tree_path bigint(20) DEFAULT N
     </item>
     
     <item>
-      <title>【MySQL】数据定义语言DDL</title>
-      <link>https://1004032560.github.io/posts/mysql%E6%95%B0%E6%8D%AE%E5%AE%9A%E4%B9%89%E8%AF%AD%E8%A8%80ddl/</link>
-      <pubDate>Mon, 12 Jul 2021 07:08:34 +0800</pubDate>
-      
-      <guid>https://1004032560.github.io/posts/mysql%E6%95%B0%E6%8D%AE%E5%AE%9A%E4%B9%89%E8%AF%AD%E8%A8%80ddl/</guid>
-      <description>数据定义语言DDL(Data Definition Language) 对象：数据库和表
-关键词：create、alter、drop、truncate(删除当前表再新建一个一模一样的表结构)
-1、数据库管理 1.1 创建数据库： # 创建数据库 如果不存在 设置字符集 CREATE DATABASE [IF NOT EXISTS] 库名 [ CHARACTER SET 字符集名]; create database [if not exists] school [character set utf8]; 1.2 修改数据库： # 数据库重命名 RENAME DATABASE 旧库名 TO 新库名; rename database shcool to new_school; # 修改数据库字符集 ALTER DATABASE 库名 CHARACTER SET 字符集名; alter database school character set utf64; 1.3 删除数据库： # 删除数据库 如果存在 drop database [if exists] school; 1.4 切换数据库： use school; 2、表管理 2.</description>
-    </item>
-    
-    <item>
-      <title>【MySQL】数据管理语言DML</title>
-      <link>https://1004032560.github.io/posts/mysql%E6%95%B0%E6%8D%AE%E7%AE%A1%E7%90%86%E8%AF%AD%E8%A8%80dml/</link>
-      <pubDate>Mon, 12 Jul 2021 06:09:34 +0800</pubDate>
-      
-      <guid>https://1004032560.github.io/posts/mysql%E6%95%B0%E6%8D%AE%E7%AE%A1%E7%90%86%E8%AF%AD%E8%A8%80dml/</guid>
-      <description>数据管理语言DML(Data Manipulatioin language) 数据管理语言DML(Data Manipulatioin language)</description>
-    </item>
-    
-    <item>
       <title>【Redis】Redis概述</title>
       <link>https://1004032560.github.io/posts/redisredis%E6%A6%82%E8%BF%B0/</link>
       <pubDate>Fri, 09 Jul 2021 15:28:57 +0800</pubDate>
@@ -166,6 +146,26 @@ Ctrl + T表格    学号 姓名 班级     10001 阿大 三班   10002 阿二 �
 四年最有纪念意义的历史是什么？见证中国移动互联网后半程。
 历史不会重演，但总是惊人的相似。四年前也和现在一样，高考完之后，想着未来会去哪座城市，会遇见什么样的风景，会做着什么样的事情。
 每一次离开，都可能是最后一次，就这样悄悄地走了，最后一次毕业典礼，也没能再没回学校。</description>
+    </item>
+    
+    <item>
+      <title>【MySQL】数据定义语言DDL</title>
+      <link>https://1004032560.github.io/posts/mysql%E6%95%B0%E6%8D%AE%E5%AE%9A%E4%B9%89%E8%AF%AD%E8%A8%80ddl/</link>
+      <pubDate>Tue, 11 May 2021 07:08:34 +0800</pubDate>
+      
+      <guid>https://1004032560.github.io/posts/mysql%E6%95%B0%E6%8D%AE%E5%AE%9A%E4%B9%89%E8%AF%AD%E8%A8%80ddl/</guid>
+      <description>数据定义语言DDL(Data Definition Language) 对象：数据库和表
+关键词：create、alter、drop、truncate(删除当前表再新建一个一模一样的表结构)
+1、数据库管理 1.1 创建数据库： # 创建数据库 如果不存在 设置字符集 CREATE DATABASE [IF NOT EXISTS] 库名 [ CHARACTER SET 字符集名]; create database [if not exists] school [character set utf8]; 1.2 修改数据库： # 数据库重命名 RENAME DATABASE 旧库名 TO 新库名; rename database shcool to new_school; # 修改数据库字符集 ALTER DATABASE 库名 CHARACTER SET 字符集名; alter database school character set utf64; 1.3 删除数据库： # 删除数据库 如果存在 drop database [if exists] school; 1.4 切换数据库： use school; 2、表管理 2.</description>
+    </item>
+    
+    <item>
+      <title>【MySQL】数据管理语言DML</title>
+      <link>https://1004032560.github.io/posts/mysql%E6%95%B0%E6%8D%AE%E7%AE%A1%E7%90%86%E8%AF%AD%E8%A8%80dml/</link>
+      <pubDate>Tue, 11 May 2021 06:09:34 +0800</pubDate>
+      
+      <guid>https://1004032560.github.io/posts/mysql%E6%95%B0%E6%8D%AE%E7%AE%A1%E7%90%86%E8%AF%AD%E8%A8%80dml/</guid>
+      <description>数据管理语言DML(Data Manipulatioin language) 数据管理语言DML(Data Manipulatioin language)</description>
     </item>
     
     <item>
