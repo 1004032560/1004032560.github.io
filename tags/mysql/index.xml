@@ -7,11 +7,11 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>[Home](/) &amp;#183; Theme [Simpleness](https://github.com/RainerChiang/simpleness) Powered by [Hugo](https://gohugo.io/)</copyright>
-    <lastBuildDate>Mon, 12 Jul 2021 17:36:34 +0800</lastBuildDate><atom:link href="https://1004032560.github.io/tags/mysql/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 12 Jul 2021 07:08:34 +0800</lastBuildDate><atom:link href="https://1004032560.github.io/tags/mysql/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>【MySQL】数据定义语言DDL</title>
       <link>https://1004032560.github.io/posts/mysql%E6%95%B0%E6%8D%AE%E5%AE%9A%E4%B9%89%E8%AF%AD%E8%A8%80ddl/</link>
-      <pubDate>Mon, 12 Jul 2021 17:36:34 +0800</pubDate>
+      <pubDate>Mon, 12 Jul 2021 07:08:34 +0800</pubDate>
       
       <guid>https://1004032560.github.io/posts/mysql%E6%95%B0%E6%8D%AE%E5%AE%9A%E4%B9%89%E8%AF%AD%E8%A8%80ddl/</guid>
       <description>数据定义语言DDL(Data Definition Language) 对象：数据库和表
@@ -22,16 +22,27 @@
     <item>
       <title>【MySQL】数据管理语言DML</title>
       <link>https://1004032560.github.io/posts/mysql%E6%95%B0%E6%8D%AE%E7%AE%A1%E7%90%86%E8%AF%AD%E8%A8%80dml/</link>
-      <pubDate>Mon, 12 Jul 2021 17:36:34 +0800</pubDate>
+      <pubDate>Mon, 12 Jul 2021 06:09:34 +0800</pubDate>
       
       <guid>https://1004032560.github.io/posts/mysql%E6%95%B0%E6%8D%AE%E7%AE%A1%E7%90%86%E8%AF%AD%E8%A8%80dml/</guid>
       <description>数据管理语言DML(Data Manipulatioin language) 数据管理语言DML(Data Manipulatioin language)</description>
     </item>
     
     <item>
+      <title>【MySQL】基础架构</title>
+      <link>https://1004032560.github.io/posts/mysql%E5%9F%BA%E7%A1%80%E6%9E%B6%E6%9E%84/</link>
+      <pubDate>Tue, 11 May 2021 06:07:29 +0800</pubDate>
+      
+      <guid>https://1004032560.github.io/posts/mysql%E5%9F%BA%E7%A1%80%E6%9E%B6%E6%9E%84/</guid>
+      <description>MySQL 可以分为 Server 层和存储引擎层两部分
+Server 层包括连接器、查询缓存、分析器、优化器、执行器等，涵盖 MySQL 的大多数核心服务功能，以及所有的内置函数（如日期、时间、数学和加密函数等），所有跨存储引擎的功能都在这一层实现，比如存储过程、触发器、视图等。
+而存储引擎层负责数据的存储和提取。其架构模式是插件式的，支持 InnoDB、MyISAM、Memory 等多个存储引擎。现在最常用的存储引擎是 InnoDB，它从 MySQL 5.5.5版本开始成为了默认存储引擎。</description>
+    </item>
+    
+    <item>
       <title>【MySQL】SQL简介</title>
       <link>https://1004032560.github.io/posts/mysqlsql%E7%AE%80%E4%BB%8B/</link>
-      <pubDate>Tue, 11 May 2021 15:06:29 +0800</pubDate>
+      <pubDate>Tue, 11 May 2021 06:06:29 +0800</pubDate>
       
       <guid>https://1004032560.github.io/posts/mysqlsql%E7%AE%80%E4%BB%8B/</guid>
       <description>SQL简介 SQL（Structured Query Language）结构化查询语言，用来访问和操作数据库系统。
@@ -42,17 +53,6 @@
 **DCL：数据控制语言（Data Control Language）**是用来设置或更改数据库用户或角色权限的操作。
 2、SQL 数据类型： 对于一个关系表，除了定义每一列的名称外，还需要定义每一列的数据类型。关系数据库支持的标准数据类型包括数值、字符串、时间等：
    名称 类型 说明     INT 整型 4字节整数类型，范围约+/-21亿   BIGINT 长整型 8字节整数类型，范围约   REAL 浮点型 4字节浮点数，范围约   DOUBLE 浮点型 8字节浮点数，范围约   DECIMAL(M,N) 高精度小数 由用户指定精度的小数，例如，DECIMAL(20,10)表示一共20位，其中小数10位，通常用于财务计算   CHAR(N) 定长字符串 存储指定长度的字符串，例如，CHAR(100)总是存储100个字符的字符串   VARCHAR(N) 变长字符串 存储可变长度的字符串，例如，VARCHAR(100)可以存储0~100个字符的字符串   BOOLEAN 布尔类型 存储True或者False   DATE 日期类型 存储日期，例如，2018-06-22   TIME 时间类型 存储时间，例如，12:20:59   DATETIME 日期和时间类型 存储日期+时间，例如，2018-06-22 12:20:59    选择数据类型的时候，要根据业务规则选择合适的类型。通常来说，BIGINT 能满足整数存储的需求，VARCHAR(N) 能满足字符串存储的需求，这两种类型是使用最广泛的。</description>
-    </item>
-    
-    <item>
-      <title>【MySQL】基础架构</title>
-      <link>https://1004032560.github.io/posts/mysql%E5%9F%BA%E7%A1%80%E6%9E%B6%E6%9E%84/</link>
-      <pubDate>Tue, 11 May 2021 15:06:29 +0800</pubDate>
-      
-      <guid>https://1004032560.github.io/posts/mysql%E5%9F%BA%E7%A1%80%E6%9E%B6%E6%9E%84/</guid>
-      <description>MySQL 可以分为 Server 层和存储引擎层两部分
-Server 层包括连接器、查询缓存、分析器、优化器、执行器等，涵盖 MySQL 的大多数核心服务功能，以及所有的内置函数（如日期、时间、数学和加密函数等），所有跨存储引擎的功能都在这一层实现，比如存储过程、触发器、视图等。
-而存储引擎层负责数据的存储和提取。其架构模式是插件式的，支持 InnoDB、MyISAM、Memory 等多个存储引擎。现在最常用的存储引擎是 InnoDB，它从 MySQL 5.5.5版本开始成为了默认存储引擎。</description>
     </item>
     
   </channel>
