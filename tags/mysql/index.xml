@@ -29,6 +29,22 @@
     </item>
     
     <item>
+      <title>【MySQL】SQL简介</title>
+      <link>https://1004032560.github.io/posts/mysqlsql%E7%AE%80%E4%BB%8B/</link>
+      <pubDate>Tue, 11 May 2021 15:06:29 +0800</pubDate>
+      
+      <guid>https://1004032560.github.io/posts/mysqlsql%E7%AE%80%E4%BB%8B/</guid>
+      <description>SQL简介 SQL（Structured Query Language）结构化查询语言，用来访问和操作数据库系统。
+不同的数据库，都支持标准 SQL，因此 SQL 这一种语言，就可以操作各种不同的数据库。大部分数据库都支持标准的 SQL，但是部分数据库在不常用的 SQL 上扩展了一些功能。而各个数据库支持的各自扩展的功能，通常我们把它们称之为“方言” VS &amp;ldquo;方言&amp;rdquo;。
+1、SQL 语言分类： **DDL：数据定义语言（Data Definition Language）**是用来创建、修改、删除数据库和表的操作。
+**DML：数据管理语言（Data Manipulate Language）**是用来对表数据进行增、删、改的操作。
+**DQL：数据查询语言（Data Query Language）**是用来对表数据进行查询（查询的重要性）的操作。
+**DCL：数据控制语言（Data Control Language）**是用来设置或更改数据库用户或角色权限的操作。
+2、SQL 数据类型： 对于一个关系表，除了定义每一列的名称外，还需要定义每一列的数据类型。关系数据库支持的标准数据类型包括数值、字符串、时间等：
+   名称 类型 说明     INT 整型 4字节整数类型，范围约+/-21亿   BIGINT 长整型 8字节整数类型，范围约   REAL 浮点型 4字节浮点数，范围约   DOUBLE 浮点型 8字节浮点数，范围约   DECIMAL(M,N) 高精度小数 由用户指定精度的小数，例如，DECIMAL(20,10)表示一共20位，其中小数10位，通常用于财务计算   CHAR(N) 定长字符串 存储指定长度的字符串，例如，CHAR(100)总是存储100个字符的字符串   VARCHAR(N) 变长字符串 存储可变长度的字符串，例如，VARCHAR(100)可以存储0~100个字符的字符串   BOOLEAN 布尔类型 存储True或者False   DATE 日期类型 存储日期，例如，2018-06-22   TIME 时间类型 存储时间，例如，12:20:59   DATETIME 日期和时间类型 存储日期+时间，例如，2018-06-22 12:20:59    选择数据类型的时候，要根据业务规则选择合适的类型。通常来说，BIGINT 能满足整数存储的需求，VARCHAR(N) 能满足字符串存储的需求，这两种类型是使用最广泛的。</description>
+    </item>
+    
+    <item>
       <title>【MySQL】基础架构</title>
       <link>https://1004032560.github.io/posts/mysql%E5%9F%BA%E7%A1%80%E6%9E%B6%E6%9E%84/</link>
       <pubDate>Tue, 11 May 2021 15:06:29 +0800</pubDate>
