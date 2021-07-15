@@ -33,7 +33,7 @@ ALTER TABLE uoc_ord_sale_insure MODIFY COLUMN org_tree_path bigint(20) DEFAULT N
     <item>
       <title>第1期looper周报</title>
       <link>https://1004032560.github.io/posts/%E7%AC%AC1%E6%9C%9Flooper%E5%91%A8%E6%8A%A5/</link>
-      <pubDate>Fri, 09 Jul 2021 16:55:59 +0800</pubDate>
+      <pubDate>Mon, 05 Jul 2021 16:55:59 +0800</pubDate>
       
       <guid>https://1004032560.github.io/posts/%E7%AC%AC1%E6%9C%9Flooper%E5%91%A8%E6%8A%A5/</guid>
       <description>1、学习 1.1 结对编程： 结对编程：敏捷开发的一种方式，两个程序员玩同一台电脑，一个负责编写代码，另一个负责观察。比如：狙击手，一般需要一名观察员进行辅助，观测风速、空气湿度、海拔高度等等，有时候也可以互换身份。
