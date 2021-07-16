@@ -277,15 +277,6 @@ Docker</description>
     </item>
     
     <item>
-      <title>HUGO-README</title>
-      <link>https://1004032560.github.io/posts/hugo-readme/</link>
-      <pubDate>Thu, 15 Oct 2020 15:38:23 +0800</pubDate>
-      
-      <guid>https://1004032560.github.io/posts/hugo-readme/</guid>
-      <description>Hello World </description>
-    </item>
-    
-    <item>
       <title>北漂开始</title>
       <link>https://1004032560.github.io/posts/%E5%8C%97%E6%BC%82%E5%BC%80%E5%A7%8B/</link>
       <pubDate>Mon, 07 Sep 2020 15:33:19 +0800</pubDate>
@@ -317,6 +308,24 @@ Docker</description>
 随机生成一篇没有主题、没有意义、没有干货的算不上文章的文章，记录或吐槽这枯燥的、潦草的、无规律的算不上生活的生活，一个在互联网苟延残喘的Looper。
 公 众 号：looper梦呓
 知 乎：looper</description>
+    </item>
+    
+    <item>
+      <title>HUGO-README</title>
+      <link>https://1004032560.github.io/posts/hugo-readme/</link>
+      <pubDate>Sat, 08 Aug 2020 08:08:08 +0800</pubDate>
+      
+      <guid>https://1004032560.github.io/posts/hugo-readme/</guid>
+      <description>Hello World HUGO 中文文档
+HUGO 官网
+HUGO 官网文档
+  HUGO 是由 Go 语言实现的静态网站生成器。简单、易用、高效、易扩展、快速部署。
+  HUGO 有一个内容和模板目录，把他们渲染到完全的 HTML 网站。
+  HUGO 依赖于 Markdown 文件，元数据字体 。用户可以从任意的目录中运行 Hugo，支持共享主机和其他系统。
+  HUGO 只需要几分之一秒就可以渲染一个经典的中型网站，最好网站的每个部分渲染只需 1 毫秒。
+  HUGO 非常适合博客，文档等等网站的生成。
+  HUGO 当前提供 Windows，Linux，FreeBSD，NetBSD 和 OS X (Darwin) 的 x64, i386 和 ARM 架构的二进制预构建包。
+  </description>
     </item>
     
   </channel>
