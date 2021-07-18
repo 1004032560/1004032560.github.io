@@ -76,9 +76,9 @@
       
 
       
-        4 min
+        5 min
       
-      25 s
+      28 s
       &nbsp;
     
     </div>
@@ -92,7 +92,24 @@
 <p>DML：数据管理语言（Data Manipulate Language）是用来对表数据进行增、删、改的操作。</p>
 <p>DQL：数据查询语言（Data Query Language）是用来对表数据进行查询（查询的重要性）的操作。</p>
 <p>DCL：数据控制语言（Data Control Language）是用来设置或更改数据库用户或角色权限的操作。</p>
-<h4 id="2sql-数据类型">2、SQL 数据类型：</h4>
+<h4 id="2数据库的常见分类">2、数据库的常见分类</h4>
+<p>关系型数据库：MySQL、Oracle、DB2、SQL Server
+非关系型数据库：</p>
+<ul>
+<li>键值存储数据库：Redis、Memcached、MemcacheDB</li>
+<li>列存储数据库：HBase、Cassandra</li>
+<li>面向文档的数据库：MongDB、CouchDB</li>
+<li>图形数据库：Neo4J</li>
+</ul>
+<h4 id="3主流关系数据库">3、主流关系数据库</h4>
+<p>目前，主流的关系数据库主要分为以下几类：</p>
+<ol>
+<li>商用数据库，例如：<a href="https://www.oracle.com/">Oracle</a>，<a href="https://www.microsoft.com/sql-server/">SQL Server</a>，<a href="https://www.ibm.com/db2/">DB2</a> 等；</li>
+<li>开源数据库，例如：<a href="https://www.mysql.com/">MySQL</a>，<a href="https://www.postgresql.org/">PostgreSQL</a> 等；</li>
+<li>桌面数据库，以微软 <a href="https://products.office.com/access">Access</a> 为代表，适合桌面应用程序使用；</li>
+<li>嵌入式数据库，以 <a href="https://sqlite.org/">Sqlite</a> 为代表，适合手机应用和桌面程序。</li>
+</ol>
+<h4 id="4sql-数据类型">4、SQL 数据类型：</h4>
 <p>对于一个关系表，除了定义每一列的名称外，还需要定义每一列的数据类型。关系数据库支持的标准数据类型包括数值、字符串、时间等：</p>
 <table>
 <thead>
@@ -161,14 +178,8 @@
 </tbody>
 </table>
 <p>选择数据类型的时候，要根据业务规则选择合适的类型。通常来说，<code>BIGINT</code> 能满足整数存储的需求，<code>VARCHAR(N)</code> 能满足字符串存储的需求，这两种类型是使用最广泛的。</p>
-<h3 id="3主流关系数据库">3、主流关系数据库</h3>
-<p>目前，主流的关系数据库主要分为以下几类：</p>
-<ol>
-<li>商用数据库，例如：<a href="https://www.oracle.com/">Oracle</a>，<a href="https://www.microsoft.com/sql-server/">SQL Server</a>，<a href="https://www.ibm.com/db2/">DB2</a> 等；</li>
-<li>开源数据库，例如：<a href="https://www.mysql.com/">MySQL</a>，<a href="https://www.postgresql.org/">PostgreSQL</a> 等；</li>
-<li>桌面数据库，以微软 <a href="https://products.office.com/access">Access</a> 为代表，适合桌面应用程序使用；</li>
-<li>嵌入式数据库，以 <a href="https://sqlite.org/">Sqlite</a> 为代表，适合手机应用和桌面程序。</li>
-</ol>
+<h4 id="5语法特点">5、语法特点</h4>
+<p>SQL 语言关键字不区分大小写！！！但是，针对不同的数据库，对于表名和列名，有的数据库区分大小写，有的数据库不区分大小写。同一个数据库，有的在 Linux 上区分大小写，有的在 Windows 上不区分大小写。</p>
 <hr>
 <p>参考来源：<a href="https://www.liaoxuefeng.com/wiki/1177760294764384/1179613436834240">廖雪峰 SQL 教程</a></p>
 
