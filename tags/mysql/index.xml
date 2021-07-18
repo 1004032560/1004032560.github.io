@@ -29,6 +29,38 @@
     </item>
     
     <item>
+      <title>【MySQL】Test</title>
+      <link>https://1004032560.github.io/posts/mysql/mysqltest/</link>
+      <pubDate>Tue, 11 May 2021 06:09:35 +0800</pubDate>
+      
+      <guid>https://1004032560.github.io/posts/mysql/mysqltest/</guid>
+      <description>Test </description>
+    </item>
+    
+    <item>
+      <title>【MySQL】数据查询语言DQL</title>
+      <link>https://1004032560.github.io/posts/mysql%E6%95%B0%E6%8D%AE%E6%9F%A5%E8%AF%A2%E8%AF%AD%E8%A8%80dql/</link>
+      <pubDate>Tue, 11 May 2021 06:09:35 +0800</pubDate>
+      
+      <guid>https://1004032560.github.io/posts/mysql%E6%95%B0%E6%8D%AE%E6%9F%A5%E8%AF%A2%E8%AF%AD%E8%A8%80dql/</guid>
+      <description>数据查询语言DQL(Data Query language) 对象：表数据
+关键词：select
+ 1、基础查询 1.1 语法 SELECT 查询列表 FROM 表名; 1.2 特点  查询列表可以是字段、常量、函数和表达式。 查询结果为「虚拟表」。  1.3 示例 1、查询单个字段：SELECT 字段名 FROM 表名;
+2、查询多个字段：SELECT 字段名,字段名 FROM 表名;
+3、查询所有字段：SELECT * FROM 表名;
+4、查询常量：SELECT 常量值;
+注意：字符型和日期型的常量值必须用单引号引起来，数值型不需要。
+5、查询函数：SELECT 函数名(实参列表); 6、查询表达式：SELECT 100/25;
+7、起别名：SELECT 字段名 AS &amp;ldquo;别名&amp;rdquo; FROM 表名;
+注意：别名可以使用单引号、双引号引起来，当只有一个单词时，可以省略引号，当有多个单词且有空格或特殊符号时，不能省略，AS可以省略。
+8、去重复：SELECT DISTINCT 字段名 FROM 表名;
+9、做加法
+ SELECT 数值+数值; 直接运算 SELECT 字符+数值; 首先先将字符转换为整数，如果转换成功，则继续运算，如果转换失败，则默认为0，然后继续运算 SELECT NULL+数值; NULL和任何数值参与运算结果都是NULL  10、【补充】ifnull函数
+功能：判断某字段或表达式是否为 null，如果为 null，返回指定的值，否则返回原本的值
+SELECT IFNULL(字段名, 指定值) FROM 表名; 11、【补充】isnull函数</description>
+    </item>
+    
+    <item>
       <title>【MySQL】数据管理语言DML</title>
       <link>https://1004032560.github.io/posts/mysql%E6%95%B0%E6%8D%AE%E7%AE%A1%E7%90%86%E8%AF%AD%E8%A8%80dml/</link>
       <pubDate>Tue, 11 May 2021 06:09:34 +0800</pubDate>
