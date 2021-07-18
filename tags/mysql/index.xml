@@ -7,7 +7,20 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>[Home](/) &amp;#183; Theme [Simpleness](https://github.com/RainerChiang/simpleness) Powered by [Hugo](https://gohugo.io/)</copyright>
-    <lastBuildDate>Tue, 11 May 2021 07:08:34 +0800</lastBuildDate><atom:link href="https://1004032560.github.io/tags/mysql/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 11 May 2021 23:59:29 +0800</lastBuildDate><atom:link href="https://1004032560.github.io/tags/mysql/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>【MySQL】归纳</title>
+      <link>https://1004032560.github.io/posts/mysql%E5%BD%92%E7%BA%B3/</link>
+      <pubDate>Tue, 11 May 2021 23:59:29 +0800</pubDate>
+      
+      <guid>https://1004032560.github.io/posts/mysql%E5%BD%92%E7%BA%B3/</guid>
+      <description>MySQL归纳   【MySQL】SQL 简介
+  【MySQL】基础架构
+  【MySQL】数据定义语言 DDL
+  【MySQL】数据管理语言 DML
+  </description>
+    </item>
+    
     <item>
       <title>【MySQL】数据定义语言DDL</title>
       <link>https://1004032560.github.io/posts/mysql%E6%95%B0%E6%8D%AE%E5%AE%9A%E4%B9%89%E8%AF%AD%E8%A8%80ddl/</link>
