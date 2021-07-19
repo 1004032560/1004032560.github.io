@@ -76,9 +76,9 @@
       
 
       
-        5 min
+        18 min
       
-      50 s
+      48 s
       &nbsp;
     
     </div>
@@ -157,45 +157,326 @@
 <li>asc 代表升序，desc 代表降序，如果不写，默认是 asc</li>
 <li>order by 的位置一般放在查询语句的最后（除 limit 语句之外）</li>
 </ol>
-<h4 id="33-示例">3.3 示例</h4>
-<p>1、按单个字段排序：查询员工信息，要求按工资降序</p>
-<div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="color:#007020;font-weight:bold">SELECT</span> 
-  <span style="color:#666">*</span> 
-<span style="color:#007020;font-weight:bold">FROM</span>
-  employees 
-<span style="color:#007020;font-weight:bold">ORDER</span> <span style="color:#007020;font-weight:bold">BY</span> salary <span style="color:#007020;font-weight:bold">DESC</span> ;
-</code></pre></div><p>2、按多个字段查询：查询员工信息，要求先按工资降序，再按员工编号升序</p>
-<div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="color:#007020;font-weight:bold">SELECT</span> 
-  <span style="color:#666">*</span> 
-<span style="color:#007020;font-weight:bold">FROM</span>
-  employees 
-<span style="color:#007020;font-weight:bold">ORDER</span> <span style="color:#007020;font-weight:bold">BY</span> salary <span style="color:#007020;font-weight:bold">DESC</span>, employee_id <span style="color:#007020;font-weight:bold">ASC</span> ;
-</code></pre></div><p>3、按别名排序查询：查询员工信息，要求按员工年薪升序</p>
-<div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="color:#007020;font-weight:bold">SELECT</span> 
-  <span style="color:#666">*</span>,
-  salary <span style="color:#666">*</span> <span style="color:#40a070">12</span> <span style="color:#666">*</span> (<span style="color:#40a070">1</span><span style="color:#666">+</span> IFNULL(commission_pct, <span style="color:#40a070">0</span>)) <span style="">年薪</span> 
-<span style="color:#007020;font-weight:bold">FROM</span>
-  employees 
-<span style="color:#007020;font-weight:bold">ORDER</span> <span style="color:#007020;font-weight:bold">BY</span> <span style="">年薪</span> <span style="color:#007020;font-weight:bold">ASC</span> ;
-</code></pre></div><p>4、按函数排序查询：查询员工信息，要求按员工名字的长度降序</p>
-<div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="color:#007020;font-weight:bold">SELECT</span> 
-  <span style="color:#007020;font-weight:bold">LENGTH</span>(last_name),
-  last_name 
-<span style="color:#007020;font-weight:bold">FROM</span>
-  employees 
-<span style="color:#007020;font-weight:bold">ORDER</span> <span style="color:#007020;font-weight:bold">BY</span> <span style="color:#007020;font-weight:bold">LENGTH</span>(last_name) <span style="color:#007020;font-weight:bold">DESC</span> ;
-</code></pre></div><p>5、按表达式排序：查询员工信息，要求按员工年薪升序</p>
-<div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="color:#007020;font-weight:bold">SELECT</span> 
-  <span style="color:#666">*</span>,
-  salary <span style="color:#666">*</span> <span style="color:#40a070">12</span> <span style="color:#666">*</span> (<span style="color:#40a070">1</span><span style="color:#666">+</span> IFNULL(commission_pct, <span style="color:#40a070">0</span>)) 
-<span style="color:#007020;font-weight:bold">FROM</span>
-  employees 
-<span style="color:#007020;font-weight:bold">ORDER</span> <span style="color:#007020;font-weight:bold">BY</span> salary <span style="color:#666">*</span> <span style="color:#40a070">12</span> <span style="color:#666">*</span> (<span style="color:#40a070">1</span><span style="color:#666">+</span> IFNULL(commission_pct, <span style="color:#40a070">0</span>)) <span style="color:#007020;font-weight:bold">ASC</span> ;
-</code></pre></div><hr>
+<hr>
 <h3 id="4单行函数">4、单行函数</h3>
 <h4 id="41-语法">4.1 语法</h4>
 <div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="color:#007020;font-weight:bold">SELECT</span> <span style="">函数名</span>(<span style="">实参列表</span>) <span style="">【</span><span style="color:#007020;font-weight:bold">FROM</span> <span style="">表】</span>;
-</code></pre></div><h4 id="42-示例">4.2 示例</h4>
+</code></pre></div><h4 id="42-分类">4.2 分类</h4>
+<ul>
+<li>字符函数</li>
+</ul>
+<pre><code>concat：连接字符
+substr：截取子串
+replace：替换字符
+upper：变大写
+lower：变小写
+lpad：左填充
+rpad：右填充
+length：获取字节长度
+trim：去除前后空格
+instr：获取子串第一次出现的索引
+</code></pre><p>注意：MySQL中的索引是从1开始的</p>
+<ul>
+<li>数学函数</li>
+</ul>
+<pre><code>round：四舍五入
+ceil：向上取整
+floor：向下取整
+mod：取模运算（a-a/b*b）
+truncate：保留小数的位数，不进行四舍五入
+rand：获取随机数，返回 0-1 之间的小数
+</code></pre><ul>
+<li>日期函数</li>
+</ul>
+<pre><code>now：返回当前日期+时间
+curdate：返回当前日期
+curtime：返回当前时间
+year：返回年
+month：返回月
+day：返回日
+hour：小时
+minute：分钟
+second：秒
+monthname：以英文形式返回月
+datediff：返回两个日期相差的天数
+date_format：将日期转换成字符
+str_to_date：将字符转换成日期
+</code></pre><ul>
+<li>格式符：</li>
+</ul>
+<pre><code>%Y：四位的年份
+%y：二位的年份
+%m：二位的月份（01，02，...，12）
+%c：一位的月份（1，2，...，12）
+%d：日（01，02，...，31）
+%H：小时（24小时制）
+%h：小时（12小时制）
+%i：分钟（00，01，02，...，59）
+%s：秒（00，01，02，...，59）  
+</code></pre><ul>
+<li>控制函数</li>
+</ul>
+<p>if：判断函数</p>
+<p>case：分支函数</p>
+<div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="color:#40a070">1</span><span style="">、</span><span style="color:#007020;font-weight:bold">IF</span>(<span style="">条件表达式，表达式</span><span style="color:#40a070">1</span><span style="">，表达式</span><span style="color:#40a070">2</span>)<span style="">：如果条件表达式成立，返回表达式</span><span style="color:#40a070">1</span><span style="">，否则返回表达式</span><span style="color:#40a070">2</span>
+
+<span style="color:#40a070">2</span><span style="">、</span>case的格式一<span style="">：</span>
+    <span style="color:#007020;font-weight:bold">CASE</span> <span style="">变量或字段或表达式</span> 
+      <span style="color:#007020;font-weight:bold">WHEN</span> <span style="">常量</span><span style="color:#40a070">1</span> <span style="color:#007020;font-weight:bold">THEN</span> <span style="">值</span><span style="color:#40a070">1</span> 
+      <span style="color:#007020;font-weight:bold">WHEN</span> <span style="">常量</span><span style="color:#40a070">2</span> <span style="color:#007020;font-weight:bold">THEN</span> <span style="">值</span><span style="color:#40a070">2</span>
+      ...
+      <span style="color:#007020;font-weight:bold">ELSE</span> <span style="">值</span>n 
+    <span style="color:#007020;font-weight:bold">END</span> ;
+    
+<span style="color:#40a070">3</span><span style="">、</span>case的格式二<span style="">：</span>
+    <span style="color:#007020;font-weight:bold">CASE</span>
+      <span style="color:#007020;font-weight:bold">WHEN</span> <span style="">条件</span><span style="color:#40a070">1</span> <span style="color:#007020;font-weight:bold">THEN</span> <span style="">值</span><span style="color:#40a070">1</span> 
+      <span style="color:#007020;font-weight:bold">WHEN</span> <span style="">条件</span><span style="color:#40a070">2</span> <span style="color:#007020;font-weight:bold">THEN</span> <span style="">值</span><span style="color:#40a070">2</span>
+      ...
+      <span style="color:#007020;font-weight:bold">ELSE</span> <span style="">值</span>n 
+    <span style="color:#007020;font-weight:bold">END</span>
+</code></pre></div><ul>
+<li>其它函数</li>
+</ul>
+<pre><code>version：当前数据库的版本
+database：当前打开的数据库
+user：当前登录的用户
+password(‘字符’)：返回该字符的密码形式
+md5(‘字符’)：返回该字符的md5加密形式
+</code></pre><hr>
+<h3 id="5分组函数">5、分组函数</h3>
+<h4 id="51-语法">5.1 语法</h4>
+<div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="color:#007020;font-weight:bold">SELECT</span> <span style="">函数名</span>(<span style="">实参列表</span>) <span style="">【</span><span style="color:#007020;font-weight:bold">FROM</span> <span style="">表】</span>;
+</code></pre></div><h4 id="52-分类">5.2 分类</h4>
+<div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="color:#007020;font-weight:bold">sum</span><span style="">：求和</span>
+<span style="color:#007020;font-weight:bold">avg</span><span style="">：平均值</span>
+<span style="color:#007020;font-weight:bold">max</span><span style="">：最大值</span>
+<span style="color:#007020;font-weight:bold">min</span><span style="">：最小值</span>
+<span style="color:#007020;font-weight:bold">count</span><span style="">：计算个数</span>
+</code></pre></div><ol>
+<li>sum、avg一般用于处理数值型，max、min、count可以处理任何类型</li>
+<li>以上分组函数都忽略null值</li>
+<li>可以和distinct搭配实现去重的运算：select sum(distinct 字段) from 表;</li>
+<li>一般使用count(*)用作统计行数</li>
+<li>和分组函数一同查询的字段要求是group by后的字段</li>
+</ol>
+<hr>
+<h3 id="6分组查询">6、分组查询</h3>
+<h4 id="61-语法">6.1 语法</h4>
+<div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="color:#007020;font-weight:bold">SELECT</span> 
+  <span style="">查询列表</span> 
+<span style="color:#007020;font-weight:bold">FROM</span>
+  <span style="">表</span> 
+<span style="">【</span><span style="color:#007020;font-weight:bold">where</span> <span style="">筛选条件】</span> 
+<span style="color:#007020;font-weight:bold">GROUP</span> <span style="color:#007020;font-weight:bold">BY</span> <span style="">分组的字段</span> 
+<span style="">【</span><span style="color:#007020;font-weight:bold">having</span> <span style="">分组后的筛选】</span>
+<span style="">【</span><span style="color:#007020;font-weight:bold">order</span> <span style="color:#007020;font-weight:bold">BY</span> <span style="">排序的字段】</span> ;
+</code></pre></div><h4 id="62-特点">6.2 特点</h4>
+<p>1、和分组函数一同查询的字段必须是group by后出现的字段</p>
+<p>2、筛选分为两类：分组前筛选和分组后筛选</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>针对的表</th>
+<th>语句位置</th>
+<th>连接的关键字</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>分组前筛选</td>
+<td>分组前的原始表</td>
+<td>group by前</td>
+<td>where</td>
+</tr>
+<tr>
+<td>分组后筛选</td>
+<td>分组后的结果集</td>
+<td>group by后</td>
+<td>having</td>
+</tr>
+</tbody>
+</table>
+<p>3、分组可以按单个字段也可以按多个字段</p>
+<p>4、分组可以搭配着排序使用</p>
+<h4 id="63-总结">6.3 总结</h4>
+<p>分组，个人理解是多个不同的数据都有一个共同的标识，按照这一个标识对这些数据进行分组。</p>
+<hr>
+<h3 id="7连接查询">7、连接查询</h3>
+<h4 id="71-含义">7.1 含义</h4>
+<p>连接查询又称多表查询，当查询的字段来自于多个表时，就会用到连接查询</p>
+<h4 id="72-注意">7.2 注意</h4>
+<p>笛卡尔乘积现象：表 1 有 m 行，表 2 有 n 行，结果 = m*n 行</p>
+<p>发生原因：没有有效的连接条件</p>
+<p>如何避免：添加有效的连接条件</p>
+<h4 id="73-分类">7.3 分类</h4>
+<p>按年代分类：</p>
+<ul>
+<li>
+<p>sql92 标准：支持内连接</p>
+</li>
+<li>
+<p>sql99 标准：支持内连接、部分外连接（左外、右外）、交叉连接</p>
+</li>
+</ul>
+<p>按功能分类：</p>
+<ul>
+<li>
+<p>内连接（返回两张表都满足条件的部分）</p>
+<ul>
+<li>等值连接</li>
+<li>非等值连接（在两表某值范围内进行范围查询）</li>
+<li>自连接（自己和自己连接，得到一些他特殊数据）</li>
+</ul>
+</li>
+<li>
+<p>外连接</p>
+<ul>
+<li>左外连接（左表以及右表符合条件部分）</li>
+<li>右外连接（右表以及左表符合条件部分）</li>
+<li>全外连接（全外连接是在结果中除了显示满足连接的条件的行外，还显示了 join 两侧表中所有满足检索条件的行）</li>
+<li>交叉连接（笛卡尔积，左表每一行与右表全表组合）</li>
+</ul>
+</li>
+</ul>
+<h4 id="74-区别">7.4 区别</h4>
+<ol>
+<li>功能方面：sql99 支持的较多</li>
+<li>可读性：sql99 实现了连接条件和筛选条件的分离，因此可读性较高</li>
+</ol>
+<h4 id="75-总结">7.5 总结</h4>
+<p>sql92 功能较少，不支持外连接；sql99 引入了 JOIN 进行关联查询，功能强大，支持外连接，可读性高，常用 sql99。</p>
+<h3 id="8sql99标准">8、sql99标准</h3>
+<h4 id="81-语法">8.1 语法</h4>
+<div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="color:#007020;font-weight:bold">SELECT</span> 
+  <span style="">查询列表</span> 
+<span style="color:#007020;font-weight:bold">FROM</span> <span style="">表</span><span style="color:#40a070">1</span> <span style="">别名</span><span style="color:#40a070">1</span> 
+<span style="">【连接类型】</span> <span style="color:#007020;font-weight:bold">JOIN</span> <span style="">表</span><span style="color:#40a070">2</span> <span style="">别名</span><span style="color:#40a070">2</span> <span style="color:#007020;font-weight:bold">ON</span> <span style="">连接条件</span> 
+<span style="">【</span><span style="color:#007020;font-weight:bold">where</span> <span style="">分组前筛选条件】</span>
+<span style="">【</span><span style="color:#007020;font-weight:bold">group</span> <span style="color:#007020;font-weight:bold">BY</span> <span style="">分组列表】</span>
+<span style="">【</span><span style="color:#007020;font-weight:bold">having</span> <span style="">分组后筛选条件】</span>
+<span style="">【</span><span style="color:#007020;font-weight:bold">order</span> <span style="color:#007020;font-weight:bold">BY</span> <span style="">排序列表】</span> ;
+</code></pre></div><h4 id="82-连接类型">8.2 连接类型</h4>
+<p>内连接：inner</p>
+<p>外连接：</p>
+<ul>
+<li>
+<p>左外连接：left 【outer】（左边的是主表）</p>
+</li>
+<li>
+<p>右外连接：right 【outer】（右边的是主表）</p>
+</li>
+<li>
+<p>全外连接：full 【outer】（两边都是主表，但是MySQL不支持全外连接、Oracle支持）</p>
+</li>
+<li>
+<p>交叉连接：cross（交叉连接其实是用sql99语法实现笛卡尔乘积）</p>
+</li>
+</ul>
+<h4 id="83-总结">8.3 总结</h4>
+<p>推荐博客：<a href="https://blog.csdn.net/wcc27857285/article/details/86439313">Sql 中内连接、外连接、全连接、交叉连接的区别</a></p>
+<hr>
+<h3 id="9子查询">9、子查询</h3>
+<h4 id="91-含义">9.1 含义</h4>
+<p>嵌套在其它语句内部的 select 语句称为子查询或内查询，外面的语句可以是 insert、delete、update、select 等，一般 select 作为外面语句较多，外面如果为 select 语句，则此语句称为外查询或主查询。</p>
+<h4 id="92-分类">9.2 分类</h4>
+<p>按出现的位置划分</p>
+<ul>
+<li>
+<p>select后面：标量子查询</p>
+</li>
+<li>
+<p>from后面：表子查询</p>
+</li>
+<li>
+<p>where或having后面</p>
+<ul>
+<li>标量子查询</li>
+<li>列子查询</li>
+<li>行子查询</li>
+</ul>
+</li>
+<li>
+<p>exists后面</p>
+<ul>
+<li>标量子查询</li>
+<li>列子查询</li>
+<li>行子查询</li>
+<li>表子查询</li>
+</ul>
+</li>
+</ul>
+<p>按结果集行列数划分</p>
+<ul>
+<li>标量子查询（单行子查询）：结果集为一行一列</li>
+<li>列子查询（多行子查询）：结果集为多行一列</li>
+<li>行子查询：结果集为多行多列</li>
+<li>表子查询：结果集为多行多列</li>
+</ul>
+<h4 id="93-特点">9.3 特点</h4>
+<ol>
+<li>子查询放在小括号内</li>
+<li>子查询一般放在条件的右侧</li>
+<li>子查询的执行优先于主查询执行，主查询的条件用到了子查询的结果</li>
+<li>标量子查询，一般搭配着单行操作符使用：&gt;、&gt;=、&lt;、&lt;=、!=、&lt;&gt;、=、&lt;=&gt;</li>
+<li>列子查询，一般搭配着多行操作符使用：in、not in、any、some、all、exits</li>
+</ol>
+<h4 id="94-总结">9.4 总结</h4>
+<p>子查询的效率并不高，每次进行子查询时需要先创建临时表，使用完之后，会销毁这些临时表，所以会对 SQL 执行的效率造成影响。</p>
+<p>注意：这张临时表是数据库（MySQL自动生成）</p>
+<p>可以使用连接查询 JOIN 代替子查询，连接查询不需要建立临时表，因此其速度比子查询快。</p>
+<p>多表联查性能优化，优化的本质就是 join on 和 where 的执行顺序。</p>
+<p>数据库在通过连接两张或多张表来返回记录时，都会生成一张 中间的临时表，然后再将这张临时表返回给用户</p>
+<p>on 和 where 条件的区别如下：</p>
+<ol>
+<li>on 条件是在生成临时表时使用的条件，它不管 on 中的条件是否为真，都会返回左边表中的记录</li>
+<li>where 条件是在临时表生成好后，再对临时表进行过滤的条件（这时已经和 left join 没关系了），条件不为真的就全部过滤掉</li>
+</ol>
+<p>参考博客：<a href="https://www.cnblogs.com/minikobe/p/12359828.html">子查询和关联查的区别</a></p>
+<hr>
+<h3 id="10分页查询">10、分页查询</h3>
+<h4 id="101-语法">10.1 语法</h4>
+<div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="color:#007020;font-weight:bold">SELECT</span> 
+  <span style="">查询列表</span> 
+<span style="color:#007020;font-weight:bold">FROM</span>
+  <span style="">表</span><span style="color:#40a070">1</span> <span style="">别名</span><span style="color:#40a070">1</span>
+<span style="">【连接类型】</span> <span style="color:#007020;font-weight:bold">JOIN</span> <span style="">表</span><span style="color:#40a070">2</span> <span style="">别名</span><span style="color:#40a070">2</span> <span style="color:#007020;font-weight:bold">ON</span> <span style="">连接条件</span> 
+<span style="">【</span><span style="color:#007020;font-weight:bold">WHERE</span> <span style="">分组前的筛选】</span>
+<span style="">【</span><span style="color:#007020;font-weight:bold">GROUP</span> <span style="color:#007020;font-weight:bold">BY</span> <span style="">分组字段】</span> 
+<span style="">【</span><span style="color:#007020;font-weight:bold">HAVING</span> <span style="">分组后的筛选</span> <span style="">】</span>
+<span style="">【</span><span style="color:#007020;font-weight:bold">ORDER</span> <span style="color:#007020;font-weight:bold">BY</span> <span style="">排序字段</span> <span style="color:#007020;font-weight:bold">ASC</span><span style="color:#666">|</span><span style="color:#007020;font-weight:bold">DESC</span><span style="">】</span>
+<span style="color:#007020;font-weight:bold">LIMIT</span> <span style="">【</span><span style="color:#007020;font-weight:bold">offset</span>, <span style="">】</span><span style="color:#007020;font-weight:bold">size</span> ;
+</code></pre></div><h4 id="102-特点">10.2 特点</h4>
+<ol>
+<li>limit 语句放在查询语句的最后</li>
+<li>offset 代表起始索引，起始索引从 0 开始，size 代表条目个数</li>
+<li>分页语句：select 查询列表 from 表 limit (page-1)*size , size;</li>
+</ol>
+<h4 id="103-总结">10.3 总结</h4>
+<p>分页的条件一般都放在 SQL 语句最后边。</p>
+<hr>
+<h3 id="11联合查询">11、联合查询</h3>
+<h3 id="111-语法">11.1 语法</h3>
+<div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="">查询语句</span><span style="color:#40a070">1</span>
+<span style="color:#007020;font-weight:bold">union</span> <span style="">【</span><span style="color:#007020;font-weight:bold">all</span><span style="">】</span>
+<span style="">查询语句</span><span style="color:#40a070">2</span>
+<span style="color:#007020;font-weight:bold">union</span> <span style="">【</span><span style="color:#007020;font-weight:bold">all</span><span style="">】</span>
+...
+</code></pre></div><h4 id="112-特点">11.2 特点</h4>
+<ol>
+<li>要查询的结果来自于多个表且多个表没有直接的连接关系，但查询的信息一致时，可以使用联合查询</li>
+<li>要求多条查询语句的查询列数是一致的</li>
+<li>要求多条查询语句的查询的每一列的类型和顺序最好一致</li>
+<li>union 关键字默认去重，如果使用 union all 可以包含重复项</li>
+</ol>
+<h4 id="113-演示">11.3 演示</h4>
+<div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="color:#666">#</span><span style="">查询中国用户中男性的信息以及外国用户中年男性的用户信息</span>
+
+<span style="color:#007020;font-weight:bold">SELECT</span> id,cname <span style="color:#007020;font-weight:bold">FROM</span> t_ca <span style="color:#007020;font-weight:bold">WHERE</span> csex<span style="color:#666">=</span><span style="color:#4070a0">&#39;男&#39;</span>
+<span style="color:#007020;font-weight:bold">UNION</span> <span style="color:#007020;font-weight:bold">ALL</span>
+<span style="color:#007020;font-weight:bold">SELECT</span> t_id,tname <span style="color:#007020;font-weight:bold">FROM</span> t_ua <span style="color:#007020;font-weight:bold">WHERE</span> tGender<span style="color:#666">=</span><span style="color:#4070a0">&#39;male&#39;</span>;
+</code></pre></div><hr>
 <p>参考文章：<a href="https://blog.csdn.net/qq_38490457/article/details/107640904">轻松的小希</a></p>
 
 
@@ -219,10 +500,6 @@
 
 <div class="releated-post">
   <h3>Related Posts</h3>
-  
-  <i class="fas fa-paperclip"></i>
-  <a href="/posts/mysql/mysqltest/">【MySQL】Test</a>
-  <br>
   
   <i class="fas fa-paperclip"></i>
   <a href="/posts/mysql%E6%95%B0%E6%8D%AE%E7%AE%A1%E7%90%86%E8%AF%AD%E8%A8%80dml/">【MySQL】数据管理语言DML</a>
