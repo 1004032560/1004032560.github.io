@@ -216,7 +216,10 @@ SELECT IFNULL(字段名, 指定值) FROM 表名; 11、【补充】isnull函数</
       
       <guid>https://1004032560.github.io/posts/mysql%E6%95%B0%E6%8D%AE%E7%AE%A1%E7%90%86%E8%AF%AD%E8%A8%80dml/</guid>
       <description>数据管理语言DML(Data Manipulatioin language) 对象：表数据
-关键词：create、update、insert、delete</description>
+关键词：insert、update、delete
+1、INSERT新增 1.1 语法 # 格式一：表名后的字段可以不按照表中顺序放，但是值必须和字段对应。 INSERT INTO 表名【字段1，字段2，...，字段n】 values(值1，值2，...，值n); # 格式二：省略表名后的字段，但是值必须按照表字段顺序。 INSERT INTO 表名 values(值1，值2，...，值n); 1.2 特点  要求值的类型和字段的类型要一致或兼容 字段的个数和顺序不一定与原始表中的字段个数和顺序一致，但必须保证值和字段一一对应 假如表中有可以为null的字段，注意可以通过以下两种方式插入null值：①字段和值都省略、②字段写上，值使用null 字段和值的个数必须一致 字段名可以省略，默认所有列 方式一支持一次插入多行，语法如下：INSERT INTO 表名【(字段名,…)】 VALUES(值,…),(值,…),…; 方式一支持子查询，语法如下：INSERT INTO 表名 查询语句;  1.3 总结  项目中经常使用格式一，SQL清晰，明确，日志信息也比较直观。 项目中多使用批量插入，一般循环值，拼接多个，用逗号隔开。   2、UPDATE更新 2.1 语法 1、单表更新
+UPDATE 表名 SET 列 = 值,... WHERE 查询条件; 2、多表更新
+#sql92语法： UPDATE 表1 别名, 表2 别名 SET 列 = 值, ... WHERE 连接条件 AND 筛选条件 ; #sql99语法： UPDATE 表1 别名 INNER | LEFT | RIGHT JOIN 表2 别名 ON 连接条件 SET 列 = 值, .</description>
     </item>
     
     <item>
