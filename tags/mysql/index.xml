@@ -29,9 +29,29 @@
     </item>
     
     <item>
+      <title>【MySQL】事务默认隔离级别</title>
+      <link>https://1004032560.github.io/posts/mysqlmysql%E9%BB%98%E8%AE%A4%E9%9A%94%E7%A6%BB%E7%BA%A7%E5%88%AB/</link>
+      <pubDate>Tue, 11 May 2021 06:09:38 +0800</pubDate>
+      
+      <guid>https://1004032560.github.io/posts/mysqlmysql%E9%BB%98%E8%AE%A4%E9%9A%94%E7%A6%BB%E7%BA%A7%E5%88%AB/</guid>
+      <description>MySQL事务默认隔离级别 MySQL 数据库事务的默认隔离级别为 Repeatable Read 简称 RR。
+Oracle 数据库事务的默认隔离级别为 Read Committed 简称 RC。
+MySQL 在 5.0 这个版本以前，binlog 只支持 STATEMENT 这种格式！而这种格式在读已提交 Read Commited 这个隔离级别下主从复制是有 BUG 的，因此 MySQL 将可重复读 Repeatable Read 作为默认的隔离级别！
+由于历史原因
+主从复制，是基于binlog复制的！
+binlog 三种格式，分别是
+ statement：记录的是修改 SQL 语句（基于语句的主从复制） row：记录的是每行实际数据的变更（基于行锁的主从复制） mixed：statement 和 row 模式的混合  这样，你就出现了主从不一致性的问题！原因其实很简单，就是在主（master）上执行的顺序为先删后插！而此时 binlog 为 STATEMENT 格式，它记录的顺序为先插后删！从（slave）同步的是 binlog，因此从机执行的顺序和主机不一致！就会出现主从不一致！
+解决方案有两种！
+  隔离级别设为「可重复读 Repeatable Read」，在该隔离级别下引入间隙锁。当Session 1执行delete语句时，会锁住间隙。那么，Ssession 2执行插入语句就会阻塞住！
+  将binglog的格式修改为row格式，此时是基于行的复制，自然就不会出现sql执行顺序不一样的问题！奈何这个格式在mysql5.1版本开始才引入。因此由于历史原因，mysql将默认的隔离级别设为可重复读(Repeatable Read)，保证主从复制不出问题！
+  那么，当我们了解完mysql选可重复读(Repeatable Read)作为默认隔离级别的原因后，接下来我们将其和读已提交(Read Commited)进行对比，来说明为什么在互联网项目为什么将隔离级别设为读已提交(Read Commited)！
+对比 ok，我们先明白一点！项目中是不用**读未提交(Read UnCommitted)和串行化(Serializable)**两个隔离级别，原因有二</description>
+    </item>
+    
+    <item>
       <title>【MySQL】事务</title>
       <link>https://1004032560.github.io/posts/mysql%E4%BA%8B%E5%8A%A1/</link>
-      <pubDate>Tue, 11 May 2021 06:09:36 +0800</pubDate>
+      <pubDate>Tue, 11 May 2021 06:09:37 +0800</pubDate>
       
       <guid>https://1004032560.github.io/posts/mysql%E4%BA%8B%E5%8A%A1/</guid>
       <description>事务 一条或多条sql语句组成一个执行单位，一组sql语句要么都执行要么都不执行

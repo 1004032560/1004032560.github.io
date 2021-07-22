@@ -60,7 +60,7 @@
     <h1 style="text-align: center;" >【MySQL】事务</h1>
     <div class="post-meta">
     
-      <time datetime="2021-05-11T06:09:36&#43;08:00">May 11, 2021</time> &nbsp; 
+      <time datetime="2021-05-11T06:09:37&#43;08:00">May 11, 2021</time> &nbsp; 
     
 
     looper &nbsp;
@@ -76,9 +76,9 @@
       
 
       
-        10 min
+        9 min
       
-      22 s
+      55 s
       &nbsp;
     
     </div>
@@ -300,8 +300,6 @@
 <p>注意：不是事务隔离级别设置得越高越好，事务隔离级别设置得越高，意味着势必要花手段去加锁用以保证事务的正确性，那么效率就要降低，因此实际开发中往往要在效率和并发正确性之间做一个取舍。</p>
 <p>一般情况下会设置为 READ_COMMITED，此时避免了脏读，并发性也还不错，之后再通过一些别的手段去解决不可重复读和幻读的问题就好了。</p>
 <p>MySQL 数据库默认的隔离级别为 REPEATABLE_READ。（属于历史原因）</p>
-<p>MySQL 在 5.0 这个版本以前，binlog 只支持 <code>STATEMENT</code> 这种格式！而这种格式在读已提交 Read Commited 这个隔离级别下主从复制是有 BUG 的，因此 MySQL 将可重复读 Repeatable Read 作为默认的隔离级别！</p>
-<p>Oracle 的默认隔离级别就是 RC（Read Commited）</p>
 <h4 id="46-查询及设置事务隔离级别">4.6 查询及设置事务隔离级别</h4>
 <div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="color:#666">#</span> <span style="">查看默认的事务隔离级别</span>  MySQL默认的是 <span style="color:#007020;font-weight:bold">repeatable</span> <span style="color:#007020;font-weight:bold">read</span>
 <span style="color:#007020;font-weight:bold">select</span> <span style="color:#666">@@</span>tx_isolation

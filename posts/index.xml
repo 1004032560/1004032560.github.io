@@ -16,6 +16,7 @@
       <guid>https://1004032560.github.io/posts/%E7%AC%AC3%E6%9C%9Flooper%E5%91%A8%E6%8A%A5/</guid>
       <description>1、学习 1.1 MySQL 继续学习 MySQL，对 DQL 进行了系统学习归纳。数据库主要作用就是存储数据，涉及到的主要功能就是数据的修改和查询。注重数据无误和查询速度。对查询 SQL 进行优化，提高查询效率。同时随着数据量的增加和数据操作频率增加，就需要考虑数据库性能的问题。
 1.2 MySQ隔离级别 推荐一篇讲解 MySQL 隔离级别的文章：MySQL的默认隔离级别
+1.3 耦合 耦合具有两面性（Two-Headed Beast）：一方面，紧密耦合的代码难以测试、难以复用、难以理解，并且典型地表现出“打地鼠”式的 BUG 特性（修复一个 BUG，将会出现一个或者更多新的 BUG）。另一方面，一定程度的耦合又是必须的——完全没有耦合的代码什么也做不了。
  2、生活 【20210719】芹菜腐竹和木须肉 周末下午做的饭，为周一中午准备的。芹菜炒腐竹和木须肉，木须肉是现场看教程，到最后也是有啥调料放啥。哈哈哈哈。
 我觉得炒菜做饭，只要自己觉得好吃，适合自己的口味那就是美食。
 但是如果，去开一个饭馆，餐厅。我们能按照顾客的口味去做菜么？也不是不能，比如顾客不吃辣，那就少放点，顾客高血压，少放盐。
@@ -191,9 +192,29 @@ Ctrl + T表格    学号 姓名 班级     10001 阿大 三班   10002 阿二 �
     </item>
     
     <item>
+      <title>【MySQL】事务默认隔离级别</title>
+      <link>https://1004032560.github.io/posts/mysqlmysql%E9%BB%98%E8%AE%A4%E9%9A%94%E7%A6%BB%E7%BA%A7%E5%88%AB/</link>
+      <pubDate>Tue, 11 May 2021 06:09:38 +0800</pubDate>
+      
+      <guid>https://1004032560.github.io/posts/mysqlmysql%E9%BB%98%E8%AE%A4%E9%9A%94%E7%A6%BB%E7%BA%A7%E5%88%AB/</guid>
+      <description>MySQL事务默认隔离级别 MySQL 数据库事务的默认隔离级别为 Repeatable Read 简称 RR。
+Oracle 数据库事务的默认隔离级别为 Read Committed 简称 RC。
+MySQL 在 5.0 这个版本以前，binlog 只支持 STATEMENT 这种格式！而这种格式在读已提交 Read Commited 这个隔离级别下主从复制是有 BUG 的，因此 MySQL 将可重复读 Repeatable Read 作为默认的隔离级别！
+由于历史原因
+主从复制，是基于binlog复制的！
+binlog 三种格式，分别是
+ statement：记录的是修改 SQL 语句（基于语句的主从复制） row：记录的是每行实际数据的变更（基于行锁的主从复制） mixed：statement 和 row 模式的混合  这样，你就出现了主从不一致性的问题！原因其实很简单，就是在主（master）上执行的顺序为先删后插！而此时 binlog 为 STATEMENT 格式，它记录的顺序为先插后删！从（slave）同步的是 binlog，因此从机执行的顺序和主机不一致！就会出现主从不一致！
+解决方案有两种！
+  隔离级别设为「可重复读 Repeatable Read」，在该隔离级别下引入间隙锁。当Session 1执行delete语句时，会锁住间隙。那么，Ssession 2执行插入语句就会阻塞住！
+  将binglog的格式修改为row格式，此时是基于行的复制，自然就不会出现sql执行顺序不一样的问题！奈何这个格式在mysql5.1版本开始才引入。因此由于历史原因，mysql将默认的隔离级别设为可重复读(Repeatable Read)，保证主从复制不出问题！
+  那么，当我们了解完mysql选可重复读(Repeatable Read)作为默认隔离级别的原因后，接下来我们将其和读已提交(Read Commited)进行对比，来说明为什么在互联网项目为什么将隔离级别设为读已提交(Read Commited)！
+对比 ok，我们先明白一点！项目中是不用**读未提交(Read UnCommitted)和串行化(Serializable)**两个隔离级别，原因有二</description>
+    </item>
+    
+    <item>
       <title>【MySQL】事务</title>
       <link>https://1004032560.github.io/posts/mysql%E4%BA%8B%E5%8A%A1/</link>
-      <pubDate>Tue, 11 May 2021 06:09:36 +0800</pubDate>
+      <pubDate>Tue, 11 May 2021 06:09:37 +0800</pubDate>
       
       <guid>https://1004032560.github.io/posts/mysql%E4%BA%8B%E5%8A%A1/</guid>
       <description>事务 一条或多条sql语句组成一个执行单位，一组sql语句要么都执行要么都不执行
@@ -411,15 +432,6 @@ HUGO 官网文档
   HUGO 非常适合博客，文档等等网站的生成。
   HUGO 当前提供 Windows，Linux，FreeBSD，NetBSD 和 OS X (Darwin) 的 x64, i386 和 ARM 架构的二进制预构建包。
   </description>
-    </item>
-    
-    <item>
-      <title></title>
-      <link>https://1004032560.github.io/posts/mysqlmysql%E9%BB%98%E8%AE%A4%E9%9A%94%E7%A6%BB%E7%BA%A7%E5%88%AB/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://1004032560.github.io/posts/mysqlmysql%E9%BB%98%E8%AE%A4%E9%9A%94%E7%A6%BB%E7%BA%A7%E5%88%AB/</guid>
-      <description></description>
     </item>
     
   </channel>
