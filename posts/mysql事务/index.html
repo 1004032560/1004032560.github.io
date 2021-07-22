@@ -78,7 +78,7 @@
       
         10 min
       
-      13 s
+      22 s
       &nbsp;
     
     </div>
@@ -249,9 +249,9 @@
 <p><img src="https://raw.githubusercontent.com/1004032560/images/master/image-20210722105527972.png" alt="image-20210722105527972"></p>
 <h4 id="41-读未提交read-uncommitted">4.1 读未提交（Read Uncommitted）</h4>
 <p>读未提交：能够读到没有提交的数据，因此这个隔离级别，无法解决脏读、幻读和不可重复读。</p>
-<h4 id="42-读已提交read-committed">4.2 读已提交（Read Committed）</h4>
+<h4 id="42-读已提交read-committedrc">4.2 读已提交（Read Committed）RC</h4>
 <p>读已提交：即能够读到那些已经提交的数据，因此能够防止脏读，但是无法限制不可重复读和幻读。</p>
-<h4 id="43-可重复读repeatable-read">4.3 可重复读（Repeatable Read）</h4>
+<h4 id="43-可重复读repeatable-readrr">4.3 可重复读（Repeatable Read）RR</h4>
 <p>可重复读：指的是在数据读出来之后加锁，这个事务不结束，别的事务就不可以修改这条记录。这样就解决了脏读、不可重复读的问题，但是幻读的问题还是无法解决</p>
 <h4 id="44-串行化serializable">4.4 串行化（Serializable）</h4>
 <p>串行化：是最高的事务隔离级别，不管多少事务，挨个运行完一个事务的所有子事务之后才可以执行另外一个事务里面的所有子事务。这样就解决了脏读、不可重复读和幻读的问题了，但是性能的消耗也是最大的。</p>
@@ -299,8 +299,9 @@
 </table>
 <p>注意：不是事务隔离级别设置得越高越好，事务隔离级别设置得越高，意味着势必要花手段去加锁用以保证事务的正确性，那么效率就要降低，因此实际开发中往往要在效率和并发正确性之间做一个取舍。</p>
 <p>一般情况下会设置为 READ_COMMITED，此时避免了脏读，并发性也还不错，之后再通过一些别的手段去解决不可重复读和幻读的问题就好了。</p>
-<p>MySQL 数据库默认的隔离级别为 REPEATABLE_READ。</p>
-<p>MySQL 在5.0这个版本以前，binlog 只支持 <code>STATEMENT</code> 这种格式！而这种格式在读已提交 Read Commited 这个隔离级别下主从复制是有 BUG 的，因此 MySQL 将可重复读 Repeatable Read 作为默认的隔离级别！</p>
+<p>MySQL 数据库默认的隔离级别为 REPEATABLE_READ。（属于历史原因）</p>
+<p>MySQL 在 5.0 这个版本以前，binlog 只支持 <code>STATEMENT</code> 这种格式！而这种格式在读已提交 Read Commited 这个隔离级别下主从复制是有 BUG 的，因此 MySQL 将可重复读 Repeatable Read 作为默认的隔离级别！</p>
+<p>Oracle 的默认隔离级别就是 RC（Read Commited）</p>
 <h4 id="46-查询及设置事务隔离级别">4.6 查询及设置事务隔离级别</h4>
 <div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="color:#666">#</span> <span style="">查看默认的事务隔离级别</span>  MySQL默认的是 <span style="color:#007020;font-weight:bold">repeatable</span> <span style="color:#007020;font-weight:bold">read</span>
 <span style="color:#007020;font-weight:bold">select</span> <span style="color:#666">@@</span>tx_isolation
