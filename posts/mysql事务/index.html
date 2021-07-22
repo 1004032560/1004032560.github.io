@@ -78,7 +78,7 @@
       
         10 min
       
-      57 s
+      13 s
       &nbsp;
     
     </div>
@@ -92,8 +92,9 @@
 <p>隔离性I</p>
 <p>持久性D</p>
 <h3 id="2事务分类">2、事务分类</h3>
+<hr>
 <h3 id="3-事务并发问题">3、 事务并发问题：</h3>
-<h4 id="31-脏读dirty-read">3.1 脏读（Dirty read）</h4>
+<h4 id="31-脏读dirty-read">3.1 脏读（Dirty Read）</h4>
 <p>当一个「事务T1」正在访问数据并且对数据进行了修改，而这种修改还没有提交到数据库中，这时另一个「事务T2」也访问了这个数据，然后使用了这个数据。因为这个数据是还没有提交的数据，那么另外一个事务读到的这个数据是「脏数据」，依据「脏数据」所做的操作可能是不正确的。</p>
 <p>T1 被 T2 影响到了，但是实际上余额是 100，T1 中使用了 150 去做计算的话，会造成一系列的问题。</p>
 <table>
@@ -137,7 +138,7 @@
 </tr>
 </tbody>
 </table>
-<h4 id="32-不可重复读unrepeatableread">3.2 不可重复读（Unrepeatableread）</h4>
+<h4 id="32-不可重复读unrepeatable-read">3.2 不可重复读（Unrepeatable Read）</h4>
 <p>指在一个「事务T1」内多次读同一数据。在一个「事务T1」还没有结束时，另一个「事务T2」也访问该数据。那么，在「事务T1」中的两次读数据之间，由于「事务T2」的修改导致「事务T1」两次读取的数据可能不太一样。</p>
 <p>这就发生了在一个事务内两次读到的数据是不一样的情况，因此称为不可重复读。</p>
 <table>
@@ -186,7 +187,7 @@
 </tr>
 </tbody>
 </table>
-<h4 id="33-幻读phantom-read">3.3 幻读（Phantom read）</h4>
+<h4 id="33-幻读phantom-read">3.3 幻读（Phantom Read）</h4>
 <p>幻读与不可重复读类似。它发生在一个「事务T1」读取了几行数据，接着另一个并发「事务T2」插入了一些数据时。在随后的查询中，第一个「事务T1」就会发现多了一些原本不存在的记录，就好像发生了幻觉一样，所以称为幻读。</p>
 <table>
 <thead>
@@ -230,10 +231,10 @@
 </tbody>
 </table>
 <h4 id="34-不可重复度和幻读区别">3.4 不可重复度和幻读区别：</h4>
-<p>不可重复读的重点是修改，幻读的重点在于新增或者删除。</p>
-<p>解决不可重复读的问题只需锁住满足条件的行，解决幻读需要锁表。</p>
-<p>例1（同样的条件, 你读取过的数据, 再次读取出来发现值不一样了 ）：事务1中的A先生读取自己的工资为 1000的操作还没完成，事务2中的B先生就修改了A的工资为2000，导 致A再读自己的工资时工资变为 2000；这就是不可重复读。</p>
-<p>例2（同样的条件, 第1次和第2次读出来的记录数不一样 ）：假某工资单表中工资大于3000的有4人，事务1读取了所有工资大于3000的人，共查到4条记录，这时事务2 又插入了一条工资大于3000的记录，事务1再次读取时查到的记录就变为了5条，这样就导致了幻读</p>
+<p>不可重复读的重点是修改，导致两次数据不一致；幻读的重点在于新增或者删除，导致两次结果集不一致。</p>
+<p>解决不可重复读的问题只需锁住满足条件的行；解决幻读需要锁表。</p>
+<p>例 1（同样的条件，你读取过的数据，再次读取出来发现值不一样了 ）：事务 1 中的 A 先生读取自己的工资为 1000 的操作还没完成，事务 2 中的 B 先生就修改了 A 的工资为2000，导致 A 再读自己的工资时工资变为 2000；这就是不可重复读。</p>
+<p>例 2（同样的条件，第 1 次和第 2 次读出来的记录数不一样 ）：假某工资单表中工资大于 3000 的有 4 人，事务 1 读取了所有工资大于 3000 的人，共查到 4 条记录，这时事务 2 又插入了一条工资大于 3000 的记录，事务 1 再次读取时查到的记录就变为了 5 条，这样就导致了幻读。</p>
 <hr>
 <h3 id="4事务的隔离级别">4、事务的隔离级别：</h3>
 <p>事务隔离级别，就是为了解决上面几种问题而诞生的，用于决定如何控制并发用户读写数据的操作。</p>
@@ -244,31 +245,71 @@
 <li>串行化（Serializable）</li>
 </ul>
 <p>事务隔离级别越高，在并发下会产生的问题就越少，但同时付出的性能消耗也将越大，因此很多时候必须在并发性和性能之间做一个权衡。所以设立了几种事务隔离级别，以便让不同的项目可以根据自己项目的并发情况选择合适的事务隔离级别。</p>
+<p>可以使用 select @@tx_isolation 来查看默认隔离级别</p>
+<p><img src="https://raw.githubusercontent.com/1004032560/images/master/image-20210722105527972.png" alt="image-20210722105527972"></p>
 <h4 id="41-读未提交read-uncommitted">4.1 读未提交（Read Uncommitted）</h4>
+<p>读未提交：能够读到没有提交的数据，因此这个隔离级别，无法解决脏读、幻读和不可重复读。</p>
 <h4 id="42-读已提交read-committed">4.2 读已提交（Read Committed）</h4>
+<p>读已提交：即能够读到那些已经提交的数据，因此能够防止脏读，但是无法限制不可重复读和幻读。</p>
 <h4 id="43-可重复读repeatable-read">4.3 可重复读（Repeatable Read）</h4>
+<p>可重复读：指的是在数据读出来之后加锁，这个事务不结束，别的事务就不可以修改这条记录。这样就解决了脏读、不可重复读的问题，但是幻读的问题还是无法解决</p>
 <h4 id="44-串行化serializable">4.4 串行化（Serializable）</h4>
-<p>默认隔离级别，每种数据库支持的事务隔离级别不一样，如果Spring配置事务时将isolation设置为这个值的话，那么将使用底层数据库的默认事务隔离级别。顺便说一句，如果使用的MySQL，可以使用&quot;<strong>select @@tx_isolation</strong>&ldquo;来查看默认的事务隔离级别</p>
-<p><strong>2、READ_UNCOMMITTED</strong></p>
-<p>读未提交，即能够读取到没有被提交的数据，所以很明显这个级别的隔离机制无法解决脏读、不可重复读、幻读中的任何一种，因此很少使用</p>
-<p><strong>3、READ_COMMITED</strong></p>
-<p>读已提交，即能够读到那些已经提交的数据，自然能够防止脏读，但是无法限制不可重复读和幻读</p>
-<p><strong>4、REPEATABLE_READ</strong></p>
-<p>重复读取，即在数据读出来之后加锁，类似&quot;select * from XXX for update&rdquo;，明确数据读取出来就是为了更新用的，所以要加一把锁，防止别人修改它。REPEATABLE_READ的意思也类似，读取了一条数据，这个事务不结束，别的事务就不可以改这条记录，这样就解决了脏读、不可重复读的问题，但是幻读的问题还是无法解决</p>
-<p><strong>5、SERLALIZABLE</strong></p>
-<p>串行化，最高的事务隔离级别，不管多少事务，挨个运行完一个事务的所有子事务之后才可以执行另外一个事务里面的所有子事务，这样就解决了脏读、不可重复读和幻读的问题了</p>
-<p>网上专门有图用表格的形式列出了事务隔离级别解决的并发问题：</p>
-<p><img src="https://images2015.cnblogs.com/blog/801753/201512/801753-20151229231850151-1072203985.png" alt="img"></p>
-<p>再必须强调一遍，不是事务隔离级别设置得越高越好，事务隔离级别设置得越高，意味着势必要花手段去加锁用以保证事务的正确性，那么效率就要降低，因此实际开发中往往要在效率和并发正确性之间做一个取舍，一般情况下会设置为READ_COMMITED，此时避免了脏读，并发性也还不错，之后再通过一些别的手段去解决不可重复读和幻读的问题就好了。</p>
-<p>查询及设置事务隔离级别：</p>
-<p>&ndash; 查看默认的事务隔离级别  MySQL默认的是repeatable read
-select @@tx_isolation
-&ndash; 设置事务的隔离级别
-set session transaction isolation level read uncommitted;
-set session transaction isolation level read committed;
-set session transaction isolation level repeatable read;
-set session transaction isolation level serializable;</p>
-<p>数据库编写常见的优化措施：</p>
+<p>串行化：是最高的事务隔离级别，不管多少事务，挨个运行完一个事务的所有子事务之后才可以执行另外一个事务里面的所有子事务。这样就解决了脏读、不可重复读和幻读的问题了，但是性能的消耗也是最大的。</p>
+<h4 id="45-隔离级别出现并发问题的可能性">4.5 隔离级别出现并发问题的可能性</h4>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">隔离级别</th>
+<th style="text-align:center">脏读</th>
+<th style="text-align:center">不可重复读</th>
+<th style="text-align:center">幻读</th>
+<th style="text-align:center">加锁读</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">Read Uncommitted</td>
+<td style="text-align:center">是</td>
+<td style="text-align:center">是</td>
+<td style="text-align:center">是</td>
+<td style="text-align:center">否</td>
+</tr>
+<tr>
+<td style="text-align:center">Read Committed</td>
+<td style="text-align:center">否</td>
+<td style="text-align:center">是</td>
+<td style="text-align:center">是</td>
+<td style="text-align:center">否</td>
+</tr>
+<tr>
+<td style="text-align:center">Repeatable Read</td>
+<td style="text-align:center">否</td>
+<td style="text-align:center">否</td>
+<td style="text-align:center">是</td>
+<td style="text-align:center">否</td>
+</tr>
+<tr>
+<td style="text-align:center">Serializable</td>
+<td style="text-align:center">否</td>
+<td style="text-align:center">否</td>
+<td style="text-align:center">否</td>
+<td style="text-align:center">是</td>
+</tr>
+</tbody>
+</table>
+<p>注意：不是事务隔离级别设置得越高越好，事务隔离级别设置得越高，意味着势必要花手段去加锁用以保证事务的正确性，那么效率就要降低，因此实际开发中往往要在效率和并发正确性之间做一个取舍。</p>
+<p>一般情况下会设置为 READ_COMMITED，此时避免了脏读，并发性也还不错，之后再通过一些别的手段去解决不可重复读和幻读的问题就好了。</p>
+<p>MySQL 数据库默认的隔离级别为 REPEATABLE_READ。</p>
+<p>MySQL 在5.0这个版本以前，binlog 只支持 <code>STATEMENT</code> 这种格式！而这种格式在读已提交 Read Commited 这个隔离级别下主从复制是有 BUG 的，因此 MySQL 将可重复读 Repeatable Read 作为默认的隔离级别！</p>
+<h4 id="46-查询及设置事务隔离级别">4.6 查询及设置事务隔离级别</h4>
+<div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="color:#666">#</span> <span style="">查看默认的事务隔离级别</span>  MySQL默认的是 <span style="color:#007020;font-weight:bold">repeatable</span> <span style="color:#007020;font-weight:bold">read</span>
+<span style="color:#007020;font-weight:bold">select</span> <span style="color:#666">@@</span>tx_isolation
+<span style="color:#666">#</span> <span style="">设置事务的隔离级别</span>
+<span style="color:#007020;font-weight:bold">set</span> <span style="color:#007020;font-weight:bold">session</span> <span style="color:#007020;font-weight:bold">transaction</span> <span style="color:#007020;font-weight:bold">isolation</span> <span style="color:#007020;font-weight:bold">level</span> <span style="color:#007020;font-weight:bold">read</span> <span style="color:#007020;font-weight:bold">uncommitted</span>;
+<span style="color:#007020;font-weight:bold">set</span> <span style="color:#007020;font-weight:bold">session</span> <span style="color:#007020;font-weight:bold">transaction</span> <span style="color:#007020;font-weight:bold">isolation</span> <span style="color:#007020;font-weight:bold">level</span> <span style="color:#007020;font-weight:bold">read</span> <span style="color:#007020;font-weight:bold">committed</span>;
+<span style="color:#007020;font-weight:bold">set</span> <span style="color:#007020;font-weight:bold">session</span> <span style="color:#007020;font-weight:bold">transaction</span> <span style="color:#007020;font-weight:bold">isolation</span> <span style="color:#007020;font-weight:bold">level</span> <span style="color:#007020;font-weight:bold">repeatable</span> <span style="color:#007020;font-weight:bold">read</span>;
+<span style="color:#007020;font-weight:bold">set</span> <span style="color:#007020;font-weight:bold">session</span> <span style="color:#007020;font-weight:bold">transaction</span> <span style="color:#007020;font-weight:bold">isolation</span> <span style="color:#007020;font-weight:bold">level</span> <span style="color:#007020;font-weight:bold">serializable</span>;
+</code></pre></div><h4 id="47-数据库编写常见的优化措施">4.7 数据库编写常见的优化措施：</h4>
 <p>1、对查询进行优化，要尽量避免全表扫描，首先应考虑在 where 及 order by 涉及的列上建立索引。</p>
 <p>2、应尽量避免在 where 子句中对字段进行 null 值判断，否则将导致引擎放弃使用索引而进行全表扫描</p>
 <p>3、应尽量避免在 where 子句中使用 != 或 &lt;&gt; 操作符，否则将引擎放弃使用索引而进行全表扫描。</p>
