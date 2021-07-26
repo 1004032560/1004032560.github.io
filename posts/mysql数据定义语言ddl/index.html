@@ -78,7 +78,7 @@
       
         3 min
       
-      31 s
+      35 s
       &nbsp;
     
     </div>
@@ -148,7 +148,7 @@
 <div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="">方式一：</span><span style="color:#007020;font-weight:bold">DROP</span> <span style="color:#007020;font-weight:bold">TABLE</span> [<span style="color:#007020;font-weight:bold">IF</span> <span style="color:#007020;font-weight:bold">EXISTS</span>] <span style="">表名</span>;
 <span style="">方式二：</span><span style="color:#007020;font-weight:bold">TRUNCATE</span> <span style="color:#007020;font-weight:bold">TABLE</span> [<span style="color:#007020;font-weight:bold">IF</span> <span style="color:#007020;font-weight:bold">EXISTS</span>] <span style="">表名</span>;
 <span style="color:#007020;font-weight:bold">drop</span> <span style="color:#007020;font-weight:bold">table</span> student;
-</code></pre></div><p>5.2.4、表的复制</p>
+</code></pre></div><h4 id="24表的复制">2.4、表的复制：</h4>
 <div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="color:#40a070">1</span><span style="">、复制表的结构</span>
 <span style="color:#007020;font-weight:bold">CREATE</span> <span style="color:#007020;font-weight:bold">TABLE</span> <span style="">表名</span> <span style="color:#007020;font-weight:bold">LIKE</span> <span style="">旧表</span>;
 
@@ -163,12 +163,14 @@
 <span style="color:#40a070">4</span><span style="">、复制表的某些字段</span><span style="color:#666">+</span><span style="">数据</span>
 <span style="color:#007020;font-weight:bold">CREATE</span> <span style="color:#007020;font-weight:bold">TABLE</span> <span style="">表名</span> 
 <span style="color:#007020;font-weight:bold">SELECT</span> <span style="">字段</span><span style="color:#40a070">1</span>,<span style="">字段</span><span style="color:#40a070">2</span>,... <span style="color:#007020;font-weight:bold">FROM</span> <span style="">旧表</span> <span style="">【</span><span style="color:#007020;font-weight:bold">WHERE</span> <span style="">筛选条件】</span>;
-</code></pre></div><h4 id="22-查看数据库里存在的表">2.2 查看数据库里存在的表：</h4>
+</code></pre></div><h4 id="25-查看数据库里存在的表">2.5 查看数据库里存在的表：</h4>
 <div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="color:#007020;font-weight:bold">show</span> tables;
-</code></pre></div><p>查看生成表的sql语句：</p>
+</code></pre></div><h4 id="26-查看生成表的sql语句">2.6 查看生成表的sql语句：</h4>
 <div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="color:#007020;font-weight:bold">show</span> <span style="color:#007020;font-weight:bold">create</span> <span style="color:#007020;font-weight:bold">table</span> student;
-</code></pre></div><p>查看表结构：</p>
+</code></pre></div><h4 id="27-查看表结构">2.7 查看表结构：</h4>
 <div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="color:#007020;font-weight:bold">desc</span> student;
+</code></pre></div><h4 id="28-查看表里的字段索引">2.8 查看表里的字段索引：</h4>
+<div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="color:#007020;font-weight:bold">show</span> <span style="color:#007020;font-weight:bold">index</span> <span style="color:#007020;font-weight:bold">from</span> student;
 </code></pre></div>
 
   
