@@ -387,9 +387,25 @@ Object 类是所有类的父类（树结构中的根节点） 。当一个类没
       <pubDate>Fri, 16 Oct 2020 17:38:23 +0800</pubDate>
       
       <guid>https://1004032560.github.io/posts/%E8%AE%A2%E5%8D%95%E4%B8%AD%E5%BF%83%E6%95%B0%E6%8D%AE%E8%A1%A8/</guid>
-      <description>订单中心数据表 uoc_special_apply_order：特价支付表单
+      <description>订单中心数据表 售前： uoc_order：订单表
+uoc_ord_reservation：外部预订单表
+uoc_ord_reservation_item：外部预订单明细表
+uoc_ord_sale：销售表
+uoc_ord_item：订单明细表
+uoc_ord_sale_insure：保障服务表
+uoc_ord_sale_invoice：发票表
+uoc_ord_sale_mi：小米销售记录表
+uoc_ord_sale_surplus_yield：顺差让利销售表
+uoc_ord_promotion：订单优惠活动记录表
+uoc_deposit_order：定金单
+uoc_ord_pay：支付单
+uoc_ord_pay_item：支付明细单
+uoc_special_apply_order：特价支付表单
 uoc_special_apply_ord_item：特价支付明细表单
-uoc_special_apply_approval：特价支付审批表单</description>
+uoc_special_apply_approval：特价支付审批表单
+uoc_ord_logistics_rela：物流联系人信息表
+uoc_ord_ship：发货表
+uoc_ord_ship_item：发货明细表</description>
     </item>
     
     <item>
