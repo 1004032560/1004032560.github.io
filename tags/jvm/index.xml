@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>JVM on looper梦呓</title>
+    <link>https://1004032560.github.io/tags/jvm/</link>
+    <description>Recent content in JVM on looper梦呓</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>[Home](/) &amp;#183; Theme [Simpleness](https://github.com/RainerChiang/simpleness) Powered by [Hugo](https://gohugo.io/)</copyright>
+    <lastBuildDate>Tue, 10 Aug 2021 17:14:59 +0800</lastBuildDate><atom:link href="https://1004032560.github.io/tags/jvm/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>【JVM】目录导航</title>
+      <link>https://1004032560.github.io/posts/jvm00%E7%9B%AE%E5%BD%95%E5%AF%BC%E8%88%AA/</link>
+      <pubDate>Tue, 10 Aug 2021 17:14:59 +0800</pubDate>
+      
+      <guid>https://1004032560.github.io/posts/jvm00%E7%9B%AE%E5%BD%95%E5%AF%BC%E8%88%AA/</guid>
+      <description>JVM笔记目录 学习来源：bilibili尚学堂</description>
+    </item>
+    
+  </channel>
+</rss>
