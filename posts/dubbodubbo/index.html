@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="generator" content="Hugo 0.76.5" />
+
+  <title> 【Dubbo】Dubbo |  looper梦呓</title>
+  <meta name="description" content="A simple and concise hugo theme.">
+  <link rel="stylesheet" href="https://1004032560.github.io/css/index.css">
+  <link rel="stylesheet" href="https://1004032560.github.io/css/classes.css">
+  <link rel="canonical" href="https://1004032560.github.io/posts/dubbodubbo/">
+  <link rel="alternate" type="application/rss+xml" href="" title="looper梦呓">
+  
+  
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" rel="stylesheet">
+</head>
+
+<body>
+  <header class="menus">
+  
+
+  <nav >
+    
+    <a href="/"> looper梦呓</a>
+    
+    <a href="/tags"> Tags</a>
+    
+    <a href="/about/about"> About</a>
+    
+  </nav>
+
+  <nav class="fontawesome">
+    
+    <a href="https://github.com/1004032560" target="_blank">
+        <i title="GitHub" class="fab fa-github"></i>
+    </a>
+    
+    
+    <a href="https://mp.weixin.qq.com/s/HpWP32efkOUumg7fUGZV1g" target="_blank">
+        <i title="微信公众号" class="fab fa-weixin"></i>
+    </a>
+    
+    
+    <a href="https://1004032560.github.io/index.xml" target="_blank">
+        <i title="RSS" class="fas fa-rss"></i>
+    </a>
+    
+  </nav>
+  
+  
+  <div class="hidden description">A simple and concise hugo theme.</div>
+  
+</header>
+
+<article id="article">
+  <header>
+  
+
+    <h1 style="text-align: center;" >【Dubbo】Dubbo</h1>
+    <div class="post-meta">
+    
+      <time datetime="2022-02-10T17:14:59&#43;08:00">February 10, 2022</time> &nbsp; 
+    
+
+    looper &nbsp;
+
+    
+    
+    
+
+    
+      <i class="far fa-clock"></i>
+      
+      
+      
+
+      
+        2 min
+      
+      58 s
+      &nbsp;
+    
+    </div>
+  </header>
+
+  <h1 id="dubbodubbo">【Dubbo】Dubbo</h1>
+<h3 id="1架构发展演变">1、架构发展演变</h3>
+<h4 id="单体架构orm">单体架构（ORM）：</h4>
+<p>一台服务器部署整个应用。</p>
+<p>问题：修改某一处功能，整个应用都需要重新打包重新部署；协同开发不易。</p>
+<h4 id="垂直架构mvc">垂直架构（MVC）：</h4>
+<p>按照模块分成多个应用，订单页面订单后端为一个应用，商品页面商品后端为一个应用等。</p>
+<p>问题：应用之间需要交互，交互成本高。</p>
+<h4 id="分布式架构rpc">分布式架构（RPC）：</h4>
+<p>垂直应用越来越多，应用之间还需要交互；分布式架构则将垂直应用的核心业务抽取出来，通过远程过程调用的方式进行交互。同一台服务器叫做进程内调用；两台服务器之间叫做远程过程调用。</p>
+<h4 id="流动计算架构soa">流动计算架构（SOA）：</h4>
+<p>基于访问压力实时管理分布式集群的容量，提高集群的利用率。</p>
+<h3 id="2rpc远程过程调用">2、RPC远程过程调用</h3>
+<p>RPC 是一种进程间的通信方式，是一种技术思想，而不是规范。它允许一台服务的程序调用另一个台服务器的函数、方法。</p>
+<p><img src="https://raw.githubusercontent.com/1004032560/images/master/image-20220227200335121.png" alt="image-20220227200335121"></p>
+<h3 id="3dubbo">3、Dubbo</h3>
+<p>分布式框架Dubbo架构：框架容器（Container）、注册中心（Registry）、服务提供者（Provider）、服务消费者（Consumer）、监控中心（Monitor）</p>
+<p><img src="https://raw.githubusercontent.com/1004032560/images/master/image-20220227202235356.png" alt="image-20220227202235356"></p>
+<p>Dubbo启动是，Container容器初始化，服务提供者Provider向注册中心Registry注册服务，服务消费者Consumer向注册中心订阅服务，Provider进行服务变更之后，Registry还会通过长连接的方式将这次变更推送给Consumer。Consumer可以通过Register提供的服务信息，调用Provider的服务（负载均衡调用）。每次的调用信息都会定时的发送到监控中心，监控中心就会知道服务的情况。</p>
+
+
+  
+  <footer>
+    <hr>
+    
+    <div class="post-tags">
+    
+      <i class="fas fa-tags"></i>
+      
+        <a href="/tags/java">Java</a>
+        &nbsp;
+      
+    
+    </div>
+  </footer>
+  
+
+  
+
+<div class="releated-post">
+  <h3>Related Posts</h3>
+  
+  <i class="fas fa-paperclip"></i>
+  <a href="/posts/java%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E7%9A%84%E4%B8%89%E5%A4%A7%E7%89%B9%E5%BE%81/">【Java】面向对象的三大特征</a>
+  <br>
+  
+  <i class="fas fa-paperclip"></i>
+  <a href="/posts/%E5%AD%A6%E4%B9%A0%E8%B7%AF%E7%BA%BF/">学习路线</a>
+  <br>
+  
+</div>
+
+
+  <div class="comments">
+
+
+
+</div>
+
+</article>
+
+
+
+  
+  
+  
+</body>
+<div class="foot">
+  
+  
+    &copy; 2019 - 2022 &#183; 
+    <a href="/">Home</a> · Theme <a href="https://github.com/RainerChiang/simpleness">Simpleness</a> Powered by <a href="https://gohugo.io/">Hugo</a> &#183;
+    <a href="#"><i class="fas fa-chevron-up"></i></a>
+  
+
+  
+  
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+	ga('create', 'looper', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+
+  
+</div>
+
+<script src="/js/lazyload.min.js"></script>
+<script>
+  var lazyImage = new LazyLoad({
+    container: document.getElementById('article')
+  });
+</script>
+
+
+</html>

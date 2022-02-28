@@ -14,7 +14,14 @@
       <pubDate>Tue, 10 Aug 2021 17:14:59 +0800</pubDate>
       
       <guid>https://1004032560.github.io/posts/jvm00%E7%9B%AE%E5%BD%95%E5%AF%BC%E8%88%AA/</guid>
-      <description>JVM笔记目录 学习来源：bilibili尚学堂</description>
+      <description>JVM笔记目录 1、JVM 的位置
+7、PC 寄存器
+8、方法区
+9、栈
+10、堆
+11、新生区、老年区
+12、永久区
+14、堆内存调优</description>
     </item>
     
   </channel>

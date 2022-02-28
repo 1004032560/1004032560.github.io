@@ -7,7 +7,16 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>[Home](/) &amp;#183; Theme [Simpleness](https://github.com/RainerChiang/simpleness) Powered by [Hugo](https://gohugo.io/)</copyright>
-    <lastBuildDate>Fri, 31 Dec 2021 11:34:09 +0800</lastBuildDate><atom:link href="https://1004032560.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 10 Feb 2022 17:15:59 +0800</lastBuildDate><atom:link href="https://1004032560.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Java</title>
+      <link>https://1004032560.github.io/tags/java/</link>
+      <pubDate>Thu, 10 Feb 2022 17:15:59 +0800</pubDate>
+      
+      <guid>https://1004032560.github.io/tags/java/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>Life</title>
       <link>https://1004032560.github.io/tags/life/</link>
@@ -50,15 +59,6 @@
       <pubDate>Tue, 11 May 2021 23:59:29 +0800</pubDate>
       
       <guid>https://1004032560.github.io/tags/mysql/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Java</title>
-      <link>https://1004032560.github.io/tags/java/</link>
-      <pubDate>Sun, 11 Apr 2021 15:15:09 +0800</pubDate>
-      
-      <guid>https://1004032560.github.io/tags/java/</guid>
       <description></description>
     </item>
     
