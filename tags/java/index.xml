@@ -7,7 +7,18 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>[Home](/) &amp;#183; Theme [Simpleness](https://github.com/RainerChiang/simpleness) Powered by [Hugo](https://gohugo.io/)</copyright>
-    <lastBuildDate>Thu, 10 Feb 2022 17:15:59 +0800</lastBuildDate><atom:link href="https://1004032560.github.io/tags/java/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 03 Mar 2022 17:15:59 +0800</lastBuildDate><atom:link href="https://1004032560.github.io/tags/java/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>【Spring】Spring事务</title>
+      <link>https://1004032560.github.io/posts/springspring%E4%BA%8B%E5%8A%A1/</link>
+      <pubDate>Thu, 03 Mar 2022 17:15:59 +0800</pubDate>
+      
+      <guid>https://1004032560.github.io/posts/springspring%E4%BA%8B%E5%8A%A1/</guid>
+      <description>【Spring】Spring事务 Spring事务三个接口 PlantformTransactionManager：
+TransactionDefinition：
+TransactionStatus：</description>
+    </item>
+    
     <item>
       <title>【Dubbo】注册中心</title>
       <link>https://1004032560.github.io/posts/dubbo%E6%B3%A8%E5%86%8C%E4%B8%AD%E5%BF%83/</link>
