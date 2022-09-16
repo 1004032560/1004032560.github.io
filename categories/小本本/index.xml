@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>小本本 on looper梦呓</title>
+    <link>https://1004032560.github.io/categories/%E5%B0%8F%E6%9C%AC%E6%9C%AC/</link>
+    <description>Recent content in 小本本 on looper梦呓</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>[Home](/) &amp;#183; Theme [Simpleness](https://github.com/RainerChiang/simpleness) Powered by [Hugo](https://gohugo.io/)</copyright>
+    <lastBuildDate>Fri, 16 Sep 2022 09:50:21 +0800</lastBuildDate><atom:link href="https://1004032560.github.io/categories/%E5%B0%8F%E6%9C%AC%E6%9C%AC/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Docker小本本</title>
+      <link>https://1004032560.github.io/posts/docker%E5%B0%8F%E6%9C%AC%E6%9C%AC/</link>
+      <pubDate>Fri, 16 Sep 2022 09:50:21 +0800</pubDate>
+      
+      <guid>https://1004032560.github.io/posts/docker%E5%B0%8F%E6%9C%AC%E6%9C%AC/</guid>
+      <description>Docker 虚拟化容器技术：Docker基于镜像，可以秒级启动各种容器，每一个容器都是一个完整的运行环境，容器之间相互隔离。
+Docker 主机（Host）：
+Docker 客户端（Client）：
+Docker 仓库（Repository）：本地用来存放下载的各种打包好的软件镜像
+Docker 镜像（Image）：
+Docker 容器（Container）：
+ Docker安装 默认 CentOS 8，Linux 操作系统
+ Docker命令 1、启动关闭命令 # 启动 Docker systemctl start docker # 重启 Docker systemctl restart docker # 查看 Docker 状态 systemctl status docker # 关闭 Docker systemctl stop docker # 开机自动启动 Docker systemctl enable docker 2、帮助命令docker &amp;ndash;help # 查看 Dcoker 版本信息 docker version # 查看 Dcoker 全部信息（镜像和容器数量等） docker info # 帮助命令 docker 命令 --help # -h 查看 help 命名已经不推荐使用了，推荐使用 --help Flag shorthand -h has been deprecated, please use --help 3、镜像命令 3.</description>
+    </item>
+    
+  </channel>
+</rss>

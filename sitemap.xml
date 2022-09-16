@@ -3,17 +3,37 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>https://1004032560.github.io/posts/git%E5%9F%BA%E6%9C%AC%E5%91%BD%E4%BB%A4/</loc>
-    <lastmod>2022-04-27T11:17:44+08:00</lastmod>
+    <loc>https://1004032560.github.io/categories/</loc>
+    <lastmod>2022-09-16T09:50:21+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://1004032560.github.io/categories/docker/</loc>
+    <lastmod>2022-09-16T09:50:21+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://1004032560.github.io/posts/docker%E5%B0%8F%E6%9C%AC%E6%9C%AC/</loc>
+    <lastmod>2022-09-16T09:50:21+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://1004032560.github.io/</loc>
-    <lastmod>2022-04-27T11:17:44+08:00</lastmod>
+    <lastmod>2022-09-16T09:50:21+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://1004032560.github.io/posts/</loc>
+    <lastmod>2022-09-16T09:50:21+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://1004032560.github.io/categories/%E5%B0%8F%E6%9C%AC%E6%9C%AC/</loc>
+    <lastmod>2022-09-16T09:50:21+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://1004032560.github.io/posts/git%E5%9F%BA%E6%9C%AC%E5%91%BD%E4%BB%A4/</loc>
     <lastmod>2022-04-27T11:17:44+08:00</lastmod>
   </url>
   
@@ -220,10 +240,6 @@
   <url>
     <loc>https://1004032560.github.io/posts/hugo-readme/</loc>
     <lastmod>2020-08-08T08:08:08+08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://1004032560.github.io/categories/</loc>
   </url>
   
 </urlset>

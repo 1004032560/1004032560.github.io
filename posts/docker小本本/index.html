@@ -1,0 +1,1004 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="generator" content="Hugo 0.76.5" />
+
+  <title> Docker小本本 |  looper梦呓</title>
+  <meta name="description" content="A simple and concise hugo theme.">
+  <link rel="stylesheet" href="https://1004032560.github.io/css/index.css">
+  <link rel="stylesheet" href="https://1004032560.github.io/css/classes.css">
+  <link rel="canonical" href="https://1004032560.github.io/posts/docker%E5%B0%8F%E6%9C%AC%E6%9C%AC/">
+  <link rel="alternate" type="application/rss+xml" href="" title="looper梦呓">
+  
+  
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" rel="stylesheet">
+</head>
+
+<body>
+  <header class="menus">
+  
+
+  <nav >
+    
+    <a href="/"> looper梦呓</a>
+    
+    <a href="/tags"> Tags</a>
+    
+    <a href="/about/about"> About</a>
+    
+  </nav>
+
+  <nav class="fontawesome">
+    
+    <a href="https://github.com/1004032560" target="_blank">
+        <i title="GitHub" class="fab fa-github"></i>
+    </a>
+    
+    
+    <a href="https://mp.weixin.qq.com/s/HpWP32efkOUumg7fUGZV1g" target="_blank">
+        <i title="微信公众号" class="fab fa-weixin"></i>
+    </a>
+    
+    
+    <a href="https://1004032560.github.io/index.xml" target="_blank">
+        <i title="RSS" class="fas fa-rss"></i>
+    </a>
+    
+  </nav>
+  
+  
+  <div class="hidden description">A simple and concise hugo theme.</div>
+  
+</header>
+
+<article id="article">
+  <header>
+  
+    <i class="fas fa-folder"></i>
+    
+    <a href="/categories/%E5%B0%8F%E6%9C%AC%E6%9C%AC">小本本</a>
+    &nbsp;
+    
+    <a href="/categories/docker">Docker</a>
+    &nbsp;
+    
+  
+
+    <h1 style="text-align: center;" >Docker小本本</h1>
+    <div class="post-meta">
+    
+      <time datetime="2022-09-16T09:50:21&#43;08:00">September 16, 2022</time> &nbsp; 
+    
+
+    looper &nbsp;
+
+    
+    
+    
+
+    
+      <i class="far fa-clock"></i>
+      
+      
+      
+
+      
+        31 min
+      
+      9 s
+      &nbsp;
+    
+    </div>
+  </header>
+
+  <h2 id="docker">Docker</h2>
+<p>虚拟化容器技术：Docker基于镜像，可以秒级启动各种容器，每一个容器都是一个完整的运行环境，容器之间相互隔离。</p>
+<p>Docker 主机（Host）：</p>
+<p>Docker 客户端（Client）：</p>
+<p>Docker 仓库（Repository）：本地用来存放下载的各种打包好的软件镜像</p>
+<p>Docker 镜像（Image）：</p>
+<p>Docker 容器（Container）：</p>
+<hr>
+<h2 id="docker安装">Docker安装</h2>
+<p>默认 CentOS 8，Linux 操作系统</p>
+<hr>
+<h2 id="docker命令">Docker命令</h2>
+<h3 id="1启动关闭命令">1、启动关闭命令</h3>
+<div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell"><span style="color:#60a0b0;font-style:italic"># 启动 Docker</span>
+systemctl start docker
+<span style="color:#60a0b0;font-style:italic"># 重启 Docker</span>
+systemctl restart docker
+<span style="color:#60a0b0;font-style:italic"># 查看 Docker 状态</span>
+systemctl status docker
+<span style="color:#60a0b0;font-style:italic"># 关闭 Docker</span>
+systemctl stop docker
+<span style="color:#60a0b0;font-style:italic"># 开机自动启动 Docker</span>
+systemctl <span style="color:#007020">enable</span> docker
+</code></pre></div><h3 id="2帮助命令docker---help">2、帮助命令docker &ndash;help</h3>
+<div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell"><span style="color:#60a0b0;font-style:italic"># 查看 Dcoker 版本信息</span>
+docker version
+<span style="color:#60a0b0;font-style:italic"># 查看 Dcoker 全部信息（镜像和容器数量等）</span>
+docker info
+<span style="color:#60a0b0;font-style:italic"># 帮助命令</span>
+docker 命令 --help
+<span style="color:#60a0b0;font-style:italic"># -h 查看 help 命名已经不推荐使用了，推荐使用 --help</span>
+Flag shorthand -h has been deprecated, please use --help
+</code></pre></div><h3 id="3镜像命令">3、镜像命令</h3>
+<h4 id="31查看本机镜像docker-images">3.1、查看本机镜像docker images</h4>
+<div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell"><span style="color:#60a0b0;font-style:italic"># 查看 Docker 本机所有的镜像</span>
+docker images
+
+REPOSITORY    TAG       IMAGE ID       CREATED        SIZE
+hello-world   latest    feb5d9fea6a5   <span style="color:#40a070">8</span> months ago   13.3kB
+
+<span style="color:#60a0b0;font-style:italic"># 解释</span>
+REPOSITORY    镜像在本地仓库的名字（去远程仓库下载也是通过这个名字）
+TAG           镜像的标签
+IMAGE ID      镜像的Id
+CREATED       镜像的创建时间
+SIZE          镜像的大小
+
+<span style="color:#60a0b0;font-style:italic"># 可选参数</span>
+ -a --all     列出所有镜像
+ -q --quiet   只显示镜像的Id
+
+<span style="color:#60a0b0;font-style:italic">#####################################################################</span>
+
+<span style="color:#60a0b0;font-style:italic"># 显示所有镜像的Id</span>
+docker images -aq
+</code></pre></div><h4 id="32搜索镜像docker-search">3.2、搜索镜像docker search</h4>
+<div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell"><span style="color:#60a0b0;font-style:italic"># 搜索 DockerHub 中所需要的镜像</span>
+docker search 镜像名（MySQL）
+
+<span style="color:#60a0b0;font-style:italic"># 搜索结果，简单展示</span>
+NAME                           DESCRIPTION                                     STARS
+mysql                          MySQL is a widely used, open-source relation…   <span style="color:#40a070">12660</span>
+mariadb                        MariaDB Server is a high performing open sou…   <span style="color:#40a070">4858</span>
+percona                        Percona Server is a fork of the MySQL relati…   <span style="color:#40a070">578</span>
+phpmyadmin                     phpMyAdmin - A web interface <span style="color:#007020;font-weight:bold">for</span> MySQL and M…   <span style="color:#40a070">545</span>
+bitnami/mysql                  Bitnami MySQL Docker Image                      <span style="color:#40a070">71</span>
+
+<span style="color:#60a0b0;font-style:italic"># 可选参数</span>
+ --filter -f     按照某个条件进行过滤
+
+<span style="color:#60a0b0;font-style:italic">#####################################################################</span>
+
+<span style="color:#60a0b0;font-style:italic"># 搜索 MySQL 镜像时，通过 Stars 属性进行过滤搜索（搜索Stars数量大于等于3000的MySQL镜像）</span>
+docker search mysql --filter<span style="color:#666">=</span><span style="color:#bb60d5">stars</span><span style="color:#666">=</span><span style="color:#40a070">3000</span>
+</code></pre></div><h4 id="33下载镜像docker-pull">3.3、下载镜像docker pull</h4>
+<div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell"><span style="color:#60a0b0;font-style:italic"># 下载搜索出来的所需要的镜像, 如果不标注 tag 默认是最新的 latest</span>
+docker pull 镜像名<span style="color:#666">(</span>mysql<span style="color:#666">)[</span>:tag<span style="color:#666">]</span>
+
+<span style="color:#60a0b0;font-style:italic">#####################################################################</span>
+
+<span style="color:#60a0b0;font-style:italic"># 下载 MySQL 的镜像</span>
+docker pull mysql
+<span style="color:#60a0b0;font-style:italic"># 使用默认 tag 最新的 latest</span>
+Using default tag: latest              
+latest: Pulling from library/mysql
+<span style="color:#60a0b0;font-style:italic"># 采用的分层下载 Docker Image 的核心（联合文件系统）</span>
+72a69066d2fe: Pull <span style="color:#007020">complete</span>
+93619dbc5b36: Pull <span style="color:#007020">complete</span> 
+......
+<span style="color:#60a0b0;font-style:italic"># 签名（防止伪造）</span>
+Digest: sha256:e9027fe4d91c0153429607251656806cc784e914937271037f7738bd5b8e7709
+Status: Downloaded newer image <span style="color:#007020;font-weight:bold">for</span> mysql:latest
+<span style="color:#60a0b0;font-style:italic"># 真实地址</span>
+docker.io/library/mysql:latest
+
+<span style="color:#60a0b0;font-style:italic"># 这俩个操作等价 (docker pull mysql) = (docker pull docker.io/library/mysql:latest)</span>
+
+<span style="color:#60a0b0;font-style:italic">#####################################################################</span>
+
+<span style="color:#60a0b0;font-style:italic"># 指定版本下载</span>
+docker pull mysql:5.7
+
+5.7: Pulling from library/mysql
+<span style="color:#60a0b0;font-style:italic"># 采用的分层下载的好处，之前版本下载过的内容可以复用的就不会再下载</span>
+72a69066d2fe: Already exists 
+93619dbc5b36: Already exists 
+......
+0ceb82207cd7: Pull <span style="color:#007020">complete</span> 
+37f2405cae96: Pull <span style="color:#007020">complete</span> 
+......
+Digest: sha256:f2ad209efe9c67104167fc609cca6973c8422939491c9345270175a300419f94
+Status: Downloaded newer image <span style="color:#007020;font-weight:bold">for</span> mysql:5.7
+docker.io/library/mysql:5.7
+</code></pre></div><h4 id="34删除镜像docker-rmi">3.4、删除镜像docker rmi</h4>
+<div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell"><span style="color:#60a0b0;font-style:italic"># 删除 Docker 镜像, rm = remove, i = image, </span>
+docker rmi <span style="color:#666">[</span>可选参数<span style="color:#666">]</span> 镜像名<span style="color:#666">(</span>mysql<span style="color:#666">)</span>
+
+<span style="color:#60a0b0;font-style:italic"># 可选参数</span>
+ -f      <span style="color:#60a0b0;font-style:italic"># 强制删除</span>
+
+<span style="color:#60a0b0;font-style:italic">#####################################################################</span>
+
+<span style="color:#60a0b0;font-style:italic"># 通过镜像名强制删除</span>
+docker rmi -f mysql
+<span style="color:#60a0b0;font-style:italic"># 通过镜像名删除，删除的则是最新 Tag 的镜像</span>
+Untagged: mysql:latest
+Untagged: mysql@sha256:e9027fe4d91c0153429607251656806cc784e914937271037f7738bd5b8e7709
+<span style="color:#60a0b0;font-style:italic"># 删除只会删除这个 Tag 特有的部分，同镜像名公共部分不会删除（对应分层下载）</span>
+Deleted: sha256:3218b38490cec8d31976a40b92e09d61377359eab878db49f025e5d464367f3b
+Deleted: sha256:aa81ca46575069829fe1b3c654d9e8feb43b4373932159fe2cad1ac13524a2f5
+......
+
+<span style="color:#60a0b0;font-style:italic">#####################################################################</span>
+
+<span style="color:#60a0b0;font-style:italic"># 通过镜像 id 强制删除指定的镜像</span>
+docker rmi -f 镜像Id<span style="color:#666">(</span>c20987f18b13<span style="color:#666">)</span>
+
+<span style="color:#60a0b0;font-style:italic">#####################################################################</span>
+
+<span style="color:#60a0b0;font-style:italic"># 通过多个镜像Id，删除这些指定的镜像</span>
+docker rmi -f 镜像Id<span style="color:#666">(</span>c20987f18b13<span style="color:#666">)</span> 镜像Id<span style="color:#666">(</span>feb5d9fea6a5<span style="color:#666">)</span> 镜像Id<span style="color:#666">(</span>3218b38490ce<span style="color:#666">)</span>
+
+<span style="color:#60a0b0;font-style:italic">#####################################################################</span>
+
+<span style="color:#60a0b0;font-style:italic"># 通过 $() 传参，删除所有的镜像</span>
+docker rmi <span style="color:#007020;font-weight:bold">$(</span>docker images -aq<span style="color:#007020;font-weight:bold">)</span>
+</code></pre></div><h3 id="4容器命令">4、容器命令</h3>
+<p>有镜像之后，才可以创建容器。</p>
+<div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">docker images
+docker search centos
+docker pull centos      <span style="color:#60a0b0;font-style:italic"># using default tag:latest</span>
+</code></pre></div><h4 id="41创建启动容器docker-run">4.1、创建启动容器docker run</h4>
+<div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell"><span style="color:#60a0b0;font-style:italic"># 启动容器的基本命令</span>
+docker run <span style="color:#666">[</span>可选参数<span style="color:#666">]</span> 镜像Id<span style="color:#666">(</span>5d0da3dc9764<span style="color:#666">)</span>
+
+<span style="color:#60a0b0;font-style:italic"># 可选参数</span>
+ --name<span style="color:#666">=</span><span style="color:#4070a0">&#34;ContainerName&#34;</span>         <span style="color:#60a0b0;font-style:italic"># 启动容器的名字，用于区分（例如：tomcat01、tomcat02等）</span>
+ -d                             <span style="color:#60a0b0;font-style:italic"># 该容器以后台的方式运行</span>
+ -it                            <span style="color:#60a0b0;font-style:italic"># 使用交互的方式，进入容器内查看内容</span>
+ -p（小写）                      <span style="color:#60a0b0;font-style:italic"># 指定容器端口</span>
+	-p ip:主机端口:容器端口
+	-p 主机端口:容器端口    <span style="color:#60a0b0;font-style:italic"># 常用</span>
+	-p 容器端口
+	容器端口
+ -P（大写）                      <span style="color:#60a0b0;font-style:italic"># 随机指定容器的端口</span>
+
+<span style="color:#60a0b0;font-style:italic">#####################################################################</span>
+
+<span style="color:#60a0b0;font-style:italic"># 启动容器，并且进入容器查看</span>
+<span style="color:#666">[</span>root@iZ2ze4jen9kd2w1c52zfe0Z /<span style="color:#666">]</span><span style="color:#60a0b0;font-style:italic"># docker run -it centos</span>
+<span style="color:#60a0b0;font-style:italic"># 进入的容器内的CentOS中，root后边的主机名已经发生变化，主机名=容器Id</span>
+<span style="color:#666">[</span>root@7de2fba86cbc /<span style="color:#666">]</span><span style="color:#60a0b0;font-style:italic"># exit</span>
+<span style="color:#60a0b0;font-style:italic"># 从容器中退出到主机</span>
+<span style="color:#007020">exit</span>
+<span style="color:#666">[</span>root@iZ2ze4jen9kd2w1c52zfe0Z /<span style="color:#666">]</span><span style="color:#60a0b0;font-style:italic"># docker ps -a</span>
+CONTAINER ID   IMAGE         COMMAND       CREATED          STATUS
+7de2fba86cbc   centos        <span style="color:#4070a0">&#34;/bin/bash&#34;</span>   <span style="color:#40a070">14</span> minutes ago   Exited <span style="color:#666">(</span>1<span style="color:#666">)</span> <span style="color:#40a070">7</span> seconds ago
+d9b589fb8548   hello-world   <span style="color:#4070a0">&#34;/hello&#34;</span>      <span style="color:#40a070">47</span> hours ago     Exited <span style="color:#666">(</span>0<span style="color:#666">)</span> <span style="color:#40a070">47</span> hours ago
+</code></pre></div><h4 id="42查看容器docker-ps">4.2、查看容器docker ps</h4>
+<div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell"><span style="color:#60a0b0;font-style:italic"># 查看容器</span>
+docker ps <span style="color:#666">[</span>可选参数<span style="color:#666">]</span>
+
+<span style="color:#60a0b0;font-style:italic"># 可选参数</span>
+ -a     <span style="color:#60a0b0;font-style:italic"># 列出之前运行过的所有容器</span>
+ -n<span style="color:#666">=</span><span style="color:#40a070">1</span>   <span style="color:#60a0b0;font-style:italic"># 列出最近运行的一个容器</span>
+ -q     <span style="color:#60a0b0;font-style:italic"># 只显示容器的Id</span>
+
+<span style="color:#60a0b0;font-style:italic">#####################################################################</span>
+
+<span style="color:#60a0b0;font-style:italic"># 查看当前正在运行的Container</span>
+docker ps
+<span style="color:#60a0b0;font-style:italic"># 查看历史运行过的Container</span>
+docker ps -a
+<span style="color:#60a0b0;font-style:italic"># 按照数量查找最近运行过的Container</span>
+docker ps -n<span style="color:#666">=</span><span style="color:#40a070">1</span>
+<span style="color:#60a0b0;font-style:italic"># 查看历史运行过的容器的Id</span>
+docker ps -aq
+docker ps -aq -n<span style="color:#666">=</span><span style="color:#40a070">1</span>
+</code></pre></div><h4 id="43进入退出容器docker-attachexit">4.3、进入退出容器docker attach/exit</h4>
+<div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell"><span style="color:#60a0b0;font-style:italic"># 退出容器后再次进入容器</span>
+<span style="color:#60a0b0;font-style:italic"># 方式一: 进入正在执行的终端</span>
+docker attach 容器Id
+<span style="color:#60a0b0;font-style:italic"># 方式二: 进入容器后，开启一个新的终端</span>
+docker <span style="color:#007020">exec</span> -it 容器Id /bin/bash
+
+<span style="color:#60a0b0;font-style:italic">#####################################################################</span>
+
+<span style="color:#60a0b0;font-style:italic"># 直接退出容器，并且停止容器</span>
+<span style="color:#007020">exit</span>
+<span style="color:#60a0b0;font-style:italic"># 退出容器，但不停止容器</span>
+CTRL + P + Q
+</code></pre></div><h4 id="44删除容器docker-rm">4.4、删除容器docker rm</h4>
+<div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell"><span style="color:#60a0b0;font-style:italic"># 删除指定容器Id的容器</span>
+docker rm <span style="color:#666">[</span>可选参数<span style="color:#666">]</span> 容器Id
+
+<span style="color:#60a0b0;font-style:italic"># 可选参数</span>
+ -f       <span style="color:#60a0b0;font-style:italic"># 强制删除，可以删除正在运行中的容器</span>
+
+<span style="color:#60a0b0;font-style:italic">#####################################################################</span>
+
+<span style="color:#666">[</span>root@iZ2ze4jen9kd2w1c52zfe0Z /<span style="color:#666">]</span><span style="color:#60a0b0;font-style:italic"># docker ps</span>
+CONTAINER ID   IMAGE     COMMAND       CREATED          STATUS
+5ed16b23ac73   centos    <span style="color:#4070a0">&#34;/bin/bash&#34;</span>   <span style="color:#40a070">23</span> seconds ago   Up <span style="color:#40a070">22</span> seconds
+
+<span style="color:#60a0b0;font-style:italic"># 强制删除容器 5ed16b23ac73</span>
+docker rm -f 5ed16b23ac73
+<span style="color:#60a0b0;font-style:italic"># 删除所有的容器</span>
+docker rm -f <span style="color:#007020;font-weight:bold">$(</span>docker ps -aq<span style="color:#007020;font-weight:bold">)</span>
+<span style="color:#60a0b0;font-style:italic"># 删除所有的容器</span>
+docker ps -aq | xargs docker rm -f
+</code></pre></div><h4 id="45启动停止容器docker-startstop">4.5、启动停止容器docker start/stop</h4>
+<div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell"><span style="color:#60a0b0;font-style:italic"># 启动容器</span>
+docker start 容器Id
+<span style="color:#60a0b0;font-style:italic"># 重启容器</span>
+docker restart 容器Id
+<span style="color:#60a0b0;font-style:italic"># 停止容器</span>
+docker stop 容器Id
+<span style="color:#60a0b0;font-style:italic"># 强制停止容器</span>
+docker <span style="color:#007020">kill</span> 容器Id
+</code></pre></div><h3 id="5其他常用命令">5、其他常用命令</h3>
+<h4 id="51后台启动容器docker-run">5.1、后台启动容器docker run</h4>
+<div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell"><span style="color:#666">[</span>root@iZ2ze4jen9kd2w1c52zfe0Z /<span style="color:#666">]</span><span style="color:#60a0b0;font-style:italic"># docker run -d centos</span>
+5ecf2432a6ac5f1dc876b68562ba5357fe2284bf1c06aaf5de1476c6f881f318
+<span style="color:#666">[</span>root@iZ2ze4jen9kd2w1c52zfe0Z /<span style="color:#666">]</span><span style="color:#60a0b0;font-style:italic"># docker ps</span>
+CONTAINER ID   IMAGE     COMMAND   CREATED   STATUS    PORTS     NAMES
+<span style="color:#666">[</span>root@iZ2ze4jen9kd2w1c52zfe0Z /<span style="color:#666">]</span><span style="color:#60a0b0;font-style:italic"># </span>
+</code></pre></div><p>以后台的模式启动了一个 CentOS 的容器，docker ps 时没有发现正在运行的容器，启动的 CentOS 的容器停止了，是因为后台启动一个容器，必须要有个一个前台进程，Docker 没有发现前台进程就会自动停止。</p>
+<p>容器启动之后，自己发现容器没有提供服务，就会立刻停止。</p>
+<h4 id="52查看日志信息docker-logs">5.2、查看日志信息docker logs</h4>
+<div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell"><span style="color:#60a0b0;font-style:italic"># 查看日志所以信息</span>
+docker logs <span style="color:#666">[</span>可选参数<span style="color:#666">]</span> 镜像Id
+
+<span style="color:#60a0b0;font-style:italic"># 可选参数</span>
+ -t --timestamps       <span style="color:#60a0b0;font-style:italic"># 显示日志的时间戳</span>
+ -f --follow           <span style="color:#60a0b0;font-style:italic"># 动态显示日志信息，保存日志窗口，持续打印</span>
+ -n --tail 行数         <span style="color:#60a0b0;font-style:italic"># 显示指定行数日志</span>
+
+<span style="color:#60a0b0;font-style:italic">#####################################################################</span>
+
+<span style="color:#60a0b0;font-style:italic"># 启动运行一个 CentOS 守护进程，并且持续输出 Shell 脚本</span>
+<span style="color:#666">[</span>root@iZ2ze4jen9kd2w1c52zfe0Z /<span style="color:#666">]</span><span style="color:#60a0b0;font-style:italic"># docker run -itd centos /bin/sh -c &#34;while true; do echo looper; sleep 2; done&#34;</span>
+2fe2453aa7e2074fec2ffba882857d5ad5e7d04f665b7054382b14f2d854c053
+<span style="color:#666">[</span>root@iZ2ze4jen9kd2w1c52zfe0Z /<span style="color:#666">]</span><span style="color:#60a0b0;font-style:italic"># docker ps</span>
+CONTAINER ID   IMAGE     COMMAND                  CREATED          STATUS          PORTS     NAMES
+2fe2453aa7e2   centos    <span style="color:#4070a0">&#34;/bin/sh -c &#39;while t…&#34;</span>   <span style="color:#40a070">33</span> seconds ago   Up <span style="color:#40a070">32</span> seconds             keen_jepsen
+<span style="color:#666">[</span>root@iZ2ze4jen9kd2w1c52zfe0Z /<span style="color:#666">]</span><span style="color:#60a0b0;font-style:italic"># docker logs -tf --tail 10 2fe2453aa7e2</span>
+<span style="color:#60a0b0;font-style:italic"># 上下命令等价</span>
+<span style="color:#666">[</span>root@iZ2ze4jen9kd2w1c52zfe0Z /<span style="color:#666">]</span><span style="color:#60a0b0;font-style:italic"># docker logs -tfn 10 2fe2453aa7e2</span>
+2022-05-29T11:19:03.931726639Z looper
+2022-05-29T11:19:05.933569425Z looper
+2022-05-29T11:19:07.935330987Z looper
+......
+</code></pre></div><h4 id="53查看进程信息docker-top">5.3、查看进程信息docker top</h4>
+<div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell"><span style="color:#60a0b0;font-style:italic"># 查看Docker容器内部的进程信息</span>
+docker top 容器ID
+
+<span style="color:#60a0b0;font-style:italic">#####################################################################</span>
+
+<span style="color:#666">[</span>root@iZ2ze4jen9kd2w1c52zfe0Z /<span style="color:#666">]</span><span style="color:#60a0b0;font-style:italic"># docker top 6990f597c9b5</span>
+用户Id       当前进程Id   父进程Id
+UID         PID         PPID        C           STIME       TTY
+root        <span style="color:#40a070">3019</span>        <span style="color:#40a070">3000</span>        <span style="color:#40a070">0</span>           19:40       pts/0
+root        <span style="color:#40a070">3058</span>        <span style="color:#40a070">3019</span>        <span style="color:#40a070">0</span>           19:41       pts/0
+</code></pre></div><h4 id="54查看容器元数据docker-inspect">5.4、查看容器元数据docker inspect</h4>
+<div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell"><span style="color:#60a0b0;font-style:italic"># 查看容器的所有信息</span>
+docker inspect 容器ID
+
+<span style="color:#60a0b0;font-style:italic">#####################################################################</span>
+
+docker inspect 6990f597c9b5
+<span style="color:#666">[</span>
+    <span style="color:#666">{</span>
+        <span style="color:#4070a0">&#34;Id&#34;</span>: <span style="color:#4070a0">&#34;6990f597c9b5c40c9af01463ec622f98520f63813b0f30fc424068f10bf5526b&#34;</span>,
+        <span style="color:#4070a0">&#34;Created&#34;</span>: <span style="color:#4070a0">&#34;2022-05-29T11:40:48.270035543Z&#34;</span>,
+        <span style="color:#4070a0">&#34;Path&#34;</span>: <span style="color:#4070a0">&#34;/bin/sh&#34;</span>,
+        <span style="color:#4070a0">&#34;Args&#34;</span>: <span style="color:#666">[</span>
+            <span style="color:#4070a0">&#34;-c&#34;</span>,
+            <span style="color:#4070a0">&#34;while true; do echo looper; sleep 2; done&#34;</span>
+        <span style="color:#666">]</span>,
+        <span style="color:#4070a0">&#34;State&#34;</span>: <span style="color:#666">{</span>
+            ......
+        <span style="color:#666">}</span>,
+        <span style="color:#4070a0">&#34;Image&#34;</span>: <span style="color:#4070a0">&#34;sha256:5d0da3dc976460b72c77d94c8a1ad043720b0416bfc16c52c45d4847e53fadb6&#34;</span>,
+        ......
+        <span style="color:#4070a0">&#34;HostConfig&#34;</span>: <span style="color:#666">{</span>
+            ......
+        <span style="color:#666">}</span>,
+        <span style="color:#4070a0">&#34;GraphDriver&#34;</span>: <span style="color:#666">{</span>
+            ......
+        <span style="color:#666">}</span>,
+        <span style="color:#4070a0">&#34;Mounts&#34;</span>: <span style="color:#666">[]</span>,
+        <span style="color:#4070a0">&#34;Config&#34;</span>: <span style="color:#666">{</span>
+            ......
+        <span style="color:#666">}</span>,
+        <span style="color:#4070a0">&#34;NetworkSettings&#34;</span>: <span style="color:#666">{</span>
+            ......
+            <span style="color:#4070a0">&#34;Networks&#34;</span>: <span style="color:#666">{</span>
+                <span style="color:#4070a0">&#34;bridge&#34;</span>: <span style="color:#666">{</span>
+                    <span style="color:#4070a0">&#34;MacAddress&#34;</span>: <span style="color:#4070a0">&#34;02:42:ac:11:00:02&#34;</span>,
+                    ......
+                <span style="color:#666">}</span>
+            <span style="color:#666">}</span>
+        <span style="color:#666">}</span>
+    <span style="color:#666">}</span>
+<span style="color:#666">]</span>
+</code></pre></div><h4 id="55从容器内拷贝文件到主机docker-cp">5.5、从容器内拷贝文件到主机docker cp</h4>
+<div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell"><span style="color:#60a0b0;font-style:italic"># 拷贝容器内部文件到主机上</span>
+docker cp 容器Id:容器内路径 主机目标路径
+
+<span style="color:#60a0b0;font-style:italic">#####################################################################</span>
+
+docker cp 6990f597c9b5:/home/Looper.java /home
+
+<span style="color:#60a0b0;font-style:italic"># 拷贝是手动的同步文件的过程，可以使用 -v 数据卷的技术进行自动同步</span>
+</code></pre></div><p>&ndash;</p>
+<h2 id="docker安装nginx">Docker安装Nginx</h2>
+<h3 id="1查找-nginx-镜像">1、查找 Nginx 镜像</h3>
+<div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell"><span style="color:#666">[</span>root@iZ2ze4jen9kd2w1c52zfe0Z /<span style="color:#666">]</span><span style="color:#60a0b0;font-style:italic"># docker search nginx</span>
+NAME                      DESCRIPTION                            STARS
+nginx                     Official build of Nginx.               <span style="color:#40a070">16867</span>
+linuxserver/nginx         An Nginx container, brought...         <span style="color:#40a070">168</span>
+bitnami/nginx             Bitnami nginx Docker Image             <span style="color:#40a070">131</span>
+</code></pre></div><h3 id="2下载-nginx-镜像">2、下载 Nginx 镜像</h3>
+<div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell"><span style="color:#666">[</span>root@iZ2ze4jen9kd2w1c52zfe0Z /<span style="color:#666">]</span><span style="color:#60a0b0;font-style:italic"># docker pull nginx</span>
+Using default tag: latest
+latest: Pulling from library/nginx
+a2abf6c4d29d: Pull <span style="color:#007020">complete</span> 
+a9edb18cadd1: Pull <span style="color:#007020">complete</span> 
+589b7251471a: Pull <span style="color:#007020">complete</span> 
+186b1aaa4aa6: Pull <span style="color:#007020">complete</span> 
+b4df32aa5a72: Pull <span style="color:#007020">complete</span> 
+a0bcbecc962e: Pull <span style="color:#007020">complete</span> 
+Digest: sha256:0d17b565c37bcbd895e9d92315a05c1c3c9a29f762b011a10c54a66cd53c9b31
+Status: Downloaded newer image <span style="color:#007020;font-weight:bold">for</span> nginx:latest
+docker.io/library/nginx:latest
+</code></pre></div><h3 id="3启动-nginx">3、启动 Nginx</h3>
+<div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell"><span style="color:#666">[</span>root@iZ2ze4jen9kd2w1c52zfe0Z /<span style="color:#666">]</span><span style="color:#60a0b0;font-style:italic"># docker run -d --name nginx01 -p 3344:80 nginx</span>
+66d71b16468c3ebf6dcf1291a0aa2d80de5286bb36db247281582ea56b0085b0
+</code></pre></div><h3 id="4测试访问-nginx">4、测试访问 Nginx</h3>
+<div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell"><span style="color:#666">[</span>root@iZ2ze4jen9kd2w1c52zfe0Z /<span style="color:#666">]</span><span style="color:#60a0b0;font-style:italic"># curl localhost:3344</span>
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+&lt;title&gt;Welcome to nginx!&lt;/title&gt;
+&lt;style&gt;
+html <span style="color:#666">{</span> color-scheme: light dark; <span style="color:#666">}</span>
+body <span style="color:#666">{</span> width: 35em; margin: <span style="color:#40a070">0</span> auto;
+font-family: Tahoma, Verdana, Arial, sans-serif; <span style="color:#666">}</span>
+&lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+&lt;h1&gt;Welcome to nginx!&lt;/h1&gt;
+&lt;p&gt;If you see this page, the nginx web server is successfully installed and
+working. Further configuration is required.&lt;/p&gt;
+
+&lt;p&gt;For online documentation and support please refer to
+&lt;a <span style="color:#bb60d5">href</span><span style="color:#666">=</span><span style="color:#4070a0">&#34;http://nginx.org/&#34;</span>&gt;nginx.org&lt;/a&gt;.&lt;br/&gt;
+Commercial support is available at
+&lt;a <span style="color:#bb60d5">href</span><span style="color:#666">=</span><span style="color:#4070a0">&#34;http://nginx.com/&#34;</span>&gt;nginx.com&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;Thank you <span style="color:#007020;font-weight:bold">for</span> using nginx.&lt;/em&gt;&lt;/p&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre></div><hr>
+<h2 id="docker安装tomcat">Docker安装Tomcat</h2>
+<h3 id="1启动tomcat">1、启动Tomcat</h3>
+<div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell"><span style="color:#60a0b0;font-style:italic"># 之前都是启动容器之后，在后台运行，现在官方使用命令，用完即删除，一般用于测试</span>
+docker run -it --rm tomcat:9.0
+<span style="color:#60a0b0;font-style:italic"># 启动 Tomcat，执行run命令是会自动下载不存在的镜像</span>
+docker run -it -p 3355:8080 --name tomcat01 tomcat
+</code></pre></div><h3 id="2通过外网访问tomcat">2、通过外网访问Tomcat</h3>
+<div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell"><span style="color:#60a0b0;font-style:italic"># 通过阿里云下载的 Tomcat 属于阉割版的，不会下载一些不必要的内容所有 webapps 下边没有内容</span>
+<span style="color:#60a0b0;font-style:italic"># 解决方式</span>
+<span style="color:#60a0b0;font-style:italic"># 进入Tomcat容器内</span>
+docker <span style="color:#007020">exec</span> -it tomcat01 /bin/bash
+<span style="color:#60a0b0;font-style:italic"># 把 webapps.dist 中的内容 copy 到 webapps 中，即可通过外网访问 tomcat 主页</span>
+cp -r webapps.dist/* webapps
+</code></pre></div><hr>
+<h2 id="docker镜像">Docker镜像</h2>
+<h3 id="1镜像是什么">1、镜像是什么</h3>
+<p>镜像（Image）是一种轻量级、可执行的独立软件包，包含了软件运行所需要的运行环境和内容（代码、运行是库、环境变量以及配置文件等）。</p>
+<p>所有应用打包成 Docker 镜像，就可以直接运行起来。</p>
+<p>镜像的来源：从远程仓库下载；从其他服务器拷贝镜像；自己制作一个镜像。</p>
+<hr>
+<h3 id="2镜像加载原理">2、镜像加载原理</h3>
+<h4 id="21联合文件系统unionfs">2.1、联合文件系统UnionFS</h4>
+<p>UnionFS（联合文件系统）：是 Linux 中一种分层的，轻量级的高性能文件系统，它支持对文件系统的修改作为一次提交，来一层层的进行叠加（类似于 Git 对每次修改的代码进行版本控制），同时可以将不同的目录挂载到同一个虚拟文件系统下。</p>
+<p>UnionFS 文件系统是 Docker 镜像的基础。Docker 可以通过分层思想对基础镜像改造出各种的具体应用镜像。</p>
+<p>特性：一次同时加载多个文件系统，但是从外边看起来，只能看到一个文件系统；联合加载会吧各层文件系统叠加起来，这样最终的文件系统会包含所有底层文件和目录。</p>
+<h4 id="22镜像加载原理">2.2、镜像加载原理</h4>
+<p>Docker 的镜像实际上由一层一层的文件系统组成，这种层级的文件系统 UnionFS。</p>
+<p>BootFS（Boot File System）主要包含 Bootloader（Boot 加载器） 和 Kernel（内核），Bootloader 主要是引导加载 Kernel，Linux  刚启动时会加载 BootFS文件系统，在 Docker 镜像的最底层是 BootFS。这一层与我们典型的 Linux/Unix 系统是一样的，包含 Boot 加载器和内核。当 Boot 加载完成之后整个内核就都在内存中了，此时内存的使用权已由 BootFS 转交给内核，此时系统也会卸载 BootFS。</p>
+<p>RootFS（Root File System），在 BootFS 之上。包含的就是典型 Linux 系统中的 /dev，/proc，/bin，/etc 等标准目录和文件。RootFS就是各种不同的操作系统发行版，比如 Ubuntu , Centos 等等。</p>
+<h4 id="23分层理解">2.3、分层理解</h4>
+<p>通过 Docker pull 下载镜像的时候是分层下载的。这样下载的好处：复用，节省磁盘空间，相同的内容只需加载一份到内存。</p>
+<div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell"><span style="color:#666">[</span>root@iZ2ze4jen9kd2w1c52zfe0Z /<span style="color:#666">]</span><span style="color:#60a0b0;font-style:italic"># docker pull redis</span>
+Using default tag: latest
+latest: Pulling from library/redis
+a2abf6c4d29d: Already exists <span style="color:#60a0b0;font-style:italic"># 已经下载过的就不会再下载了</span>
+c7a4e4382001: Pull <span style="color:#007020">complete</span> <span style="color:#60a0b0;font-style:italic"># 下载当前版本镜像特有的内容</span>
+4044b9ba67c9: Pull <span style="color:#007020">complete</span> 
+c8388a79482f: Pull <span style="color:#007020">complete</span> 
+413c8bb60be2: Pull <span style="color:#007020">complete</span> 
+1abfd3011519: Pull <span style="color:#007020">complete</span> 
+<span style="color:#60a0b0;font-style:italic"># 镜像签名</span>
+Digest: sha256:db485f2e245b5b3329fdc7eff4eb00f913e09d8feb9ca720788059fdc2ed8339
+Status: Downloaded newer image <span style="color:#007020;font-weight:bold">for</span> redis:latest
+docker.io/library/redis:latest
+<span style="color:#666">[</span>root@iZ2ze4jen9kd2w1c52zfe0Z /<span style="color:#666">]</span><span style="color:#60a0b0;font-style:italic"># docker images</span>
+REPOSITORY    TAG       IMAGE ID       CREATED        SIZE
+redis         latest    7614ae9453d1   <span style="color:#40a070">5</span> months ago   113MB
+hello-world   latest    feb5d9fea6a5   <span style="color:#40a070">8</span> months ago   13.3kB
+centos        latest    5d0da3dc9764   <span style="color:#40a070">8</span> months ago   231MB
+<span style="color:#60a0b0;font-style:italic"># 查看 Redis 镜像的元数据</span>
+<span style="color:#666">[</span>root@iZ2ze4jen9kd2w1c52zfe0Z /<span style="color:#666">]</span><span style="color:#60a0b0;font-style:italic"># docker inspect 7614ae9453d1</span>
+......
+<span style="color:#4070a0">&#34;RootFS&#34;</span>: <span style="color:#666">{</span>
+            <span style="color:#4070a0">&#34;Type&#34;</span>: <span style="color:#4070a0">&#34;layers&#34;</span>,
+            <span style="color:#4070a0">&#34;Layers&#34;</span>: <span style="color:#666">[</span>
+            	<span style="color:#60a0b0;font-style:italic"># 镜像层级，对应 docker pull 时的下载过程的层级</span>
+                <span style="color:#4070a0">&#34;sha256:2edcec3590a4ec7f40cf0743c15d78fb39d8326bc029073b41ef9727da6c851f&#34;</span>,
+                <span style="color:#4070a0">&#34;sha256:9b24afeb7c2f21e50a686ead025823cd2c6e9730c013ca77ad5f115c079b57cb&#34;</span>,
+                <span style="color:#4070a0">&#34;sha256:4b8e2801e0f956a4220c32e2c8b0a590e6f9bd2420ec65453685246b82766ea1&#34;</span>,
+                <span style="color:#4070a0">&#34;sha256:529cdb636f61e95ab91a62a51526a84fd7314d6aab0d414040796150b4522372&#34;</span>,
+                <span style="color:#4070a0">&#34;sha256:9975392591f2777d6bf4d9919ad1b2c9afa12f9a9b4d260f45025ec3cc9b18ed&#34;</span>,
+                <span style="color:#4070a0">&#34;sha256:8e5669d8329116b8444b9bbb1663dda568ede12d3dbcce950199b582f6e94952&#34;</span>
+            <span style="color:#666">]</span>
+        <span style="color:#666">}</span>
+......
+<span style="color:#60a0b0;font-style:italic"># 查看 CentOS 镜像的元数据</span>
+<span style="color:#666">[</span>root@iZ2ze4jen9kd2w1c52zfe0Z /<span style="color:#666">]</span><span style="color:#60a0b0;font-style:italic"># docker inspect 5d0da3dc9764</span>
+......
+	<span style="color:#60a0b0;font-style:italic"># CentOS 镜像签名</span>
+    <span style="color:#4070a0">&#34;Id&#34;</span>: <span style="color:#4070a0">&#34;sha256:5d0da3dc976460b72c77d94c8a1ad043720b0416bfc16c52c45d4847e53fadb6&#34;</span>,
+    <span style="color:#4070a0">&#34;RepoTags&#34;</span>: <span style="color:#666">[</span>
+        <span style="color:#4070a0">&#34;centos:latest&#34;</span>
+    <span style="color:#666">]</span>
+......
+</code></pre></div><h4 id="24commit镜像">2.4、Commit镜像</h4>
+<p>自己制作一个镜像，进行提交，可以在原有的镜像的基础上，对该镜像进行修改之后，以后其他服务器就可以用这个修改后的镜像，无需再次修改镜像内容（以安装的 Tomcat 镜像为例，修改了 webapps 目录里的内容，生成一个自己的镜像）</p>
+<p>镜像分层类似于 Git 的版本控制，Linux 快照；状态内容更新之后，会有个版本记录可以回到之前的状态内容。</p>
+<p>通过 DockerFile 也可以进行镜像创建。</p>
+<div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell"><span style="color:#60a0b0;font-style:italic"># 提交修改过的 Docker 容器; -a 作者; -m 描述信息; 类似于 Git 提交代码控制版本信息</span>
+docker commit -a<span style="color:#666">=</span><span style="color:#4070a0">&#34;作者&#34;</span> -m<span style="color:#666">=</span><span style="color:#4070a0">&#34;描述&#34;</span> 容器Id<span style="color:#666">(</span>e30fa0ebaa5b<span style="color:#666">)</span> 新镜像名:版本号
+
+<span style="color:#60a0b0;font-style:italic">#####################################################################</span>
+
+<span style="color:#666">[</span>root@iZ2ze4jen9kd2w1c52zfe0Z /<span style="color:#666">]</span><span style="color:#60a0b0;font-style:italic"># docker ps</span>
+CONTAINER ID  IMAGE   COMMAND            CREATED       STATUS        PORTS                    NAMES
+e30fa0ebaa5b  tomcat  <span style="color:#4070a0">&#34;catalina.sh run&#34;</span>  <span style="color:#40a070">18</span> hours ago  Up <span style="color:#40a070">6</span> minutes  0.0.0.0:3355-&gt;8080/tcp   tomcat01
+<span style="color:#60a0b0;font-style:italic"># 提交修改后的 tomcat00 镜像</span>
+<span style="color:#666">[</span>root@iZ2ze4jen9kd2w1c52zfe0Z /<span style="color:#666">]</span><span style="color:#60a0b0;font-style:italic"># docker commit -a=&#34;looper&#34; -m=&#34;add webapps&#34; e30fa0ebaa5b tomcat00:1.0</span>
+<span style="color:#60a0b0;font-style:italic"># 提交后返回一个签名</span>
+sha256:d543f21d737ca34ebf2abceb8fe39e2fbf459930b4fcbd93617987c146df1b3b
+<span style="color:#60a0b0;font-style:italic"># 查看本地现有的镜像，其中就包含 tomcat00 版本号为 1.0</span>
+<span style="color:#666">[</span>root@iZ2ze4jen9kd2w1c52zfe0Z /<span style="color:#666">]</span><span style="color:#60a0b0;font-style:italic"># docker images</span>
+REPOSITORY    TAG       IMAGE ID       CREATED         SIZE
+tomcat00      1.0       d543f21d737c   <span style="color:#40a070">2</span> seconds ago   684MB
+tomcat        latest    fb5657adc892   <span style="color:#40a070">5</span> months ago    680MB
+</code></pre></div><hr>
+<h2 id="docker容器数据卷">Docker容器数据卷</h2>
+<h3 id="1数据卷">1、数据卷</h3>
+<p>为了防止容器被删除之后，造成容器内的数据丢失，所以通过容器数据卷技术，将容器内的数据同步到容器外部的 Linux 操作系统上。</p>
+<p>总结：容器和主机之间的数据同步操作（持久化），容器和容器之间也可以数据共享。</p>
+<p>主机和容器之间挂载好之后，停止运行容器，修改主机指定目录下的内容，容器内部也会自动修改</p>
+<hr>
+<h3 id="2使用数据卷">2、使用数据卷</h3>
+<h4 id="21使用命令进行挂载">2.1、使用命令进行挂载</h4>
+<p>文件挂载是将宿主机的指定文件挂载到 Docker 容器中的文件，文件位置由用户自行管理。</p>
+<p>数据卷挂载的目录是由Docker管理的，优点是位置统一，操作简单一些。</p>
+<div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell"><span style="color:#60a0b0;font-style:italic"># 容器数据卷通过 -v, --volume list 命令, 将容器和主机之间的数据相互同步</span>
+docker run -it -v 主机目录:容器目录 镜像Id /bin/bash
+
+<span style="color:#60a0b0;font-style:italic">#####################################################################</span>
+
+<span style="color:#666">[</span>root@iZ2ze4jen9kd2w1c52zfe0Z /<span style="color:#666">]</span><span style="color:#60a0b0;font-style:italic"># docker run -it -v /home/test:/home centos /bin/bash</span>
+<span style="color:#666">[</span>root@f6723156a6d3 /<span style="color:#666">]</span><span style="color:#60a0b0;font-style:italic"># cd home</span>
+<span style="color:#666">[</span>root@f6723156a6d3 home<span style="color:#666">]</span><span style="color:#60a0b0;font-style:italic"># ls</span>
+<span style="color:#60a0b0;font-style:italic"># 容器内部 /home 目录下添加 Test.java 文件</span>
+<span style="color:#666">[</span>root@f6723156a6d3 home<span style="color:#666">]</span><span style="color:#60a0b0;font-style:italic"># touch Test.java</span>
+<span style="color:#666">[</span>root@f6723156a6d3 home<span style="color:#666">]</span><span style="color:#60a0b0;font-style:italic"># ls</span>
+Test.java
+
+<span style="color:#60a0b0;font-style:italic"># 主机 /home/test 目录下自动同步数据</span>
+<span style="color:#666">[</span>root@iZ2ze4jen9kd2w1c52zfe0Z test<span style="color:#666">]</span><span style="color:#60a0b0;font-style:italic"># ls</span>
+<span style="color:#666">[</span>root@iZ2ze4jen9kd2w1c52zfe0Z test<span style="color:#666">]</span><span style="color:#60a0b0;font-style:italic"># ls </span>
+Test.java
+
+<span style="color:#60a0b0;font-style:italic"># 查看 CentOS 容器的元数据</span>
+<span style="color:#666">[</span>root@iZ2ze4jen9kd2w1c52zfe0Z test<span style="color:#666">]</span><span style="color:#60a0b0;font-style:italic"># docker inspect f6723156a6d3</span>
+......
+<span style="color:#4070a0">&#34;Mounts&#34;</span>: <span style="color:#666">[</span>
+            <span style="color:#666">{</span>
+                <span style="color:#4070a0">&#34;Type&#34;</span>: <span style="color:#4070a0">&#34;bind&#34;</span>,
+                <span style="color:#60a0b0;font-style:italic"># 源</span>
+                <span style="color:#4070a0">&#34;Source&#34;</span>: <span style="color:#4070a0">&#34;/home/test&#34;</span>,
+                <span style="color:#60a0b0;font-style:italic"># 目标</span>
+                <span style="color:#4070a0">&#34;Destination&#34;</span>: <span style="color:#4070a0">&#34;/home&#34;</span>,
+                <span style="color:#4070a0">&#34;Mode&#34;</span>: <span style="color:#4070a0">&#34;&#34;</span>,
+                <span style="color:#4070a0">&#34;RW&#34;</span>: true,
+                <span style="color:#4070a0">&#34;Propagation&#34;</span>: <span style="color:#4070a0">&#34;rprivate&#34;</span>
+            <span style="color:#666">}</span>
+        <span style="color:#666">]</span>
+......
+</code></pre></div><hr>
+<h3 id="3数据卷优缺点">3、数据卷优缺点</h3>
+<p>优点：修改文件只需要在本地修改即可，不需要每次都进入到容器内部。</p>
+<p>缺点：占用存储空间，容器内部数据量特别大时，主机占用的数据量也很大。</p>
+<hr>
+<h3 id="4匿名挂载和具名挂载">4、匿名挂载和具名挂载</h3>
+<h4 id="41匿名挂载">4.1、匿名挂载</h4>
+<div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell"><span style="color:#60a0b0;font-style:italic"># -P 大写P, 随机指定端口号</span>
+<span style="color:#60a0b0;font-style:italic"># -v /etc/nginx 后边的目录是容器内部目录</span>
+<span style="color:#666">[</span>root@iZ2ze4jen9kd2w1c52zfe0Z /<span style="color:#666">]</span><span style="color:#60a0b0;font-style:italic"># docker run -d -P --name nginx02 -v /etc/nginx nginx</span>
+0bbcb5a31ef353aaa185a0f47ffa06b0a5e81be1b6bd8e0f5b09ac0614afdb95
+<span style="color:#60a0b0;font-style:italic"># 查看所有的匿名挂载；每个 VOLUME NAME 都是一个存在的目录</span>
+<span style="color:#666">[</span>root@iZ2ze4jen9kd2w1c52zfe0Z /<span style="color:#666">]</span><span style="color:#60a0b0;font-style:italic"># docker volume ls</span>
+DRIVER     VOLUME NAME 
+		  <span style="color:#60a0b0;font-style:italic"># 未指定具体名字</span>
+<span style="color:#007020">local</span>     070dfc7c118191140fa7a5fc653cd6033d32711d9a320d5d1065437aee8dd427
+</code></pre></div><h4 id="42具名挂载">4.2、具名挂载</h4>
+<div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell"><span style="color:#60a0b0;font-style:italic"># -P 大写P, 随机指定端口号</span>
+<span style="color:#60a0b0;font-style:italic"># -v this_nginx:/etc/nginx (this_nginx) 指定具体的目录名字</span>
+<span style="color:#666">[</span>root@iZ2ze4jen9kd2w1c52zfe0Z /<span style="color:#666">]</span><span style="color:#60a0b0;font-style:italic"># docker run -d -P --name nginx03 -v this_nginx:/etc/config nginx</span>
+8ebbab0748e70e82624cb8b77bd87b893e672747296f719e7544e4058d2e8f91
+<span style="color:#666">[</span>root@iZ2ze4jen9kd2w1c52zfe0Z /<span style="color:#666">]</span><span style="color:#60a0b0;font-style:italic"># docker volume ls</span>
+DRIVER    VOLUME NAME
+<span style="color:#007020">local</span>     070dfc7c118191140fa7a5fc653cd6033d32711d9a320d5d1065437aee8dd427
+		  <span style="color:#60a0b0;font-style:italic"># 指定具体名字</span>
+<span style="color:#007020">local</span>     this_nginx
+</code></pre></div><h4 id="43挂载路径">4.3、挂载路径</h4>
+<div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell"><span style="color:#666">[</span>root@iZ2ze4jen9kd2w1c52zfe0Z /<span style="color:#666">]</span><span style="color:#60a0b0;font-style:italic"># docker volume ls</span>
+DRIVER    VOLUME NAME
+<span style="color:#007020">local</span>     070dfc7c118191140fa7a5fc653cd6033d32711d9a320d5d1065437aee8dd427
+<span style="color:#007020">local</span>     this_nginx
+<span style="color:#60a0b0;font-style:italic"># 根据挂载的名字查找路径</span>
+<span style="color:#666">[</span>root@iZ2ze4jen9kd2w1c52zfe0Z /<span style="color:#666">]</span><span style="color:#60a0b0;font-style:italic"># docker volume inspect this_nginx</span>
+<span style="color:#666">[</span>
+    <span style="color:#666">{</span>
+        <span style="color:#4070a0">&#34;CreatedAt&#34;</span>: <span style="color:#4070a0">&#34;2022-05-30T21:30:46+08:00&#34;</span>,
+        <span style="color:#4070a0">&#34;Driver&#34;</span>: <span style="color:#4070a0">&#34;local&#34;</span>,
+        <span style="color:#4070a0">&#34;Labels&#34;</span>: null,
+        <span style="color:#60a0b0;font-style:italic"># 真实路径</span>
+        <span style="color:#4070a0">&#34;Mountpoint&#34;</span>: <span style="color:#4070a0">&#34;/var/lib/docker/volumes/this_nginx/_data&#34;</span>,
+        <span style="color:#4070a0">&#34;Name&#34;</span>: <span style="color:#4070a0">&#34;this_nginx&#34;</span>,
+        <span style="color:#4070a0">&#34;Options&#34;</span>: null,
+        <span style="color:#4070a0">&#34;Scope&#34;</span>: <span style="color:#4070a0">&#34;local&#34;</span>
+    <span style="color:#666">}</span>
+<span style="color:#666">]</span>
+<span style="color:#60a0b0;font-style:italic"># 根据挂载的名字查找路径</span>
+<span style="color:#666">[</span>root@iZ2ze4jen9kd2w1c52zfe0Z /<span style="color:#666">]</span><span style="color:#60a0b0;font-style:italic"># docker volume inspect 070dfc7c118191140fa7a5fc653cd6033d32711d9a320d5d1065437aee8dd427</span>
+<span style="color:#666">[</span>
+    <span style="color:#666">{</span>
+        <span style="color:#4070a0">&#34;CreatedAt&#34;</span>: <span style="color:#4070a0">&#34;2022-05-30T19:43:48+08:00&#34;</span>,
+        <span style="color:#4070a0">&#34;Driver&#34;</span>: <span style="color:#4070a0">&#34;local&#34;</span>,
+        <span style="color:#4070a0">&#34;Labels&#34;</span>: null,
+        <span style="color:#60a0b0;font-style:italic"># 真实路径</span>
+        <span style="color:#4070a0">&#34;Mountpoint&#34;</span>: <span style="color:#4070a0">&#34;/var/lib/docker/volumes/070dfc7c118191140fa7a5fc653cd6033d32711d9a320d5d1065437aee8dd427/_data&#34;</span>,
+        <span style="color:#4070a0">&#34;Name&#34;</span>: <span style="color:#4070a0">&#34;070dfc7c118191140fa7a5fc653cd6033d32711d9a320d5d1065437aee8dd427&#34;</span>,
+        <span style="color:#4070a0">&#34;Options&#34;</span>: null,
+        <span style="color:#4070a0">&#34;Scope&#34;</span>: <span style="color:#4070a0">&#34;local&#34;</span>
+    <span style="color:#666">}</span>
+<span style="color:#666">]</span>
+</code></pre></div><p>挂载路径一般在 /var/lib/docker/volumes/（具名or匿名）/_data 目录下</p>
+<p>判断是匿名挂载还是具名挂载</p>
+<blockquote>
+<p>-v /容器内路径                      匿名挂载</p>
+<p>-v 卷名:/容器内路径             具名挂载</p>
+<p>-v /主机路径:/容器内路径    指定路径挂载</p>
+</blockquote>
+<p>通过 -v 容器内路径:ro/rw 来改变读写权限；如果设置了读写权限，就会</p>
+<p>ro：read-only</p>
+<p>rw：read-write</p>
+<blockquote>
+<p>docker run -d -P &ndash;name nginx03 -v this_nginx:/etc/config:ro nginx</p>
+<p>docker run -d -P &ndash;name nginx03 -v this_nginx:/etc/config:rw nginx</p>
+</blockquote>
+<h4 id="44数据卷容器">4.4、数据卷容器</h4>
+<p>先看 DockerFile 章节第一二节，再看此节内容。容器之间的挂载数据同步。</p>
+<div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell"><span style="color:#666">[</span>root@iZ2ze4jen9kd2w1c52zfe0Z /<span style="color:#666">]</span><span style="color:#60a0b0;font-style:italic"># docker images</span>
+REPOSITORY      TAG       IMAGE ID       CREATED        SIZE
+looper/centos   1.0       47762f1907a9   <span style="color:#40a070">12</span> hours ago   231MB
+tomcat00        1.0       d543f21d737c   <span style="color:#40a070">19</span> hours ago   684MB
+nginx           latest    605c77e624dd   <span style="color:#40a070">5</span> months ago   141MB
+tomcat          9.0       b8e65a4d736d   <span style="color:#40a070">5</span> months ago   680MB
+tomcat          latest    fb5657adc892   <span style="color:#40a070">5</span> months ago   680MB
+redis           latest    7614ae9453d1   <span style="color:#40a070">5</span> months ago   113MB
+mysql           5.7       c20987f18b13   <span style="color:#40a070">5</span> months ago   448MB
+hello-world     latest    feb5d9fea6a5   <span style="color:#40a070">8</span> months ago   13.3kB
+centos          latest    5d0da3dc9764   <span style="color:#40a070">8</span> months ago   231MB
+<span style="color:#666">[</span>root@iZ2ze4jen9kd2w1c52zfe0Z /<span style="color:#666">]</span><span style="color:#60a0b0;font-style:italic"># docker run -it --name docker01 looper/centos</span>
+Unable to find image <span style="color:#4070a0">&#39;looper/centos:latest&#39;</span> locally
+^Z
+<span style="color:#666">[</span>1<span style="color:#666">]</span>+  Stopped                 docker run -it --name docker01 looper/centos
+<span style="color:#666">[</span>root@iZ2ze4jen9kd2w1c52zfe0Z /<span style="color:#666">]</span><span style="color:#60a0b0;font-style:italic"># docker run -it --name docker01 looper/centos:1.0</span>
+<span style="color:#666">[</span>root@25e1fef5a34e /<span style="color:#666">]</span><span style="color:#60a0b0;font-style:italic"># ls     </span>
+bin  dev  etc  home  lib  lib64  lost+found  media  mnt  opt  proc  root  run  sbin  srv  sys  tmp  usr  var  volume01  volume02
+<span style="color:#666">[</span>root@25e1fef5a34e /<span style="color:#666">]</span><span style="color:#60a0b0;font-style:italic"># [root@iZ2ze4jen9kd2w1c52zfe0Z /]# </span>
+<span style="color:#666">[</span>root@iZ2ze4jen9kd2w1c52zfe0Z /<span style="color:#666">]</span><span style="color:#60a0b0;font-style:italic"># docker ps</span>
+CONTAINER ID   IMAGE               COMMAND                  CREATED          STATUS          PORTS     NAMES
+25e1fef5a34e   looper/centos:1.0   <span style="color:#4070a0">&#34;/bin/sh -c /bin/bash&#34;</span>   <span style="color:#40a070">20</span> seconds ago   Up <span style="color:#40a070">19</span> seconds             docker01
+<span style="color:#60a0b0;font-style:italic"># 通过 --volume-from 容器名，将指定容器挂载</span>
+<span style="color:#666">[</span>root@iZ2ze4jen9kd2w1c52zfe0Z /<span style="color:#666">]</span><span style="color:#60a0b0;font-style:italic"># docker run -it --name docker02 --volumes-from docker01 looper/centos:1.0</span>
+<span style="color:#666">[</span>root@18feb341c972 /<span style="color:#666">]</span><span style="color:#60a0b0;font-style:italic"># ls</span>
+bin  dev  etc  home  lib  lib64  lost+found  media  mnt  opt  proc  root  run  sbin  srv  sys  tmp  usr  var  volume01  volume02
+
+<span style="color:#60a0b0;font-style:italic">#####################################################################</span>
+
+<span style="color:#666">[</span>root@iZ2ze4jen9kd2w1c52zfe0Z /<span style="color:#666">]</span><span style="color:#60a0b0;font-style:italic"># docker ps</span>
+CONTAINER ID   IMAGE               NAMES
+18feb341c972   looper/centos:1.0   docker02
+25e1fef5a34e   looper/centos:1.0   docker01
+<span style="color:#60a0b0;font-style:italic"># 用 Docker inspect 检查 2 个容器会发现其实都映射到了宿主机的相同目录</span>
+<span style="color:#60a0b0;font-style:italic"># Docker02 容器删除之后，Docker01 仍然会存在数据</span>
+<span style="color:#666">[</span>root@iZ2ze4jen9kd2w1c52zfe0Z /<span style="color:#666">]</span><span style="color:#60a0b0;font-style:italic"># docker inspect 25e1fef5a34e</span>
+<span style="color:#4070a0">&#34;Mounts&#34;</span>: <span style="color:#666">[</span>
+            <span style="color:#666">{</span>
+                <span style="color:#4070a0">&#34;Type&#34;</span>: <span style="color:#4070a0">&#34;volume&#34;</span>,
+                <span style="color:#4070a0">&#34;Name&#34;</span>: <span style="color:#4070a0">&#34;61aa40db830504f8ebdf4e5f95d09581eebe333bf869edbf7b2766f8698fe4da&#34;</span>,
+                <span style="color:#4070a0">&#34;Source&#34;</span>: <span style="color:#4070a0">&#34;/var/lib/docker/volumes/61aa40db830504f8ebdf4e5f95d09581eebe333bf869edbf7b2766f8698fe4da/_data&#34;</span>,
+                <span style="color:#4070a0">&#34;Destination&#34;</span>: <span style="color:#4070a0">&#34;volume01&#34;</span>,
+                <span style="color:#4070a0">&#34;Driver&#34;</span>: <span style="color:#4070a0">&#34;local&#34;</span>,
+                <span style="color:#4070a0">&#34;Mode&#34;</span>: <span style="color:#4070a0">&#34;&#34;</span>,
+                <span style="color:#4070a0">&#34;RW&#34;</span>: true,
+                <span style="color:#4070a0">&#34;Propagation&#34;</span>: <span style="color:#4070a0">&#34;&#34;</span>
+            <span style="color:#666">}</span>,
+            <span style="color:#666">{</span>
+                <span style="color:#4070a0">&#34;Type&#34;</span>: <span style="color:#4070a0">&#34;volume&#34;</span>,
+                <span style="color:#4070a0">&#34;Name&#34;</span>: <span style="color:#4070a0">&#34;ffbf0d122390611a6470bada078e8d2b1665e7731e519db80508141242a6c4f9&#34;</span>,
+                <span style="color:#4070a0">&#34;Source&#34;</span>: <span style="color:#4070a0">&#34;/var/lib/docker/volumes/ffbf0d122390611a6470bada078e8d2b1665e7731e519db80508141242a6c4f9/_data&#34;</span>,
+                <span style="color:#4070a0">&#34;Destination&#34;</span>: <span style="color:#4070a0">&#34;volume02&#34;</span>,
+                <span style="color:#4070a0">&#34;Driver&#34;</span>: <span style="color:#4070a0">&#34;local&#34;</span>,
+                <span style="color:#4070a0">&#34;Mode&#34;</span>: <span style="color:#4070a0">&#34;&#34;</span>,
+                <span style="color:#4070a0">&#34;RW&#34;</span>: true,
+                <span style="color:#4070a0">&#34;Propagation&#34;</span>: <span style="color:#4070a0">&#34;&#34;</span>
+            <span style="color:#666">}</span>
+        <span style="color:#666">]</span>
+.......
+<span style="color:#666">[</span>root@iZ2ze4jen9kd2w1c52zfe0Z /<span style="color:#666">]</span><span style="color:#60a0b0;font-style:italic"># docker inspect 25e1fef5a34e</span>
+.......
+
+        <span style="color:#4070a0">&#34;Mounts&#34;</span>: <span style="color:#666">[</span>
+            <span style="color:#666">{</span>
+                <span style="color:#4070a0">&#34;Type&#34;</span>: <span style="color:#4070a0">&#34;volume&#34;</span>,
+                <span style="color:#4070a0">&#34;Name&#34;</span>: <span style="color:#4070a0">&#34;61aa40db830504f8ebdf4e5f95d09581eebe333bf869edbf7b2766f8698fe4da&#34;</span>,
+                <span style="color:#4070a0">&#34;Source&#34;</span>: <span style="color:#4070a0">&#34;/var/lib/docker/volumes/61aa40db830504f8ebdf4e5f95d09581eebe333bf869edbf7b2766f8698fe4da/_data&#34;</span>,
+                <span style="color:#4070a0">&#34;Destination&#34;</span>: <span style="color:#4070a0">&#34;volume01&#34;</span>,
+                <span style="color:#4070a0">&#34;Driver&#34;</span>: <span style="color:#4070a0">&#34;local&#34;</span>,
+                <span style="color:#4070a0">&#34;Mode&#34;</span>: <span style="color:#4070a0">&#34;&#34;</span>,
+                <span style="color:#4070a0">&#34;RW&#34;</span>: true,
+                <span style="color:#4070a0">&#34;Propagation&#34;</span>: <span style="color:#4070a0">&#34;&#34;</span>
+            <span style="color:#666">}</span>,
+            <span style="color:#666">{</span>
+                <span style="color:#4070a0">&#34;Type&#34;</span>: <span style="color:#4070a0">&#34;volume&#34;</span>,
+                <span style="color:#4070a0">&#34;Name&#34;</span>: <span style="color:#4070a0">&#34;ffbf0d122390611a6470bada078e8d2b1665e7731e519db80508141242a6c4f9&#34;</span>,
+                <span style="color:#4070a0">&#34;Source&#34;</span>: <span style="color:#4070a0">&#34;/var/lib/docker/volumes/ffbf0d122390611a6470bada078e8d2b1665e7731e519db80508141242a6c4f9/_data&#34;</span>,
+                <span style="color:#4070a0">&#34;Destination&#34;</span>: <span style="color:#4070a0">&#34;volume02&#34;</span>,
+                <span style="color:#4070a0">&#34;Driver&#34;</span>: <span style="color:#4070a0">&#34;local&#34;</span>,
+                <span style="color:#4070a0">&#34;Mode&#34;</span>: <span style="color:#4070a0">&#34;&#34;</span>,
+                <span style="color:#4070a0">&#34;RW&#34;</span>: true,
+                <span style="color:#4070a0">&#34;Propagation&#34;</span>: <span style="color:#4070a0">&#34;&#34;</span>
+            <span style="color:#666">}</span>
+        <span style="color:#666">]</span>
+.......
+</code></pre></div><hr>
+<h2 id="docker安装mysql">Docker安装MySQL</h2>
+<h3 id="1搜索镜像">1、搜索镜像</h3>
+<p>docker search mysql</p>
+<h3 id="2下载镜像">2、下载镜像</h3>
+<p>docker pull mysql:5.7</p>
+<h3 id="3启动镜像">3、启动镜像</h3>
+<div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell"><span style="color:#60a0b0;font-style:italic"># 启动 MySQL 镜像；对 MySQL 配置文件和数据进行挂载；同时需要设置 MySQL 的密码</span>
+<span style="color:#60a0b0;font-style:italic"># -d 后台运行</span>
+<span style="color:#60a0b0;font-style:italic"># -p 端口号映射</span>
+<span style="color:#60a0b0;font-style:italic"># -v 数据卷挂载</span>
+<span style="color:#60a0b0;font-style:italic"># -e 环境配置</span>
+<span style="color:#60a0b0;font-style:italic"># --name 配置容器名</span>
+docker run -d -p 3366:3306 -v /home/mysql/conf:/etc/mysql/conf.d -v /home/mysql/data:/var/lib/mysql -e <span style="color:#bb60d5">MYSQL_ROOT_PASSWORD</span><span style="color:#666">=</span>looper123456 --name mysql01 mysql:5.7
+a53bc3b84a2cbbef0a622695550712b303c5189b2c7f4bb5b0149fa4648fa457
+</code></pre></div><h3 id="4测试连接">4、测试连接</h3>
+<p>在 Navicat （或者其他的数据库客户端）上进行连接测试即可。Navicat 中创建 test_docker_sql 数据库，新建 student 表。</p>
+<div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell"><span style="color:#666">[</span>root@iZ2ze4jen9kd2w1c52zfe0Z data<span style="color:#666">]</span><span style="color:#60a0b0;font-style:italic"># cd /</span>
+<span style="color:#666">[</span>root@iZ2ze4jen9kd2w1c52zfe0Z /<span style="color:#666">]</span><span style="color:#60a0b0;font-style:italic"># cd /home/mysql/data</span>
+<span style="color:#60a0b0;font-style:italic"># 主机的 date 目录中也就有了新建的 test_docker_sql 数据库了</span>
+<span style="color:#666">[</span>root@iZ2ze4jen9kd2w1c52zfe0Z data<span style="color:#666">]</span><span style="color:#60a0b0;font-style:italic"># ls</span>
+auto.cnf    ca.pem           client-key.pem  ibdata1      ib_logfile1  mysql               private_key.pem  server-cert.pem  sys
+ca-key.pem  client-cert.pem  ib_buffer_pool  ib_logfile0  ibtmp1       performance_schema  public_key.pem   server-key.pem   test_docker_sql
+<span style="color:#60a0b0;font-style:italic"># 数据库中有 student 表</span>
+<span style="color:#666">[</span>root@iZ2ze4jen9kd2w1c52zfe0Z test_docker_sql<span style="color:#666">]</span><span style="color:#60a0b0;font-style:italic"># ls</span>
+db.opt  student.frm  student.ibd
+</code></pre></div><hr>
+<h2 id="dockerfile">DockerFile</h2>
+<p>DockerFile 就是用来构建 Docker 镜像的构建文件，命令脚本。</p>
+<p>通过 DockerFile 可以生成镜像，生成镜像的同时可以挂载目录。</p>
+<p>可以通过 DockerFile 构建自己个性化的 Docker 镜像；例如：CentOS + Nginx + Tomcat + MySQL + Redis + ElasticSearch 这样一个体系的环境。</p>
+<hr>
+<h3 id="1dockerfile-指令">1、DockerFile 指令</h3>
+<p>DockerFile 指令关键字，通过关键字控制生成所需要的镜像。</p>
+<div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">FROM               <span style="color:#60a0b0;font-style:italic"># 基础镜像; 新制作的镜像是基于什么镜像制作的，一般都是基于 CentOS</span>
+MAINTANER          <span style="color:#60a0b0;font-style:italic"># 镜像的作者，维护者; 格式: 姓名+邮箱</span>
+RUN                <span style="color:#60a0b0;font-style:italic"># Docker镜像构建的时候需要运行的命令</span>
+ADD                <span style="color:#60a0b0;font-style:italic"># 添加步骤，将需要的东西添加进去；Redis，MySQL 压缩包之类的</span>
+WORKDIR            <span style="color:#60a0b0;font-style:italic"># 工作目录</span>
+COLUME             <span style="color:#60a0b0;font-style:italic"># 挂载目录</span>
+EXPOSE             <span style="color:#60a0b0;font-style:italic"># 端口配置</span>
+CMD                <span style="color:#60a0b0;font-style:italic"># 指定容器启动的时候运行的命令，只有最后一个命令会生效</span>
+ENTRYPONT          <span style="color:#60a0b0;font-style:italic"># 指定容器启动的时候运行的命令，可以追加命令</span>
+OBBUILD            <span style="color:#60a0b0;font-style:italic"># 当构建一个被继承的 DockerFile 时这个命令就会运行，触发指令</span>
+COPY               <span style="color:#60a0b0;font-style:italic"># 类似于 ADD ，将文件拷贝到镜像中</span>
+ENV                <span style="color:#60a0b0;font-style:italic"># 构建的时候设置环境变量，</span>
+</code></pre></div><hr>
+<h3 id="2准备dockerfile文件">2、准备DockerFile文件</h3>
+<div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell"><span style="color:#666">[</span>root@iZ2ze4jen9kd2w1c52zfe0Z docker_test_volume<span style="color:#666">]</span><span style="color:#60a0b0;font-style:italic"># pwd</span>
+/home/docker_test_volume
+<span style="color:#60a0b0;font-style:italic"># 创建 DockerFile 文件，名字随机，最好见名知意</span>
+<span style="color:#666">[</span>root@iZ2ze4jen9kd2w1c52zfe0Z docker_test_volume<span style="color:#666">]</span><span style="color:#60a0b0;font-style:italic"># vim dockerfile01</span>
+<span style="color:#666">[</span>root@iZ2ze4jen9kd2w1c52zfe0Z docker_test_volume<span style="color:#666">]</span><span style="color:#60a0b0;font-style:italic"># cat dockerfile01 </span>
+<span style="color:#60a0b0;font-style:italic"># 文件的内容  指令（忽略大小写，推荐大写） 参数</span>
+FROM centos
+
+
+VOLUME <span style="color:#666">[</span><span style="color:#4070a0">&#34;volume01&#34;</span>, <span style="color:#4070a0">&#34;volume02&#34;</span><span style="color:#666">]</span>
+
+
+CMD <span style="color:#007020">echo</span> <span style="color:#4070a0">&#34;---------------end--------------&#34;</span>
+
+
+CMD /bin/bash
+
+</code></pre></div><hr>
+<h3 id="3构建dockerfile内容">3、构建DockerFile内容</h3>
+<div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell"><span style="color:#666">[</span>root@iZ2ze4jen9kd2w1c52zfe0Z docker_test_volume<span style="color:#666">]</span><span style="color:#60a0b0;font-style:italic"># docker build -f /home/docker_test_volume/dockerfile01 -t looper/centos:1.0 .   </span>
+Sending build context to Docker daemon  2.048kB
+<span style="color:#60a0b0;font-style:italic"># 第一步：提供有一个基础的镜像</span>
+Step 1/4 : FROM centos
+ ---&gt; 5d0da3dc9764
+<span style="color:#60a0b0;font-style:italic"># 第二步：通过 VOLUME 进行挂载</span>
+Step 2/4 : VOLUME <span style="color:#666">[</span><span style="color:#4070a0">&#34;volume01&#34;</span>, <span style="color:#4070a0">&#34;volume02&#34;</span><span style="color:#666">]</span>
+ ---&gt; Running in deee5d01328a
+Removing intermediate container deee5d01328a
+ ---&gt; 1961255fb573
+<span style="color:#60a0b0;font-style:italic"># 第三步：执行脚本程序中的命令</span>
+Step 3/4 : CMD <span style="color:#007020">echo</span> <span style="color:#4070a0">&#34;---------------end--------------&#34;</span>
+ ---&gt; Running in a90163472bc8
+Removing intermediate container a90163472bc8
+ ---&gt; 2d921fdc5780
+<span style="color:#60a0b0;font-style:italic"># 第三步：进入 /bin/bash</span>
+Step 4/4 : CMD /bin/bash
+ ---&gt; Running in 3ade91186871
+Removing intermediate container 3ade91186871
+ ---&gt; 47762f1907a9
+Successfully built 47762f1907a9
+Successfully tagged looper/centos:1.0
+<span style="color:#666">[</span>root@iZ2ze4jen9kd2w1c52zfe0Z docker_test_volume<span style="color:#666">]</span><span style="color:#60a0b0;font-style:italic"># docker images</span>
+REPOSITORY      TAG       IMAGE ID       CREATED          SIZE
+<span style="color:#60a0b0;font-style:italic"># 自己制作的镜像</span>
+looper/centos   1.0       47762f1907a9   <span style="color:#40a070">38</span> minutes ago   231MB
+tomcat00        1.0       d543f21d737c   <span style="color:#40a070">7</span> hours ago      684MB
+nginx           latest    605c77e624dd   <span style="color:#40a070">5</span> months ago     141MB
+tomcat          9.0       b8e65a4d736d   <span style="color:#40a070">5</span> months ago     680MB
+redis           latest    7614ae9453d1   <span style="color:#40a070">5</span> months ago     113MB
+centos          latest    5d0da3dc9764   <span style="color:#40a070">8</span> months ago     231MB
+<span style="color:#60a0b0;font-style:italic"># 启动自己制作的镜像</span>
+<span style="color:#666">[</span>root@iZ2ze4jen9kd2w1c52zfe0Z docker_test_volume<span style="color:#666">]</span><span style="color:#60a0b0;font-style:italic"># docker run -itd -P --name centos04 47762f1907a9</span>
+6764dc184a65a22d0bde23b90b2c1297cb7c3ee5c3001674f1c058f64636a015
+<span style="color:#666">[</span>root@iZ2ze4jen9kd2w1c52zfe0Z docker_test_volume<span style="color:#666">]</span><span style="color:#60a0b0;font-style:italic"># docker ps</span>
+CONTAINER ID  IMAGE         COMMAND     CREATED            NAMES
+6764dc184a65  47762f1907a9  <span style="color:#4070a0">&#34;/bin/sh&#34;</span>   <span style="color:#40a070">17</span> seconds ago     centos04
+<span style="color:#60a0b0;font-style:italic"># 进入容器中</span>
+<span style="color:#666">[</span>root@iZ2ze4jen9kd2w1c52zfe0Z docker_test_volume<span style="color:#666">]</span><span style="color:#60a0b0;font-style:italic"># docker exec -it centos04 /bin/bash</span>
+<span style="color:#666">[</span>root@6764dc184a65 /<span style="color:#666">]</span><span style="color:#60a0b0;font-style:italic"># ls</span>
+<span style="color:#60a0b0;font-style:italic"># 可以看到前边 DockerFile 中挂载的 volume01  volume02 目录</span>
+bin  dev  etc  home  lib  lib64  lost+found  media  mnt  opt  proc  root  run  sbin  srv  sys  tmp  usr  var  volume01  volume02
+<span style="color:#60a0b0;font-style:italic"># </span>
+<span style="color:#666">[</span>root@iZ2ze4jen9kd2w1c52zfe0Z /<span style="color:#666">]</span><span style="color:#60a0b0;font-style:italic"># docker volume ls</span>
+DRIVER    VOLUME NAME
+<span style="color:#007020">local</span>     9e5766e74999b4bac2133a42e7f3dc7b74447fa8acc7d2a1cbea3a4d03465fb5
+<span style="color:#007020">local</span>     070dfc7c118191140fa7a5fc653cd6033d32711d9a320d5d1065437aee8dd427
+<span style="color:#007020">local</span>     b192f2b6089d893e18c4f8439e39c738ec58659f28b403ce48a097c5c7a95933
+<span style="color:#007020">local</span>     this_nginx
+<span style="color:#666">[</span>root@iZ2ze4jen9kd2w1c52zfe0Z /<span style="color:#666">]</span><span style="color:#60a0b0;font-style:italic"># docker inspect 6764dc184a65 </span>
+......
+<span style="color:#4070a0">&#34;Mounts&#34;</span>: <span style="color:#666">[</span>
+            <span style="color:#666">{</span>
+                <span style="color:#4070a0">&#34;Type&#34;</span>: <span style="color:#4070a0">&#34;volume&#34;</span>,
+                <span style="color:#4070a0">&#34;Name&#34;</span>: <span style="color:#4070a0">&#34;b192f2b6089d893e18c4f8439e39c738ec58659f28b403ce48a097c5c7a95933&#34;</span>,
+                <span style="color:#4070a0">&#34;Source&#34;</span>: <span style="color:#4070a0">&#34;/var/lib/docker/volumes/b192f2b6089d893e18c4f8439e39c738ec58659f28b403ce48a097c5c7a95933/_data&#34;</span>,
+                <span style="color:#4070a0">&#34;Destination&#34;</span>: <span style="color:#4070a0">&#34;volume02&#34;</span>,
+                <span style="color:#4070a0">&#34;Driver&#34;</span>: <span style="color:#4070a0">&#34;local&#34;</span>,
+                <span style="color:#4070a0">&#34;Mode&#34;</span>: <span style="color:#4070a0">&#34;&#34;</span>,
+                <span style="color:#4070a0">&#34;RW&#34;</span>: true,
+                <span style="color:#4070a0">&#34;Propagation&#34;</span>: <span style="color:#4070a0">&#34;&#34;</span>
+            <span style="color:#666">}</span>,
+            <span style="color:#666">{</span>
+                <span style="color:#4070a0">&#34;Type&#34;</span>: <span style="color:#4070a0">&#34;volume&#34;</span>,
+                <span style="color:#4070a0">&#34;Name&#34;</span>: <span style="color:#4070a0">&#34;9e5766e74999b4bac2133a42e7f3dc7b74447fa8acc7d2a1cbea3a4d03465fb5&#34;</span>,
+                <span style="color:#4070a0">&#34;Source&#34;</span>: <span style="color:#4070a0">&#34;/var/lib/docker/volumes/9e5766e74999b4bac2133a42e7f3dc7b74447fa8acc7d2a1cbea3a4d03465fb5/_data&#34;</span>,
+                <span style="color:#4070a0">&#34;Destination&#34;</span>: <span style="color:#4070a0">&#34;volume01&#34;</span>,
+                <span style="color:#4070a0">&#34;Driver&#34;</span>: <span style="color:#4070a0">&#34;local&#34;</span>,
+                <span style="color:#4070a0">&#34;Mode&#34;</span>: <span style="color:#4070a0">&#34;&#34;</span>,
+                <span style="color:#4070a0">&#34;RW&#34;</span>: true,
+                <span style="color:#4070a0">&#34;Propagation&#34;</span>: <span style="color:#4070a0">&#34;&#34;</span>
+            <span style="color:#666">}</span>
+        <span style="color:#666">]</span>
+......
+</code></pre></div><p>docker build -t 镜像名 .</p>
+<hr>
+<h2 id="docker网络">Docker网络</h2>
+<h3 id="1理解docker0">1、理解Docker0</h3>
+<div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell"><span style="color:#666">[</span>root@iZ2ze4jen9kd2w1c52zfe0Z /<span style="color:#666">]</span><span style="color:#60a0b0;font-style:italic"># ip addr</span>
+1: lo: &lt;LOOPBACK,UP,LOWER_UP&gt; mtu <span style="color:#40a070">65536</span> qdisc noqueue state UNKNOWN group default qlen <span style="color:#40a070">1000</span>
+    link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
+    inet 127.0.0.1/8 scope host lo
+       valid_lft forever preferred_lft forever
+2: eth0: &lt;BROADCAST,MULTICAST,UP,LOWER_UP&gt; mtu <span style="color:#40a070">1500</span> qdisc fq_codel state UP group default qlen <span style="color:#40a070">1000</span>
+    link/ether 00:16:3e:32:78:df brd ff:ff:ff:ff:ff:ff
+    inet 172.22.230.201/20 brd 172.22.239.255 scope global dynamic noprefixroute eth0
+       valid_lft 312922524sec preferred_lft 312922524sec
+3: docker0: &lt;NO-CARRIER,BROADCAST,MULTICAST,UP&gt; mtu <span style="color:#40a070">1500</span> qdisc noqueue state DOWN group default 
+    link/ether 02:42:35:2c:33:ae brd ff:ff:ff:ff:ff:ff
+    inet 172.17.0.1/16 brd 172.17.255.255 scope global docker0
+       valid_lft forever preferred_lft forever
+</code></pre></div><p>通过 ip addr 命令显示的三个网卡的信息为：lo：表示本机回环地址；eth0：表示阿里云内网地址；docker0：表示 docker 地址。</p>
+<p>Docker 是如何处理容器网络访问的？</p>
+<p>Docker 创建一个容器之后，会给每个容器分配一个可用的 IP 地址；容器之间访问则是通过 Docker0 进行路由寻找到要访问的容器。</p>
+
+
+  
+  <footer>
+    <hr>
+    
+    <div class="post-tags">
+    
+    </div>
+  </footer>
+  
+
+  
+
+
+  <div class="comments">
+
+
+
+</div>
+
+</article>
+
+
+
+  
+  
+  
+</body>
+<div class="foot">
+  
+  
+    &copy; 2019 - 2022 &#183; 
+    <a href="/">Home</a> · Theme <a href="https://github.com/RainerChiang/simpleness">Simpleness</a> Powered by <a href="https://gohugo.io/">Hugo</a> &#183;
+    <a href="#"><i class="fas fa-chevron-up"></i></a>
+  
+
+  
+  
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+	ga('create', 'looper', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+
+  
+</div>
+
+<script src="/js/lazyload.min.js"></script>
+<script>
+  var lazyImage = new LazyLoad({
+    container: document.getElementById('article')
+  });
+</script>
+
+
+</html>
