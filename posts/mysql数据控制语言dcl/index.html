@@ -103,12 +103,12 @@
 <p>SHOW GRANTS FOR 用户名@&lsquo;IP地址&rsquo;;</p>
 <p>注意：&lsquo;IP地址&rsquo;可以设置为localhost(代表本机)或者&rsquo;%'(代表允许所有IP地址登录)</p>
 <h3 id="7修改密码">7、修改密码</h3>
-<div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="color:#666">#</span><span style="">修改密码</span>
-<span style="color:#007020;font-weight:bold">SET</span> PASSWORD <span style="color:#666">=</span> PASSWORD(<span style="color:#4070a0">&#39;123456&#39;</span>);
-<span style="color:#666">#</span><span style="">登录授权</span>
-<span style="color:#007020;font-weight:bold">GRANT</span> <span style="color:#007020;font-weight:bold">ALL</span> <span style="color:#007020;font-weight:bold">PRIVILEGES</span> <span style="color:#007020;font-weight:bold">ON</span> <span style="color:#666">*</span>.<span style="color:#666">*</span> <span style="color:#007020;font-weight:bold">TO</span> <span style="color:#4070a0">&#39;root&#39;</span><span style="color:#666">@</span><span style="color:#4070a0">&#39;%&#39;</span> IDENTIFIED <span style="color:#007020;font-weight:bold">BY</span> <span style="color:#4070a0">&#39;123456&#39;</span>;
-<span style="color:#666">#</span><span style="">刷新授权</span>
-FLUSH <span style="color:#007020;font-weight:bold">PRIVILEGES</span>;
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="color:#000;font-weight:bold">#</span><span style="color:#a61717;background-color:#e3d2d2">修改密码</span>
+<span style="color:#000;font-weight:bold">SET</span> PASSWORD <span style="color:#000;font-weight:bold">=</span> PASSWORD(<span style="color:#d14">&#39;123456&#39;</span>);
+<span style="color:#000;font-weight:bold">#</span><span style="color:#a61717;background-color:#e3d2d2">登录授权</span>
+<span style="color:#000;font-weight:bold">GRANT</span> <span style="color:#000;font-weight:bold">ALL</span> <span style="color:#000;font-weight:bold">PRIVILEGES</span> <span style="color:#000;font-weight:bold">ON</span> <span style="color:#000;font-weight:bold">*</span>.<span style="color:#000;font-weight:bold">*</span> <span style="color:#000;font-weight:bold">TO</span> <span style="color:#d14">&#39;root&#39;</span><span style="color:#000;font-weight:bold">@</span><span style="color:#d14">&#39;%&#39;</span> IDENTIFIED <span style="color:#000;font-weight:bold">BY</span> <span style="color:#d14">&#39;123456&#39;</span>;
+<span style="color:#000;font-weight:bold">#</span><span style="color:#a61717;background-color:#e3d2d2">刷新授权</span>
+FLUSH <span style="color:#000;font-weight:bold">PRIVILEGES</span>;
 </code></pre></div><h3 id="8忘记密码">8、忘记密码</h3>
 <p>1、可以在配置文件里加上 skip-grant-tables ，注意写到 [mysqld] 参数组下，表示跳过授权</p>
 <p>2、重启 MySQL 再登录就不需要密码，进去改密码，改完后，直接 FLUSH PRIVILEGES; 就可以使用新密码来登录了

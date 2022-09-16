@@ -90,7 +90,7 @@
 <hr>
 <h3 id="1基础查询">1、基础查询</h3>
 <h4 id="11-语法">1.1 语法</h4>
-<div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="color:#007020;font-weight:bold">SELECT</span> <span style="">查询列表</span> <span style="color:#007020;font-weight:bold">FROM</span> <span style="">表名</span>;
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="color:#000;font-weight:bold">SELECT</span> <span style="color:#a61717;background-color:#e3d2d2">查询列表</span> <span style="color:#000;font-weight:bold">FROM</span> <span style="color:#a61717;background-color:#e3d2d2">表名</span>;
 </code></pre></div><h4 id="12-特点">1.2 特点</h4>
 <ol>
 <li>查询列表可以是字段、常量、函数和表达式。</li>
@@ -115,14 +115,14 @@
 </ul>
 <p>10、【补充】ifnull函数</p>
 <p>功能：判断某字段或表达式是否为 null，如果为 null，返回指定的值，否则返回原本的值</p>
-<div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-SQL" data-lang="SQL"><span style="color:#007020;font-weight:bold">SELECT</span> IFNULL(<span style="">字段名</span>, <span style="">指定值</span>) <span style="color:#007020;font-weight:bold">FROM</span> <span style="">表名</span>;
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-SQL" data-lang="SQL"><span style="color:#000;font-weight:bold">SELECT</span> IFNULL(<span style="color:#a61717;background-color:#e3d2d2">字段名</span>, <span style="color:#a61717;background-color:#e3d2d2">指定值</span>) <span style="color:#000;font-weight:bold">FROM</span> <span style="color:#a61717;background-color:#e3d2d2">表名</span>;
 </code></pre></div><p>11、【补充】isnull函数</p>
 <p>功能：判断某字段或表达式是否为 null，如果是 null，则返回 1，否则返回 0</p>
-<div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="color:#007020;font-weight:bold">SELECT</span> <span style="color:#007020;font-weight:bold">ISNULL</span>(<span style="">字段名</span>) <span style="color:#007020;font-weight:bold">FROM</span> <span style="">表名</span>;
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="color:#000;font-weight:bold">SELECT</span> <span style="color:#000;font-weight:bold">ISNULL</span>(<span style="color:#a61717;background-color:#e3d2d2">字段名</span>) <span style="color:#000;font-weight:bold">FROM</span> <span style="color:#a61717;background-color:#e3d2d2">表名</span>;
 </code></pre></div><hr>
 <h3 id="2条件查询">2、条件查询</h3>
 <h4 id="21-语法">2.1 语法</h4>
-<div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="color:#007020;font-weight:bold">SELECT</span> <span style="">查询列表</span> <span style="color:#007020;font-weight:bold">FROM</span> <span style="">表名</span> <span style="color:#007020;font-weight:bold">WHERE</span> <span style="">筛选条件</span>;
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="color:#000;font-weight:bold">SELECT</span> <span style="color:#a61717;background-color:#e3d2d2">查询列表</span> <span style="color:#000;font-weight:bold">FROM</span> <span style="color:#a61717;background-color:#e3d2d2">表名</span> <span style="color:#000;font-weight:bold">WHERE</span> <span style="color:#a61717;background-color:#e3d2d2">筛选条件</span>;
 </code></pre></div><h4 id="22-分类">2.2 分类</h4>
 <p>条件运算符：&gt;、&gt;=、&lt;、&lt;=、=、&lt;=&gt;、!=、&lt;&gt;</p>
 <p>逻辑运算符：and、or、not</p>
@@ -145,12 +145,12 @@
 <hr>
 <h3 id="3排序查询">3、排序查询</h3>
 <h4 id="31-语法">3.1 语法</h4>
-<div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="color:#007020;font-weight:bold">SELECT</span> 
-  <span style="">查询列表</span> 
-<span style="color:#007020;font-weight:bold">FROM</span>
-  <span style="">表</span> 
-<span style="">【</span><span style="color:#007020;font-weight:bold">WHERE</span> <span style="">筛选条件】</span>
-<span style="color:#007020;font-weight:bold">ORDER</span> <span style="color:#007020;font-weight:bold">BY</span> <span style="">排序列表</span> <span style="">【</span><span style="color:#007020;font-weight:bold">asc</span> <span style="color:#666">|</span> <span style="color:#007020;font-weight:bold">desc</span><span style="">】</span> ;
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="color:#000;font-weight:bold">SELECT</span> 
+  <span style="color:#a61717;background-color:#e3d2d2">查询列表</span> 
+<span style="color:#000;font-weight:bold">FROM</span>
+  <span style="color:#a61717;background-color:#e3d2d2">表</span> 
+<span style="color:#a61717;background-color:#e3d2d2">【</span><span style="color:#000;font-weight:bold">WHERE</span> <span style="color:#a61717;background-color:#e3d2d2">筛选条件】</span>
+<span style="color:#000;font-weight:bold">ORDER</span> <span style="color:#000;font-weight:bold">BY</span> <span style="color:#a61717;background-color:#e3d2d2">排序列表</span> <span style="color:#a61717;background-color:#e3d2d2">【</span><span style="color:#000;font-weight:bold">asc</span> <span style="color:#000;font-weight:bold">|</span> <span style="color:#000;font-weight:bold">desc</span><span style="color:#a61717;background-color:#e3d2d2">】</span> ;
 </code></pre></div><h4 id="32-注意">3.2 注意</h4>
 <ol>
 <li>排序列表可以是单个字段、多个字段、别名、函数、表达式</li>
@@ -160,7 +160,7 @@
 <hr>
 <h3 id="4单行函数">4、单行函数</h3>
 <h4 id="41-语法">4.1 语法</h4>
-<div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="color:#007020;font-weight:bold">SELECT</span> <span style="">函数名</span>(<span style="">实参列表</span>) <span style="">【</span><span style="color:#007020;font-weight:bold">FROM</span> <span style="">表】</span>;
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="color:#000;font-weight:bold">SELECT</span> <span style="color:#a61717;background-color:#e3d2d2">函数名</span>(<span style="color:#a61717;background-color:#e3d2d2">实参列表</span>) <span style="color:#a61717;background-color:#e3d2d2">【</span><span style="color:#000;font-weight:bold">FROM</span> <span style="color:#a61717;background-color:#e3d2d2">表】</span>;
 </code></pre></div><h4 id="42-分类">4.2 分类</h4>
 <ul>
 <li>字符函数</li>
@@ -218,23 +218,23 @@ str_to_date：将字符转换成日期
 </ul>
 <p>if：判断函数</p>
 <p>case：分支函数</p>
-<div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="color:#40a070">1</span><span style="">、</span><span style="color:#007020;font-weight:bold">IF</span>(<span style="">条件表达式，表达式</span><span style="color:#40a070">1</span><span style="">，表达式</span><span style="color:#40a070">2</span>)<span style="">：如果条件表达式成立，返回表达式</span><span style="color:#40a070">1</span><span style="">，否则返回表达式</span><span style="color:#40a070">2</span>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="color:#099">1</span><span style="color:#a61717;background-color:#e3d2d2">、</span><span style="color:#000;font-weight:bold">IF</span>(<span style="color:#a61717;background-color:#e3d2d2">条件表达式，表达式</span><span style="color:#099">1</span><span style="color:#a61717;background-color:#e3d2d2">，表达式</span><span style="color:#099">2</span>)<span style="color:#a61717;background-color:#e3d2d2">：如果条件表达式成立，返回表达式</span><span style="color:#099">1</span><span style="color:#a61717;background-color:#e3d2d2">，否则返回表达式</span><span style="color:#099">2</span>
 
-<span style="color:#40a070">2</span><span style="">、</span>case的格式一<span style="">：</span>
-    <span style="color:#007020;font-weight:bold">CASE</span> <span style="">变量或字段或表达式</span> 
-      <span style="color:#007020;font-weight:bold">WHEN</span> <span style="">常量</span><span style="color:#40a070">1</span> <span style="color:#007020;font-weight:bold">THEN</span> <span style="">值</span><span style="color:#40a070">1</span> 
-      <span style="color:#007020;font-weight:bold">WHEN</span> <span style="">常量</span><span style="color:#40a070">2</span> <span style="color:#007020;font-weight:bold">THEN</span> <span style="">值</span><span style="color:#40a070">2</span>
+<span style="color:#099">2</span><span style="color:#a61717;background-color:#e3d2d2">、</span>case的格式一<span style="color:#a61717;background-color:#e3d2d2">：</span>
+    <span style="color:#000;font-weight:bold">CASE</span> <span style="color:#a61717;background-color:#e3d2d2">变量或字段或表达式</span> 
+      <span style="color:#000;font-weight:bold">WHEN</span> <span style="color:#a61717;background-color:#e3d2d2">常量</span><span style="color:#099">1</span> <span style="color:#000;font-weight:bold">THEN</span> <span style="color:#a61717;background-color:#e3d2d2">值</span><span style="color:#099">1</span> 
+      <span style="color:#000;font-weight:bold">WHEN</span> <span style="color:#a61717;background-color:#e3d2d2">常量</span><span style="color:#099">2</span> <span style="color:#000;font-weight:bold">THEN</span> <span style="color:#a61717;background-color:#e3d2d2">值</span><span style="color:#099">2</span>
       ...
-      <span style="color:#007020;font-weight:bold">ELSE</span> <span style="">值</span>n 
-    <span style="color:#007020;font-weight:bold">END</span> ;
+      <span style="color:#000;font-weight:bold">ELSE</span> <span style="color:#a61717;background-color:#e3d2d2">值</span>n 
+    <span style="color:#000;font-weight:bold">END</span> ;
     
-<span style="color:#40a070">3</span><span style="">、</span>case的格式二<span style="">：</span>
-    <span style="color:#007020;font-weight:bold">CASE</span>
-      <span style="color:#007020;font-weight:bold">WHEN</span> <span style="">条件</span><span style="color:#40a070">1</span> <span style="color:#007020;font-weight:bold">THEN</span> <span style="">值</span><span style="color:#40a070">1</span> 
-      <span style="color:#007020;font-weight:bold">WHEN</span> <span style="">条件</span><span style="color:#40a070">2</span> <span style="color:#007020;font-weight:bold">THEN</span> <span style="">值</span><span style="color:#40a070">2</span>
+<span style="color:#099">3</span><span style="color:#a61717;background-color:#e3d2d2">、</span>case的格式二<span style="color:#a61717;background-color:#e3d2d2">：</span>
+    <span style="color:#000;font-weight:bold">CASE</span>
+      <span style="color:#000;font-weight:bold">WHEN</span> <span style="color:#a61717;background-color:#e3d2d2">条件</span><span style="color:#099">1</span> <span style="color:#000;font-weight:bold">THEN</span> <span style="color:#a61717;background-color:#e3d2d2">值</span><span style="color:#099">1</span> 
+      <span style="color:#000;font-weight:bold">WHEN</span> <span style="color:#a61717;background-color:#e3d2d2">条件</span><span style="color:#099">2</span> <span style="color:#000;font-weight:bold">THEN</span> <span style="color:#a61717;background-color:#e3d2d2">值</span><span style="color:#099">2</span>
       ...
-      <span style="color:#007020;font-weight:bold">ELSE</span> <span style="">值</span>n 
-    <span style="color:#007020;font-weight:bold">END</span>
+      <span style="color:#000;font-weight:bold">ELSE</span> <span style="color:#a61717;background-color:#e3d2d2">值</span>n 
+    <span style="color:#000;font-weight:bold">END</span>
 </code></pre></div><ul>
 <li>其它函数</li>
 </ul>
@@ -246,13 +246,13 @@ md5(‘字符’)：返回该字符的md5加密形式
 </code></pre><hr>
 <h3 id="5分组函数">5、分组函数</h3>
 <h4 id="51-语法">5.1 语法</h4>
-<div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="color:#007020;font-weight:bold">SELECT</span> <span style="">函数名</span>(<span style="">实参列表</span>) <span style="">【</span><span style="color:#007020;font-weight:bold">FROM</span> <span style="">表】</span>;
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="color:#000;font-weight:bold">SELECT</span> <span style="color:#a61717;background-color:#e3d2d2">函数名</span>(<span style="color:#a61717;background-color:#e3d2d2">实参列表</span>) <span style="color:#a61717;background-color:#e3d2d2">【</span><span style="color:#000;font-weight:bold">FROM</span> <span style="color:#a61717;background-color:#e3d2d2">表】</span>;
 </code></pre></div><h4 id="52-分类">5.2 分类</h4>
-<div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="color:#007020;font-weight:bold">sum</span><span style="">：求和</span>
-<span style="color:#007020;font-weight:bold">avg</span><span style="">：平均值</span>
-<span style="color:#007020;font-weight:bold">max</span><span style="">：最大值</span>
-<span style="color:#007020;font-weight:bold">min</span><span style="">：最小值</span>
-<span style="color:#007020;font-weight:bold">count</span><span style="">：计算个数</span>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="color:#000;font-weight:bold">sum</span><span style="color:#a61717;background-color:#e3d2d2">：求和</span>
+<span style="color:#000;font-weight:bold">avg</span><span style="color:#a61717;background-color:#e3d2d2">：平均值</span>
+<span style="color:#000;font-weight:bold">max</span><span style="color:#a61717;background-color:#e3d2d2">：最大值</span>
+<span style="color:#000;font-weight:bold">min</span><span style="color:#a61717;background-color:#e3d2d2">：最小值</span>
+<span style="color:#000;font-weight:bold">count</span><span style="color:#a61717;background-color:#e3d2d2">：计算个数</span>
 </code></pre></div><ol>
 <li>sum、avg一般用于处理数值型，max、min、count可以处理任何类型</li>
 <li>以上分组函数都忽略null值</li>
@@ -263,14 +263,14 @@ md5(‘字符’)：返回该字符的md5加密形式
 <hr>
 <h3 id="6分组查询">6、分组查询</h3>
 <h4 id="61-语法">6.1 语法</h4>
-<div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="color:#007020;font-weight:bold">SELECT</span> 
-  <span style="">查询列表</span> 
-<span style="color:#007020;font-weight:bold">FROM</span>
-  <span style="">表</span> 
-<span style="">【</span><span style="color:#007020;font-weight:bold">where</span> <span style="">筛选条件】</span> 
-<span style="color:#007020;font-weight:bold">GROUP</span> <span style="color:#007020;font-weight:bold">BY</span> <span style="">分组的字段</span> 
-<span style="">【</span><span style="color:#007020;font-weight:bold">having</span> <span style="">分组后的筛选】</span>
-<span style="">【</span><span style="color:#007020;font-weight:bold">order</span> <span style="color:#007020;font-weight:bold">BY</span> <span style="">排序的字段】</span> ;
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="color:#000;font-weight:bold">SELECT</span> 
+  <span style="color:#a61717;background-color:#e3d2d2">查询列表</span> 
+<span style="color:#000;font-weight:bold">FROM</span>
+  <span style="color:#a61717;background-color:#e3d2d2">表</span> 
+<span style="color:#a61717;background-color:#e3d2d2">【</span><span style="color:#000;font-weight:bold">where</span> <span style="color:#a61717;background-color:#e3d2d2">筛选条件】</span> 
+<span style="color:#000;font-weight:bold">GROUP</span> <span style="color:#000;font-weight:bold">BY</span> <span style="color:#a61717;background-color:#e3d2d2">分组的字段</span> 
+<span style="color:#a61717;background-color:#e3d2d2">【</span><span style="color:#000;font-weight:bold">having</span> <span style="color:#a61717;background-color:#e3d2d2">分组后的筛选】</span>
+<span style="color:#a61717;background-color:#e3d2d2">【</span><span style="color:#000;font-weight:bold">order</span> <span style="color:#000;font-weight:bold">BY</span> <span style="color:#a61717;background-color:#e3d2d2">排序的字段】</span> ;
 </code></pre></div><h4 id="62-特点">6.2 特点</h4>
 <p>1、和分组函数一同查询的字段必须是group by后出现的字段</p>
 <p>2、筛选分为两类：分组前筛选和分组后筛选</p>
@@ -349,14 +349,14 @@ md5(‘字符’)：返回该字符的md5加密形式
 <p>sql92 功能较少，不支持外连接；sql99 引入了 JOIN 进行关联查询，功能强大，支持外连接，可读性高，常用 sql99。</p>
 <h3 id="8sql99标准">8、sql99标准</h3>
 <h4 id="81-语法">8.1 语法</h4>
-<div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="color:#007020;font-weight:bold">SELECT</span> 
-  <span style="">查询列表</span> 
-<span style="color:#007020;font-weight:bold">FROM</span> <span style="">表</span><span style="color:#40a070">1</span> <span style="">别名</span><span style="color:#40a070">1</span> 
-<span style="">【连接类型】</span> <span style="color:#007020;font-weight:bold">JOIN</span> <span style="">表</span><span style="color:#40a070">2</span> <span style="">别名</span><span style="color:#40a070">2</span> <span style="color:#007020;font-weight:bold">ON</span> <span style="">连接条件</span> 
-<span style="">【</span><span style="color:#007020;font-weight:bold">where</span> <span style="">分组前筛选条件】</span>
-<span style="">【</span><span style="color:#007020;font-weight:bold">group</span> <span style="color:#007020;font-weight:bold">BY</span> <span style="">分组列表】</span>
-<span style="">【</span><span style="color:#007020;font-weight:bold">having</span> <span style="">分组后筛选条件】</span>
-<span style="">【</span><span style="color:#007020;font-weight:bold">order</span> <span style="color:#007020;font-weight:bold">BY</span> <span style="">排序列表】</span> ;
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="color:#000;font-weight:bold">SELECT</span> 
+  <span style="color:#a61717;background-color:#e3d2d2">查询列表</span> 
+<span style="color:#000;font-weight:bold">FROM</span> <span style="color:#a61717;background-color:#e3d2d2">表</span><span style="color:#099">1</span> <span style="color:#a61717;background-color:#e3d2d2">别名</span><span style="color:#099">1</span> 
+<span style="color:#a61717;background-color:#e3d2d2">【连接类型】</span> <span style="color:#000;font-weight:bold">JOIN</span> <span style="color:#a61717;background-color:#e3d2d2">表</span><span style="color:#099">2</span> <span style="color:#a61717;background-color:#e3d2d2">别名</span><span style="color:#099">2</span> <span style="color:#000;font-weight:bold">ON</span> <span style="color:#a61717;background-color:#e3d2d2">连接条件</span> 
+<span style="color:#a61717;background-color:#e3d2d2">【</span><span style="color:#000;font-weight:bold">where</span> <span style="color:#a61717;background-color:#e3d2d2">分组前筛选条件】</span>
+<span style="color:#a61717;background-color:#e3d2d2">【</span><span style="color:#000;font-weight:bold">group</span> <span style="color:#000;font-weight:bold">BY</span> <span style="color:#a61717;background-color:#e3d2d2">分组列表】</span>
+<span style="color:#a61717;background-color:#e3d2d2">【</span><span style="color:#000;font-weight:bold">having</span> <span style="color:#a61717;background-color:#e3d2d2">分组后筛选条件】</span>
+<span style="color:#a61717;background-color:#e3d2d2">【</span><span style="color:#000;font-weight:bold">order</span> <span style="color:#000;font-weight:bold">BY</span> <span style="color:#a61717;background-color:#e3d2d2">排序列表】</span> ;
 </code></pre></div><h4 id="82-连接类型">8.2 连接类型</h4>
 <p>内连接：inner</p>
 <p>外连接：</p>
@@ -437,16 +437,16 @@ md5(‘字符’)：返回该字符的md5加密形式
 <hr>
 <h3 id="10分页查询">10、分页查询</h3>
 <h4 id="101-语法">10.1 语法</h4>
-<div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="color:#007020;font-weight:bold">SELECT</span> 
-  <span style="">查询列表</span> 
-<span style="color:#007020;font-weight:bold">FROM</span>
-  <span style="">表</span><span style="color:#40a070">1</span> <span style="">别名</span><span style="color:#40a070">1</span>
-<span style="">【连接类型】</span> <span style="color:#007020;font-weight:bold">JOIN</span> <span style="">表</span><span style="color:#40a070">2</span> <span style="">别名</span><span style="color:#40a070">2</span> <span style="color:#007020;font-weight:bold">ON</span> <span style="">连接条件</span> 
-<span style="">【</span><span style="color:#007020;font-weight:bold">WHERE</span> <span style="">分组前的筛选】</span>
-<span style="">【</span><span style="color:#007020;font-weight:bold">GROUP</span> <span style="color:#007020;font-weight:bold">BY</span> <span style="">分组字段】</span> 
-<span style="">【</span><span style="color:#007020;font-weight:bold">HAVING</span> <span style="">分组后的筛选</span> <span style="">】</span>
-<span style="">【</span><span style="color:#007020;font-weight:bold">ORDER</span> <span style="color:#007020;font-weight:bold">BY</span> <span style="">排序字段</span> <span style="color:#007020;font-weight:bold">ASC</span><span style="color:#666">|</span><span style="color:#007020;font-weight:bold">DESC</span><span style="">】</span>
-<span style="color:#007020;font-weight:bold">LIMIT</span> <span style="">【</span><span style="color:#007020;font-weight:bold">offset</span>, <span style="">】</span><span style="color:#007020;font-weight:bold">size</span> ;
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="color:#000;font-weight:bold">SELECT</span> 
+  <span style="color:#a61717;background-color:#e3d2d2">查询列表</span> 
+<span style="color:#000;font-weight:bold">FROM</span>
+  <span style="color:#a61717;background-color:#e3d2d2">表</span><span style="color:#099">1</span> <span style="color:#a61717;background-color:#e3d2d2">别名</span><span style="color:#099">1</span>
+<span style="color:#a61717;background-color:#e3d2d2">【连接类型】</span> <span style="color:#000;font-weight:bold">JOIN</span> <span style="color:#a61717;background-color:#e3d2d2">表</span><span style="color:#099">2</span> <span style="color:#a61717;background-color:#e3d2d2">别名</span><span style="color:#099">2</span> <span style="color:#000;font-weight:bold">ON</span> <span style="color:#a61717;background-color:#e3d2d2">连接条件</span> 
+<span style="color:#a61717;background-color:#e3d2d2">【</span><span style="color:#000;font-weight:bold">WHERE</span> <span style="color:#a61717;background-color:#e3d2d2">分组前的筛选】</span>
+<span style="color:#a61717;background-color:#e3d2d2">【</span><span style="color:#000;font-weight:bold">GROUP</span> <span style="color:#000;font-weight:bold">BY</span> <span style="color:#a61717;background-color:#e3d2d2">分组字段】</span> 
+<span style="color:#a61717;background-color:#e3d2d2">【</span><span style="color:#000;font-weight:bold">HAVING</span> <span style="color:#a61717;background-color:#e3d2d2">分组后的筛选</span> <span style="color:#a61717;background-color:#e3d2d2">】</span>
+<span style="color:#a61717;background-color:#e3d2d2">【</span><span style="color:#000;font-weight:bold">ORDER</span> <span style="color:#000;font-weight:bold">BY</span> <span style="color:#a61717;background-color:#e3d2d2">排序字段</span> <span style="color:#000;font-weight:bold">ASC</span><span style="color:#000;font-weight:bold">|</span><span style="color:#000;font-weight:bold">DESC</span><span style="color:#a61717;background-color:#e3d2d2">】</span>
+<span style="color:#000;font-weight:bold">LIMIT</span> <span style="color:#a61717;background-color:#e3d2d2">【</span><span style="color:#000;font-weight:bold">offset</span>, <span style="color:#a61717;background-color:#e3d2d2">】</span><span style="color:#000;font-weight:bold">size</span> ;
 </code></pre></div><h4 id="102-特点">10.2 特点</h4>
 <ol>
 <li>limit 语句放在查询语句的最后</li>
@@ -458,10 +458,10 @@ md5(‘字符’)：返回该字符的md5加密形式
 <hr>
 <h3 id="11联合查询">11、联合查询</h3>
 <h3 id="111-语法">11.1 语法</h3>
-<div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="">查询语句</span><span style="color:#40a070">1</span>
-<span style="color:#007020;font-weight:bold">union</span> <span style="">【</span><span style="color:#007020;font-weight:bold">all</span><span style="">】</span>
-<span style="">查询语句</span><span style="color:#40a070">2</span>
-<span style="color:#007020;font-weight:bold">union</span> <span style="">【</span><span style="color:#007020;font-weight:bold">all</span><span style="">】</span>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="color:#a61717;background-color:#e3d2d2">查询语句</span><span style="color:#099">1</span>
+<span style="color:#000;font-weight:bold">union</span> <span style="color:#a61717;background-color:#e3d2d2">【</span><span style="color:#000;font-weight:bold">all</span><span style="color:#a61717;background-color:#e3d2d2">】</span>
+<span style="color:#a61717;background-color:#e3d2d2">查询语句</span><span style="color:#099">2</span>
+<span style="color:#000;font-weight:bold">union</span> <span style="color:#a61717;background-color:#e3d2d2">【</span><span style="color:#000;font-weight:bold">all</span><span style="color:#a61717;background-color:#e3d2d2">】</span>
 ...
 </code></pre></div><h4 id="112-特点">11.2 特点</h4>
 <ol>
@@ -471,11 +471,11 @@ md5(‘字符’)：返回该字符的md5加密形式
 <li>union 关键字默认去重，如果使用 union all 可以包含重复项</li>
 </ol>
 <h4 id="113-演示">11.3 演示</h4>
-<div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="color:#666">#</span><span style="">查询中国用户中男性的信息以及外国用户中年男性的用户信息</span>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="color:#000;font-weight:bold">#</span><span style="color:#a61717;background-color:#e3d2d2">查询中国用户中男性的信息以及外国用户中年男性的用户信息</span>
 
-<span style="color:#007020;font-weight:bold">SELECT</span> id,cname <span style="color:#007020;font-weight:bold">FROM</span> t_ca <span style="color:#007020;font-weight:bold">WHERE</span> csex<span style="color:#666">=</span><span style="color:#4070a0">&#39;男&#39;</span>
-<span style="color:#007020;font-weight:bold">UNION</span> <span style="color:#007020;font-weight:bold">ALL</span>
-<span style="color:#007020;font-weight:bold">SELECT</span> t_id,tname <span style="color:#007020;font-weight:bold">FROM</span> t_ua <span style="color:#007020;font-weight:bold">WHERE</span> tGender<span style="color:#666">=</span><span style="color:#4070a0">&#39;male&#39;</span>;
+<span style="color:#000;font-weight:bold">SELECT</span> id,cname <span style="color:#000;font-weight:bold">FROM</span> t_ca <span style="color:#000;font-weight:bold">WHERE</span> csex<span style="color:#000;font-weight:bold">=</span><span style="color:#d14">&#39;男&#39;</span>
+<span style="color:#000;font-weight:bold">UNION</span> <span style="color:#000;font-weight:bold">ALL</span>
+<span style="color:#000;font-weight:bold">SELECT</span> t_id,tname <span style="color:#000;font-weight:bold">FROM</span> t_ua <span style="color:#000;font-weight:bold">WHERE</span> tGender<span style="color:#000;font-weight:bold">=</span><span style="color:#d14">&#39;male&#39;</span>;
 </code></pre></div><hr>
 <p>参考文章：<a href="https://blog.csdn.net/qq_38490457/article/details/107640904">轻松的小希</a></p>
 

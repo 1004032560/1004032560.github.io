@@ -89,10 +89,10 @@
 <p>关键词：insert、update、delete</p>
 <h3 id="1insert新增">1、INSERT新增</h3>
 <h4 id="11-语法">1.1 语法</h4>
-<div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="color:#666">#</span> <span style="">格式一：表名后的字段可以不按照表中顺序放，但是值必须和字段对应。</span>
-<span style="color:#007020;font-weight:bold">INSERT</span> <span style="color:#007020;font-weight:bold">INTO</span> <span style="">表名【字段</span><span style="color:#40a070">1</span><span style="">，字段</span><span style="color:#40a070">2</span><span style="">，</span>...<span style="">，字段</span>n<span style="">】</span> <span style="color:#007020;font-weight:bold">values</span>(<span style="">值</span><span style="color:#40a070">1</span><span style="">，值</span><span style="color:#40a070">2</span><span style="">，</span>...<span style="">，值</span>n);
-<span style="color:#666">#</span> <span style="">格式二：省略表名后的字段，但是值必须按照表字段顺序。</span>
-<span style="color:#007020;font-weight:bold">INSERT</span> <span style="color:#007020;font-weight:bold">INTO</span> <span style="">表名</span> <span style="color:#007020;font-weight:bold">values</span>(<span style="">值</span><span style="color:#40a070">1</span><span style="">，值</span><span style="color:#40a070">2</span><span style="">，</span>...<span style="">，值</span>n);
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="color:#000;font-weight:bold">#</span> <span style="color:#a61717;background-color:#e3d2d2">格式一：表名后的字段可以不按照表中顺序放，但是值必须和字段对应。</span>
+<span style="color:#000;font-weight:bold">INSERT</span> <span style="color:#000;font-weight:bold">INTO</span> <span style="color:#a61717;background-color:#e3d2d2">表名【字段</span><span style="color:#099">1</span><span style="color:#a61717;background-color:#e3d2d2">，字段</span><span style="color:#099">2</span><span style="color:#a61717;background-color:#e3d2d2">，</span>...<span style="color:#a61717;background-color:#e3d2d2">，字段</span>n<span style="color:#a61717;background-color:#e3d2d2">】</span> <span style="color:#000;font-weight:bold">values</span>(<span style="color:#a61717;background-color:#e3d2d2">值</span><span style="color:#099">1</span><span style="color:#a61717;background-color:#e3d2d2">，值</span><span style="color:#099">2</span><span style="color:#a61717;background-color:#e3d2d2">，</span>...<span style="color:#a61717;background-color:#e3d2d2">，值</span>n);
+<span style="color:#000;font-weight:bold">#</span> <span style="color:#a61717;background-color:#e3d2d2">格式二：省略表名后的字段，但是值必须按照表字段顺序。</span>
+<span style="color:#000;font-weight:bold">INSERT</span> <span style="color:#000;font-weight:bold">INTO</span> <span style="color:#a61717;background-color:#e3d2d2">表名</span> <span style="color:#000;font-weight:bold">values</span>(<span style="color:#a61717;background-color:#e3d2d2">值</span><span style="color:#099">1</span><span style="color:#a61717;background-color:#e3d2d2">，值</span><span style="color:#099">2</span><span style="color:#a61717;background-color:#e3d2d2">，</span>...<span style="color:#a61717;background-color:#e3d2d2">，值</span>n);
 </code></pre></div><h4 id="12-特点">1.2 特点</h4>
 <ol>
 <li>要求值的类型和字段的类型要一致或兼容</li>
@@ -112,49 +112,49 @@
 <h3 id="2update更新">2、UPDATE更新</h3>
 <h4 id="21-语法">2.1 语法</h4>
 <p>1、单表更新</p>
-<div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="color:#007020;font-weight:bold">UPDATE</span> <span style="">表名</span> <span style="color:#007020;font-weight:bold">SET</span> <span style="">列</span> <span style="color:#666">=</span> <span style="">值</span>,... <span style="color:#007020;font-weight:bold">WHERE</span> <span style="">查询条件</span>;
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="color:#000;font-weight:bold">UPDATE</span> <span style="color:#a61717;background-color:#e3d2d2">表名</span> <span style="color:#000;font-weight:bold">SET</span> <span style="color:#a61717;background-color:#e3d2d2">列</span> <span style="color:#000;font-weight:bold">=</span> <span style="color:#a61717;background-color:#e3d2d2">值</span>,... <span style="color:#000;font-weight:bold">WHERE</span> <span style="color:#a61717;background-color:#e3d2d2">查询条件</span>;
 </code></pre></div><p>2、多表更新</p>
-<div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="color:#666">#</span>sql92语法<span style="">：</span> 
-<span style="color:#007020;font-weight:bold">UPDATE</span> 
-  <span style="">表</span><span style="color:#40a070">1</span> <span style="">别名</span>,
-  <span style="">表</span><span style="color:#40a070">2</span> <span style="">别名</span> 
-<span style="color:#007020;font-weight:bold">SET</span>
-  <span style="">列</span> <span style="color:#666">=</span> <span style="">值</span>,
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="color:#000;font-weight:bold">#</span>sql92语法<span style="color:#a61717;background-color:#e3d2d2">：</span> 
+<span style="color:#000;font-weight:bold">UPDATE</span> 
+  <span style="color:#a61717;background-color:#e3d2d2">表</span><span style="color:#099">1</span> <span style="color:#a61717;background-color:#e3d2d2">别名</span>,
+  <span style="color:#a61717;background-color:#e3d2d2">表</span><span style="color:#099">2</span> <span style="color:#a61717;background-color:#e3d2d2">别名</span> 
+<span style="color:#000;font-weight:bold">SET</span>
+  <span style="color:#a61717;background-color:#e3d2d2">列</span> <span style="color:#000;font-weight:bold">=</span> <span style="color:#a61717;background-color:#e3d2d2">值</span>,
   ...
-<span style="color:#007020;font-weight:bold">WHERE</span> <span style="">连接条件</span> <span style="color:#007020;font-weight:bold">AND</span> <span style="">筛选条件</span> ;
+<span style="color:#000;font-weight:bold">WHERE</span> <span style="color:#a61717;background-color:#e3d2d2">连接条件</span> <span style="color:#000;font-weight:bold">AND</span> <span style="color:#a61717;background-color:#e3d2d2">筛选条件</span> ;
 
-<span style="color:#666">#</span>sql99语法<span style="">：</span> 
-<span style="color:#007020;font-weight:bold">UPDATE</span> 
-  <span style="">表</span><span style="color:#40a070">1</span> <span style="">别名</span> 
-<span style="color:#007020;font-weight:bold">INNER</span> <span style="color:#666">|</span> <span style="color:#007020;font-weight:bold">LEFT</span> <span style="color:#666">|</span> <span style="color:#007020;font-weight:bold">RIGHT</span> <span style="color:#007020;font-weight:bold">JOIN</span> <span style="">表</span><span style="color:#40a070">2</span> <span style="">别名</span> <span style="color:#007020;font-weight:bold">ON</span> <span style="">连接条件</span>
-  <span style="color:#007020;font-weight:bold">SET</span> <span style="">列</span> <span style="color:#666">=</span> <span style="">值</span>,
+<span style="color:#000;font-weight:bold">#</span>sql99语法<span style="color:#a61717;background-color:#e3d2d2">：</span> 
+<span style="color:#000;font-weight:bold">UPDATE</span> 
+  <span style="color:#a61717;background-color:#e3d2d2">表</span><span style="color:#099">1</span> <span style="color:#a61717;background-color:#e3d2d2">别名</span> 
+<span style="color:#000;font-weight:bold">INNER</span> <span style="color:#000;font-weight:bold">|</span> <span style="color:#000;font-weight:bold">LEFT</span> <span style="color:#000;font-weight:bold">|</span> <span style="color:#000;font-weight:bold">RIGHT</span> <span style="color:#000;font-weight:bold">JOIN</span> <span style="color:#a61717;background-color:#e3d2d2">表</span><span style="color:#099">2</span> <span style="color:#a61717;background-color:#e3d2d2">别名</span> <span style="color:#000;font-weight:bold">ON</span> <span style="color:#a61717;background-color:#e3d2d2">连接条件</span>
+  <span style="color:#000;font-weight:bold">SET</span> <span style="color:#a61717;background-color:#e3d2d2">列</span> <span style="color:#000;font-weight:bold">=</span> <span style="color:#a61717;background-color:#e3d2d2">值</span>,
   ...
-<span style="color:#007020;font-weight:bold">WHERE</span> <span style="">筛选条件</span> ;
+<span style="color:#000;font-weight:bold">WHERE</span> <span style="color:#a61717;background-color:#e3d2d2">筛选条件</span> ;
 </code></pre></div><h4 id="22-总结">2.2 总结</h4>
 <p>项目中常用的更新也是批量的，单条数据的更新尽可能的入参条件和更新数据做成动态化的，可配置的，方便开发提高效率。</p>
 <hr>
 <h3 id="3delete删除">3、DELETE删除</h3>
 <h4 id="31-语法">3.1 语法</h4>
 <p>1、单表删除</p>
-<div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="color:#007020;font-weight:bold">DELETE</span> <span style="color:#007020;font-weight:bold">FROM</span> <span style="">表名</span> <span style="">【</span><span style="color:#007020;font-weight:bold">WHERE</span> <span style="">筛选条件</span> <span style="">】</span>;
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="color:#000;font-weight:bold">DELETE</span> <span style="color:#000;font-weight:bold">FROM</span> <span style="color:#a61717;background-color:#e3d2d2">表名</span> <span style="color:#a61717;background-color:#e3d2d2">【</span><span style="color:#000;font-weight:bold">WHERE</span> <span style="color:#a61717;background-color:#e3d2d2">筛选条件</span> <span style="color:#a61717;background-color:#e3d2d2">】</span>;
 </code></pre></div><p>2、多表删除（级联删除）</p>
-<div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="color:#666">#</span> sql92语法<span style="">：</span> 
-<span style="color:#007020;font-weight:bold">DELETE</span> 
-  <span style="">表</span><span style="color:#40a070">1</span><span style="">的别名</span>,
-  <span style="">表</span><span style="color:#40a070">2</span><span style="">的别名</span> 
-<span style="color:#007020;font-weight:bold">FROM</span>
-  <span style="">表</span><span style="color:#40a070">1</span> <span style="">别名</span>,
-  <span style="">表</span><span style="color:#40a070">2</span> <span style="">别名</span> 
-<span style="color:#007020;font-weight:bold">WHERE</span> <span style="">连接条件</span> <span style="color:#007020;font-weight:bold">AND</span> <span style="">筛选条件</span> ;
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="color:#000;font-weight:bold">#</span> sql92语法<span style="color:#a61717;background-color:#e3d2d2">：</span> 
+<span style="color:#000;font-weight:bold">DELETE</span> 
+  <span style="color:#a61717;background-color:#e3d2d2">表</span><span style="color:#099">1</span><span style="color:#a61717;background-color:#e3d2d2">的别名</span>,
+  <span style="color:#a61717;background-color:#e3d2d2">表</span><span style="color:#099">2</span><span style="color:#a61717;background-color:#e3d2d2">的别名</span> 
+<span style="color:#000;font-weight:bold">FROM</span>
+  <span style="color:#a61717;background-color:#e3d2d2">表</span><span style="color:#099">1</span> <span style="color:#a61717;background-color:#e3d2d2">别名</span>,
+  <span style="color:#a61717;background-color:#e3d2d2">表</span><span style="color:#099">2</span> <span style="color:#a61717;background-color:#e3d2d2">别名</span> 
+<span style="color:#000;font-weight:bold">WHERE</span> <span style="color:#a61717;background-color:#e3d2d2">连接条件</span> <span style="color:#000;font-weight:bold">AND</span> <span style="color:#a61717;background-color:#e3d2d2">筛选条件</span> ;
 
-<span style="color:#666">#</span> sql99语法<span style="">：</span> 
-<span style="color:#007020;font-weight:bold">DELETE</span> 
-  <span style="">表</span><span style="color:#40a070">1</span><span style="">的别名</span>,
-  <span style="">表</span><span style="color:#40a070">2</span><span style="">的别名</span> 
-<span style="color:#007020;font-weight:bold">FROM</span>
-  <span style="">表</span><span style="color:#40a070">1</span> <span style="">别名</span> 
-<span style="color:#007020;font-weight:bold">INNER</span> <span style="color:#666">|</span> <span style="color:#007020;font-weight:bold">LEFT</span> <span style="color:#666">|</span> <span style="color:#007020;font-weight:bold">RIGHT</span> <span style="color:#007020;font-weight:bold">JOIN</span> <span style="">表</span><span style="color:#40a070">2</span> <span style="">别名</span> <span style="color:#007020;font-weight:bold">ON</span> <span style="">连接条件</span> 
-<span style="color:#007020;font-weight:bold">WHERE</span> <span style="">筛选条件</span> ;
+<span style="color:#000;font-weight:bold">#</span> sql99语法<span style="color:#a61717;background-color:#e3d2d2">：</span> 
+<span style="color:#000;font-weight:bold">DELETE</span> 
+  <span style="color:#a61717;background-color:#e3d2d2">表</span><span style="color:#099">1</span><span style="color:#a61717;background-color:#e3d2d2">的别名</span>,
+  <span style="color:#a61717;background-color:#e3d2d2">表</span><span style="color:#099">2</span><span style="color:#a61717;background-color:#e3d2d2">的别名</span> 
+<span style="color:#000;font-weight:bold">FROM</span>
+  <span style="color:#a61717;background-color:#e3d2d2">表</span><span style="color:#099">1</span> <span style="color:#a61717;background-color:#e3d2d2">别名</span> 
+<span style="color:#000;font-weight:bold">INNER</span> <span style="color:#000;font-weight:bold">|</span> <span style="color:#000;font-weight:bold">LEFT</span> <span style="color:#000;font-weight:bold">|</span> <span style="color:#000;font-weight:bold">RIGHT</span> <span style="color:#000;font-weight:bold">JOIN</span> <span style="color:#a61717;background-color:#e3d2d2">表</span><span style="color:#099">2</span> <span style="color:#a61717;background-color:#e3d2d2">别名</span> <span style="color:#000;font-weight:bold">ON</span> <span style="color:#a61717;background-color:#e3d2d2">连接条件</span> 
+<span style="color:#000;font-weight:bold">WHERE</span> <span style="color:#a61717;background-color:#e3d2d2">筛选条件</span> ;
 </code></pre></div><h4 id="32-总结">3.2 总结</h4>
 <p>删除在项目中使用的并不多，一般都是对数据状态进行修改，使其不展示给用户。数据一般不轻易删除。</p>
 
