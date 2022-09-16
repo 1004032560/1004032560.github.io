@@ -87,7 +87,7 @@
       
         31 min
       
-      9 s
+      8 s
       &nbsp;
     
     </div>
@@ -100,10 +100,8 @@
 <p>Docker 仓库（Repository）：本地用来存放下载的各种打包好的软件镜像</p>
 <p>Docker 镜像（Image）：</p>
 <p>Docker 容器（Container）：</p>
-<hr>
 <h2 id="docker安装">Docker安装</h2>
 <p>默认 CentOS 8，Linux 操作系统</p>
-<hr>
 <h2 id="docker命令">Docker命令</h2>
 <h3 id="1启动关闭命令">1、启动关闭命令</h3>
 <div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell"><span style="color:#60a0b0;font-style:italic"># 启动 Docker</span>
@@ -427,8 +425,7 @@ docker cp 容器Id:容器内路径 主机目标路径
 docker cp 6990f597c9b5:/home/Looper.java /home
 
 <span style="color:#60a0b0;font-style:italic"># 拷贝是手动的同步文件的过程，可以使用 -v 数据卷的技术进行自动同步</span>
-</code></pre></div><p>&ndash;</p>
-<h2 id="docker安装nginx">Docker安装Nginx</h2>
+</code></pre></div><h2 id="docker安装nginx">Docker安装Nginx</h2>
 <h3 id="1查找-nginx-镜像">1、查找 Nginx 镜像</h3>
 <div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell"><span style="color:#666">[</span>root@iZ2ze4jen9kd2w1c52zfe0Z /<span style="color:#666">]</span><span style="color:#60a0b0;font-style:italic"># docker search nginx</span>
 NAME                      DESCRIPTION                            STARS
@@ -476,8 +473,7 @@ Commercial support is available at
 &lt;p&gt;&lt;em&gt;Thank you <span style="color:#007020;font-weight:bold">for</span> using nginx.&lt;/em&gt;&lt;/p&gt;
 &lt;/body&gt;
 &lt;/html&gt;
-</code></pre></div><hr>
-<h2 id="docker安装tomcat">Docker安装Tomcat</h2>
+</code></pre></div><h2 id="docker安装tomcat">Docker安装Tomcat</h2>
 <h3 id="1启动tomcat">1、启动Tomcat</h3>
 <div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell"><span style="color:#60a0b0;font-style:italic"># 之前都是启动容器之后，在后台运行，现在官方使用命令，用完即删除，一般用于测试</span>
 docker run -it --rm tomcat:9.0
@@ -490,13 +486,11 @@ docker run -it -p 3355:8080 --name tomcat01 tomcat
 docker <span style="color:#007020">exec</span> -it tomcat01 /bin/bash
 <span style="color:#60a0b0;font-style:italic"># 把 webapps.dist 中的内容 copy 到 webapps 中，即可通过外网访问 tomcat 主页</span>
 cp -r webapps.dist/* webapps
-</code></pre></div><hr>
-<h2 id="docker镜像">Docker镜像</h2>
+</code></pre></div><h2 id="docker镜像">Docker镜像</h2>
 <h3 id="1镜像是什么">1、镜像是什么</h3>
 <p>镜像（Image）是一种轻量级、可执行的独立软件包，包含了软件运行所需要的运行环境和内容（代码、运行是库、环境变量以及配置文件等）。</p>
 <p>所有应用打包成 Docker 镜像，就可以直接运行起来。</p>
 <p>镜像的来源：从远程仓库下载；从其他服务器拷贝镜像；自己制作一个镜像。</p>
-<hr>
 <h3 id="2镜像加载原理">2、镜像加载原理</h3>
 <h4 id="21联合文件系统unionfs">2.1、联合文件系统UnionFS</h4>
 <p>UnionFS（联合文件系统）：是 Linux 中一种分层的，轻量级的高性能文件系统，它支持对文件系统的修改作为一次提交，来一层层的进行叠加（类似于 Git 对每次修改的代码进行版本控制），同时可以将不同的目录挂载到同一个虚拟文件系统下。</p>
@@ -572,13 +566,11 @@ sha256:d543f21d737ca34ebf2abceb8fe39e2fbf459930b4fcbd93617987c146df1b3b
 REPOSITORY    TAG       IMAGE ID       CREATED         SIZE
 tomcat00      1.0       d543f21d737c   <span style="color:#40a070">2</span> seconds ago   684MB
 tomcat        latest    fb5657adc892   <span style="color:#40a070">5</span> months ago    680MB
-</code></pre></div><hr>
-<h2 id="docker容器数据卷">Docker容器数据卷</h2>
+</code></pre></div><h2 id="docker容器数据卷">Docker容器数据卷</h2>
 <h3 id="1数据卷">1、数据卷</h3>
 <p>为了防止容器被删除之后，造成容器内的数据丢失，所以通过容器数据卷技术，将容器内的数据同步到容器外部的 Linux 操作系统上。</p>
 <p>总结：容器和主机之间的数据同步操作（持久化），容器和容器之间也可以数据共享。</p>
 <p>主机和容器之间挂载好之后，停止运行容器，修改主机指定目录下的内容，容器内部也会自动修改</p>
-<hr>
 <h3 id="2使用数据卷">2、使用数据卷</h3>
 <h4 id="21使用命令进行挂载">2.1、使用命令进行挂载</h4>
 <p>文件挂载是将宿主机的指定文件挂载到 Docker 容器中的文件，文件位置由用户自行管理。</p>
@@ -617,11 +609,9 @@ Test.java
             <span style="color:#666">}</span>
         <span style="color:#666">]</span>
 ......
-</code></pre></div><hr>
-<h3 id="3数据卷优缺点">3、数据卷优缺点</h3>
+</code></pre></div><h3 id="3数据卷优缺点">3、数据卷优缺点</h3>
 <p>优点：修改文件只需要在本地修改即可，不需要每次都进入到容器内部。</p>
 <p>缺点：占用存储空间，容器内部数据量特别大时，主机占用的数据量也很大。</p>
-<hr>
 <h3 id="4匿名挂载和具名挂载">4、匿名挂载和具名挂载</h3>
 <h4 id="41匿名挂载">4.1、匿名挂载</h4>
 <div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell"><span style="color:#60a0b0;font-style:italic"># -P 大写P, 随机指定端口号</span>
@@ -777,8 +767,7 @@ CONTAINER ID   IMAGE               NAMES
             <span style="color:#666">}</span>
         <span style="color:#666">]</span>
 .......
-</code></pre></div><hr>
-<h2 id="docker安装mysql">Docker安装MySQL</h2>
+</code></pre></div><h2 id="docker安装mysql">Docker安装MySQL</h2>
 <h3 id="1搜索镜像">1、搜索镜像</h3>
 <p>docker search mysql</p>
 <h3 id="2下载镜像">2、下载镜像</h3>
@@ -803,12 +792,10 @@ ca-key.pem  client-cert.pem  ib_buffer_pool  ib_logfile0  ibtmp1       performan
 <span style="color:#60a0b0;font-style:italic"># 数据库中有 student 表</span>
 <span style="color:#666">[</span>root@iZ2ze4jen9kd2w1c52zfe0Z test_docker_sql<span style="color:#666">]</span><span style="color:#60a0b0;font-style:italic"># ls</span>
 db.opt  student.frm  student.ibd
-</code></pre></div><hr>
-<h2 id="dockerfile">DockerFile</h2>
+</code></pre></div><h2 id="dockerfile">DockerFile</h2>
 <p>DockerFile 就是用来构建 Docker 镜像的构建文件，命令脚本。</p>
 <p>通过 DockerFile 可以生成镜像，生成镜像的同时可以挂载目录。</p>
 <p>可以通过 DockerFile 构建自己个性化的 Docker 镜像；例如：CentOS + Nginx + Tomcat + MySQL + Redis + ElasticSearch 这样一个体系的环境。</p>
-<hr>
 <h3 id="1dockerfile-指令">1、DockerFile 指令</h3>
 <p>DockerFile 指令关键字，通过关键字控制生成所需要的镜像。</p>
 <div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">FROM               <span style="color:#60a0b0;font-style:italic"># 基础镜像; 新制作的镜像是基于什么镜像制作的，一般都是基于 CentOS</span>
@@ -823,8 +810,7 @@ ENTRYPONT          <span style="color:#60a0b0;font-style:italic"># 指定容器�
 OBBUILD            <span style="color:#60a0b0;font-style:italic"># 当构建一个被继承的 DockerFile 时这个命令就会运行，触发指令</span>
 COPY               <span style="color:#60a0b0;font-style:italic"># 类似于 ADD ，将文件拷贝到镜像中</span>
 ENV                <span style="color:#60a0b0;font-style:italic"># 构建的时候设置环境变量，</span>
-</code></pre></div><hr>
-<h3 id="2准备dockerfile文件">2、准备DockerFile文件</h3>
+</code></pre></div><h3 id="2准备dockerfile文件">2、准备DockerFile文件</h3>
 <div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell"><span style="color:#666">[</span>root@iZ2ze4jen9kd2w1c52zfe0Z docker_test_volume<span style="color:#666">]</span><span style="color:#60a0b0;font-style:italic"># pwd</span>
 /home/docker_test_volume
 <span style="color:#60a0b0;font-style:italic"># 创建 DockerFile 文件，名字随机，最好见名知意</span>
@@ -842,8 +828,7 @@ CMD <span style="color:#007020">echo</span> <span style="color:#4070a0">&#34;---
 
 CMD /bin/bash
 
-</code></pre></div><hr>
-<h3 id="3构建dockerfile内容">3、构建DockerFile内容</h3>
+</code></pre></div><h3 id="3构建dockerfile内容">3、构建DockerFile内容</h3>
 <div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell"><span style="color:#666">[</span>root@iZ2ze4jen9kd2w1c52zfe0Z docker_test_volume<span style="color:#666">]</span><span style="color:#60a0b0;font-style:italic"># docker build -f /home/docker_test_volume/dockerfile01 -t looper/centos:1.0 .   </span>
 Sending build context to Docker daemon  2.048kB
 <span style="color:#60a0b0;font-style:italic"># 第一步：提供有一个基础的镜像</span>
@@ -919,7 +904,6 @@ DRIVER    VOLUME NAME
         <span style="color:#666">]</span>
 ......
 </code></pre></div><p>docker build -t 镜像名 .</p>
-<hr>
 <h2 id="docker网络">Docker网络</h2>
 <h3 id="1理解docker0">1、理解Docker0</h3>
 <div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell"><span style="color:#666">[</span>root@iZ2ze4jen9kd2w1c52zfe0Z /<span style="color:#666">]</span><span style="color:#60a0b0;font-style:italic"># ip addr</span>
